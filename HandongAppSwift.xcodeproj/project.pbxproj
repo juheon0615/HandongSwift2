@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		52055AAE1A81FDF800907406 /* SixwayBusViewWeekendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52055AAD1A81FDF800907406 /* SixwayBusViewWeekendController.swift */; };
 		520636721A81F66500C41E35 /* ComfortBusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520636711A81F66500C41E35 /* ComfortBusModel.swift */; };
+		524170F21A84A48E00F96631 /* MomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524170F11A84A48E00F96631 /* MomsViewController.swift */; };
+		524170F41A84A5EB00F96631 /* MomsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524170F31A84A5EB00F96631 /* MomsModel.swift */; };
+		524170F61A84B59300F96631 /* HyoamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524170F51A84B59300F96631 /* HyoamViewController.swift */; };
+		524170F81A84B66200F96631 /* HyoamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524170F71A84B66200F96631 /* HyoamModel.swift */; };
+		527A698E1A835BAB003B2EB5 /* HacksickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A698D1A835BAB003B2EB5 /* HacksickViewController.swift */; };
+		527A69901A8360F4003B2EB5 /* HacksickModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A698F1A8360F4003B2EB5 /* HacksickModel.swift */; };
+		527A69921A8361A1003B2EB5 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A69911A8361A1003B2EB5 /* MenuModel.swift */; };
 		52B0D2ED1A80BFF7000A2A02 /* conv.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B0D2E31A80BFF7000A2A02 /* conv.png */; };
 		52B0D2EE1A80BFF7000A2A02 /* hansick.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B0D2E41A80BFF7000A2A02 /* hansick.png */; };
 		52B0D2EF1A80BFF7000A2A02 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B0D2E51A80BFF7000A2A02 /* home.png */; };
@@ -21,12 +28,12 @@
 		52B0D2F61A80BFF7000A2A02 /* zzimdak.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B0D2EC1A80BFF7000A2A02 /* zzimdak.png */; };
 		52B0D2FA1A80E12D000A2A02 /* SixwayBusTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B0D2F91A80E12D000A2A02 /* SixwayBusTabBarController.swift */; };
 		52B0D2FC1A80EBE5000A2A02 /* BusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B0D2FB1A80EBE5000A2A02 /* BusModel.swift */; };
-		52B0D2FE1A80ED45000A2A02 /* SixwayBusViewWeekdaysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B0D2FD1A80ED45000A2A02 /* SixwayBusViewWeekdaysController.swift */; };
+		52B0D2FE1A80ED45000A2A02 /* SixwayBusViewWeekdayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B0D2FD1A80ED45000A2A02 /* SixwayBusViewWeekdayController.swift */; };
 		52B0D3011A80EE14000A2A02 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B0D3001A80EE14000A2A02 /* Util.swift */; };
 		52B0D3031A80F393000A2A02 /* BusTzoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B0D3021A80F393000A2A02 /* BusTzoneModel.swift */; };
 		52B0D3061A81DD82000A2A02 /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B0D3051A81DD82000A2A02 /* SWXMLHash.swift */; };
 		52B8F33B1A82054C00BC2B99 /* SchoolBusTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8F33A1A82054C00BC2B99 /* SchoolBusTabBarController.swift */; };
-		52B8F33D1A82055700BC2B99 /* SchoolBusViewWeekdaysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8F33C1A82055700BC2B99 /* SchoolBusViewWeekdaysController.swift */; };
+		52B8F33D1A82055700BC2B99 /* SchoolBusViewWeekdayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8F33C1A82055700BC2B99 /* SchoolBusViewWeekdayController.swift */; };
 		52B8F33F1A82056500BC2B99 /* SchoolBusViewWeekendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8F33E1A82056500BC2B99 /* SchoolBusViewWeekendController.swift */; };
 		52BCB45E1A7FB6B70016A37E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BCB45D1A7FB6B70016A37E /* AppDelegate.swift */; };
 		52BCB4601A7FB6B70016A37E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BCB45F1A7FB6B70016A37E /* RootViewController.swift */; };
@@ -58,6 +65,13 @@
 /* Begin PBXFileReference section */
 		52055AAD1A81FDF800907406 /* SixwayBusViewWeekendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixwayBusViewWeekendController.swift; sourceTree = "<group>"; };
 		520636711A81F66500C41E35 /* ComfortBusModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComfortBusModel.swift; sourceTree = "<group>"; };
+		524170F11A84A48E00F96631 /* MomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomsViewController.swift; sourceTree = "<group>"; };
+		524170F31A84A5EB00F96631 /* MomsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomsModel.swift; sourceTree = "<group>"; };
+		524170F51A84B59300F96631 /* HyoamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HyoamViewController.swift; sourceTree = "<group>"; };
+		524170F71A84B66200F96631 /* HyoamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HyoamModel.swift; sourceTree = "<group>"; };
+		527A698D1A835BAB003B2EB5 /* HacksickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HacksickViewController.swift; sourceTree = "<group>"; };
+		527A698F1A8360F4003B2EB5 /* HacksickModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HacksickModel.swift; sourceTree = "<group>"; };
+		527A69911A8361A1003B2EB5 /* MenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		52B0D2E31A80BFF7000A2A02 /* conv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = conv.png; sourceTree = "<group>"; };
 		52B0D2E41A80BFF7000A2A02 /* hansick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hansick.png; sourceTree = "<group>"; };
 		52B0D2E51A80BFF7000A2A02 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
@@ -70,13 +84,13 @@
 		52B0D2EC1A80BFF7000A2A02 /* zzimdak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zzimdak.png; sourceTree = "<group>"; };
 		52B0D2F91A80E12D000A2A02 /* SixwayBusTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixwayBusTabBarController.swift; sourceTree = "<group>"; };
 		52B0D2FB1A80EBE5000A2A02 /* BusModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusModel.swift; sourceTree = "<group>"; };
-		52B0D2FD1A80ED45000A2A02 /* SixwayBusViewWeekdaysController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixwayBusViewWeekdaysController.swift; sourceTree = "<group>"; };
+		52B0D2FD1A80ED45000A2A02 /* SixwayBusViewWeekdayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixwayBusViewWeekdayController.swift; sourceTree = "<group>"; };
 		52B0D3001A80EE14000A2A02 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		52B0D3021A80F393000A2A02 /* BusTzoneModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusTzoneModel.swift; sourceTree = "<group>"; };
 		52B0D3041A81DD82000A2A02 /* SWXMLHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWXMLHash.h; sourceTree = "<group>"; };
 		52B0D3051A81DD82000A2A02 /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWXMLHash.swift; sourceTree = "<group>"; };
 		52B8F33A1A82054C00BC2B99 /* SchoolBusTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolBusTabBarController.swift; sourceTree = "<group>"; };
-		52B8F33C1A82055700BC2B99 /* SchoolBusViewWeekdaysController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolBusViewWeekdaysController.swift; sourceTree = "<group>"; };
+		52B8F33C1A82055700BC2B99 /* SchoolBusViewWeekdayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolBusViewWeekdayController.swift; sourceTree = "<group>"; };
 		52B8F33E1A82056500BC2B99 /* SchoolBusViewWeekendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolBusViewWeekendController.swift; sourceTree = "<group>"; };
 		52BCB4581A7FB6B70016A37E /* HandongAppSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandongAppSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BCB45C1A7FB6B70016A37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,6 +131,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		527A698C1A835B8B003B2EB5 /* MealView */ = {
+			isa = PBXGroup;
+			children = (
+				527A698D1A835BAB003B2EB5 /* HacksickViewController.swift */,
+				527A698F1A8360F4003B2EB5 /* HacksickModel.swift */,
+				527A69911A8361A1003B2EB5 /* MenuModel.swift */,
+				524170F11A84A48E00F96631 /* MomsViewController.swift */,
+				524170F31A84A5EB00F96631 /* MomsModel.swift */,
+				524170F51A84B59300F96631 /* HyoamViewController.swift */,
+				524170F71A84B66200F96631 /* HyoamModel.swift */,
+			);
+			name = MealView;
+			sourceTree = "<group>";
+		};
 		52B0D2F71A80E110000A2A02 /* BusView */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				52B0D2F91A80E12D000A2A02 /* SixwayBusTabBarController.swift */,
-				52B0D2FD1A80ED45000A2A02 /* SixwayBusViewWeekdaysController.swift */,
+				52B0D2FD1A80ED45000A2A02 /* SixwayBusViewWeekdayController.swift */,
 				52055AAD1A81FDF800907406 /* SixwayBusViewWeekendController.swift */,
 			);
 			name = SixwayBusController;
@@ -161,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				52B8F33A1A82054C00BC2B99 /* SchoolBusTabBarController.swift */,
-				52B8F33C1A82055700BC2B99 /* SchoolBusViewWeekdaysController.swift */,
+				52B8F33C1A82055700BC2B99 /* SchoolBusViewWeekdayController.swift */,
 				52B8F33E1A82056500BC2B99 /* SchoolBusViewWeekendController.swift */,
 			);
 			name = SchoolBusController;
@@ -188,6 +216,7 @@
 		52BCB45A1A7FB6B70016A37E /* HandongAppSwift */ = {
 			isa = PBXGroup;
 			children = (
+				527A698C1A835B8B003B2EB5 /* MealView */,
 				52B0D2FF1A80EE07000A2A02 /* Utils */,
 				52B0D2F71A80E110000A2A02 /* BusView */,
 				52BCB4951A80ADCE0016A37E /* MainView */,
@@ -390,15 +419,22 @@
 				52055AAE1A81FDF800907406 /* SixwayBusViewWeekendController.swift in Sources */,
 				52BCB4971A80ADE20016A37E /* MainViewController.swift in Sources */,
 				52B8F33B1A82054C00BC2B99 /* SchoolBusTabBarController.swift in Sources */,
+				524170F41A84A5EB00F96631 /* MomsModel.swift in Sources */,
 				52B0D2FC1A80EBE5000A2A02 /* BusModel.swift in Sources */,
-				52B0D2FE1A80ED45000A2A02 /* SixwayBusViewWeekdaysController.swift in Sources */,
+				52B0D2FE1A80ED45000A2A02 /* SixwayBusViewWeekdayController.swift in Sources */,
 				52BCB4621A7FB6B70016A37E /* DataViewController.swift in Sources */,
 				52B8F33F1A82056500BC2B99 /* SchoolBusViewWeekendController.swift in Sources */,
+				527A69901A8360F4003B2EB5 /* HacksickModel.swift in Sources */,
+				527A69921A8361A1003B2EB5 /* MenuModel.swift in Sources */,
 				52B0D3011A80EE14000A2A02 /* Util.swift in Sources */,
 				52BCB45E1A7FB6B70016A37E /* AppDelegate.swift in Sources */,
+				527A698E1A835BAB003B2EB5 /* HacksickViewController.swift in Sources */,
+				524170F21A84A48E00F96631 /* MomsViewController.swift in Sources */,
+				524170F81A84B66200F96631 /* HyoamModel.swift in Sources */,
 				520636721A81F66500C41E35 /* ComfortBusModel.swift in Sources */,
 				52B0D2FA1A80E12D000A2A02 /* SixwayBusTabBarController.swift in Sources */,
-				52B8F33D1A82055700BC2B99 /* SchoolBusViewWeekdaysController.swift in Sources */,
+				52B8F33D1A82055700BC2B99 /* SchoolBusViewWeekdayController.swift in Sources */,
+				524170F61A84B59300F96631 /* HyoamViewController.swift in Sources */,
 				52B0D3031A80F393000A2A02 /* BusTzoneModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,6 +561,7 @@
 				INFOPLIST_FILE = HandongAppSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -535,6 +572,7 @@
 				INFOPLIST_FILE = HandongAppSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

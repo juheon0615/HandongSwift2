@@ -15,19 +15,29 @@ class MainViewController: UIViewController {
     @IBOutlet weak var haksickButton: UIButton!
     
     @IBOutlet weak var sixwayBusButton: UIButton!
+    @IBOutlet weak var schoolBusButton: UIButton!
     
     override func viewDidLoad() {
         // make round corner button
-        let topMaskLayer = CAShapeLayer()
-        let topBezierPath = UIBezierPath(roundedRect: yasickButton.bounds, byRoundingCorners: UIRectCorner(UIRectCorner.TopLeft.rawValue|UIRectCorner.TopRight.rawValue), cornerRadii: CGSize(width: 10.0, height: 10.0))
+        let topCorner = UIRectCorner(UIRectCorner.TopLeft.rawValue|UIRectCorner.TopRight.rawValue)
+        let botCorner = UIRectCorner(UIRectCorner.BottomLeft.rawValue|UIRectCorner.BottomRight.rawValue)
+        let cornerRadi = CGSize(width: 10.0, height: 10.0)
         
-        topMaskLayer.path = topBezierPath.CGPath
-        yasickButton.layer.mask = topMaskLayer
+        let yasickButtonLayer = CAShapeLayer()
+        yasickButtonLayer.path = UIBezierPath(roundedRect: yasickButton.bounds, byRoundingCorners: topCorner, cornerRadii: cornerRadi).CGPath
+        yasickButton.layer.mask = yasickButtonLayer
         
-        let bottomMaskLayer = CAShapeLayer()
-        let bottomBezierPath = UIBezierPath(roundedRect: haksickButton.bounds, byRoundingCorners: UIRectCorner(UIRectCorner.BottomLeft.rawValue|UIRectCorner.BottomRight.rawValue), cornerRadii: CGSize(width: 10.0, height: 10.0))
+        let sixwayButtonLayer = CAShapeLayer()
+        sixwayButtonLayer.path = UIBezierPath(roundedRect: sixwayBusButton.bounds, byRoundingCorners: topCorner, cornerRadii: cornerRadi).CGPath
+        sixwayBusButton.layer.mask = sixwayButtonLayer
         
-        bottomMaskLayer.path = bottomBezierPath.CGPath
-        haksickButton.layer.mask = bottomMaskLayer
+        
+        let haksickButtonLayer = CAShapeLayer()
+        haksickButtonLayer.path = UIBezierPath(roundedRect: haksickButton.bounds, byRoundingCorners: botCorner , cornerRadii: cornerRadi).CGPath
+        haksickButton.layer.mask = haksickButtonLayer
+        
+        let schoolButtonLayer = CAShapeLayer()
+        schoolButtonLayer.path = UIBezierPath(roundedRect: schoolBusButton.bounds, byRoundingCorners: botCorner, cornerRadii: cornerRadi).CGPath
+        schoolBusButton.layer.mask = schoolButtonLayer
     }
 }

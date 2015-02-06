@@ -14,7 +14,7 @@ class BusTzoneModel {
     var bus: Array<BusModel>
     
     init(timeSplit: String, tzone: String, bus: Array<BusModel>) {
-        self.timeSplit = timeSplit
+        self.timeSplit = timeSplit.uppercaseString
         self.tzone = tzone
         self.bus = bus
     }
