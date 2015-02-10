@@ -22,15 +22,17 @@ class LoadingViewController: UIViewController {
     @IBOutlet weak var msgLabel: UILabel!
     
     var fileMgr: NSFileManager = NSFileManager.defaultManager()
-    var docsDir: String?
+    var docsDir: String = Util.getDocumentDirectory()
     var sixwayBusWeekendXMLFile: String?
     var sixwayBusWeekdayXMLFile: String?
     var schoolBusWeekendXMLFile: String?
     var schoolBusWeekdayXMLFile: String?
+    var deliveryXMLFile: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // loading image rotation
         var rotationAni = CABasicAnimation()
         rotationAni.keyPath = "transform.rotation.z";
         rotationAni.toValue = NSNumber(double: M_PI * 2)
@@ -41,14 +43,36 @@ class LoadingViewController: UIViewController {
         loadingImg.layer.addAnimation(rotationAni, forKey: "rotationAnimation")
         
         
+        // get Main Bus time table
+        self.getMainBusInfo()
         
-        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         
-        docsDir = dirPaths[0] as? String
-        sixwayBusWeekdayXMLFile = docsDir?.stringByAppendingPathComponent(Util.SixwayWeekdayBusFilename)
-        sixwayBusWeekendXMLFile = docsDir?.stringByAppendingPathComponent(Util.SixwayWeekendBusFilename)
-        schoolBusWeekdayXMLFile = docsDir?.stringByAppendingPathComponent(Util.SchoolWeekdayBusFilename)
-        schoolBusWeekendXMLFile = docsDir?.stringByAppendingPathComponent(Util.SchoolWeekendBusFilename)
+        // get Bus Time Table
+        self.getBusInfo()
+        
+        
+        // get Delivery Food Info
+        self.getDeliveryInfo()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        let timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: Selector("nextPage"), userInfo: nil, repeats: false)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func nextPage() {
+        self.performSegueWithIdentifier("loadingDoneSegue", sender: self)
+    }
+    
+    func getBusInfo() {
+        sixwayBusWeekdayXMLFile = docsDir.stringByAppendingPathComponent(Util.SixwayWeekdayBusFilename)
+        sixwayBusWeekendXMLFile = docsDir.stringByAppendingPathComponent(Util.SixwayWeekendBusFilename)
+        schoolBusWeekdayXMLFile = docsDir.stringByAppendingPathComponent(Util.SchoolWeekdayBusFilename)
+        schoolBusWeekendXMLFile = docsDir.stringByAppendingPathComponent(Util.SchoolWeekendBusFilename)
         
         var version: String? = nil
         if fileMgr.fileExistsAtPath(sixwayBusWeekdayXMLFile!) {
@@ -90,21 +114,6 @@ class LoadingViewController: UIViewController {
         }
         getBusDataFromServer(BusTimeType.SchoolWeekend, version: version)
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        let timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: Selector("nextPage"), userInfo: nil, repeats: false)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    func nextPage() {
-        self.performSegueWithIdentifier("loadingDoneSegue", sender: self)
-    }
-    
     
     func checkBusXMLVersion(data: NSString) -> String {
         var xmlDom = SWXMLHash.parse(data)
@@ -172,6 +181,122 @@ class LoadingViewController: UIViewController {
                     default:
                         break
                     }
+                }
+        })
+        dataTask.resume()
+    }
+    
+    func getMainBusInfo() {
+        var urlSix: NSURL
+        var urlSchool: NSURL
+        
+        var mainBus = MainBusModel.sharedInstance
+        
+        if Util.isWeekendToday() {
+            // case for weekend
+            urlSchool = NSURL(string: Util.MainBusSchoolWeekendURL)!
+            urlSix = NSURL(string: Util.MainBusSixwayWeekendURL)!
+        } else {
+            // case for weekdays
+            urlSchool = NSURL(string: Util.MainBusSchoolWeekdayURL)!
+            urlSix = NSURL(string: Util.MainBusSixwayWeekdayURL)!
+        }
+        
+        let session = NSURLSession.sharedSession()
+        let dataTaskSchool = session.dataTaskWithURL(urlSchool, completionHandler:
+            {(data: NSData!, response:NSURLResponse!, error:NSError!) -> Void in
+                var xmlDom = SWXMLHash.parse(data)
+                var rootTag: String
+                
+                if (xmlDom["WeekdayBus"].element != nil) {
+                    rootTag = "WeekdayBus"
+                } else if (xmlDom["WeekendBus"].element != nil) {
+                    rootTag = "WeekendBus"
+                } else {
+                    return
+                }
+                
+                let allBus = xmlDom[rootTag]["Bus"].all
+                for item in allBus {
+                    mainBus.toSchool.append(
+                        BusModel(
+                            six: item["six"].element!.text!,
+                            hwan: item["hwan"].element!.text!,
+                            school: item["school"].element!.text!))
+                }
+                
+                if allBus.count < 3 {
+                    for i in allBus.count ..< 3 {
+                        mainBus.toSchool.append(BusModel(six: "-", hwan: "-", school: "-"))
+                    }
+                }
+        })
+        dataTaskSchool.resume()
+        
+        let dataTaskSix = session.dataTaskWithURL(urlSix, completionHandler:
+            {(data: NSData!, response:NSURLResponse!, error:NSError!) -> Void in
+                var xmlDom = SWXMLHash.parse(data)
+                var rootTag: String
+                
+                if (xmlDom["WeekdayBus"].element != nil) {
+                    rootTag = "WeekdayBus"
+                } else if (xmlDom["WeekendBus"].element != nil) {
+                    rootTag = "WeekendBus"
+                } else {
+                    return
+                }
+                
+                let allBus = xmlDom[rootTag]["Bus"].all
+                for item in allBus {
+                    mainBus.toSix.append(
+                        BusModel(
+                            six: item["six"].element!.text!,
+                            hwan: item["hwan"].element!.text!,
+                            school: item["school"].element!.text!))
+                }
+                
+                if allBus.count < 3 {
+                    for i in allBus.count ..< 3 {
+                        mainBus.toSix.append(BusModel(six: "-", hwan: "-", school: "-"))
+                    }
+                }
+        })
+        dataTaskSix.resume()
+    }
+    
+    func getDeliveryInfo() {
+        deliveryXMLFile = docsDir.stringByAppendingPathComponent(Util.DeliveryFoodFilename)
+        
+        var version: String? = nil
+        if fileMgr.fileExistsAtPath(deliveryXMLFile!) {
+            let dataBuffer = fileMgr.contentsAtPath(deliveryXMLFile!)
+            let dataString = NSString(data: dataBuffer!, encoding: NSUTF8StringEncoding)
+            version = self.checkDeliveryFoodXMLVersion(dataString!)
+        }
+        getDeliveryFoodDataFromServer(version)
+    }
+    
+    func checkDeliveryFoodXMLVersion(data: NSString) -> String {
+        let xmlDom = SWXMLHash.parse(data)
+        
+        return xmlDom["delivery"]["version"].element!.text!
+    }
+    
+    func getDeliveryFoodDataFromServer(version: String?) {
+        var param = (version != nil ? "?version="+version! : "")
+        
+        let url = NSURL(string: Util.DeliveryFoodURL + param)!
+        let session = NSURLSession.sharedSession()
+        
+        let dataTask = session.dataTaskWithURL(url, completionHandler:
+            {(data: NSData!, response:NSURLResponse!, error:NSError!) -> Void in
+                let xmlDom = SWXMLHash.parse(data)
+                
+                if xmlDom["delivery"]["vResult"].element != nil {
+                    // case: do not need to update xml
+                    println("Already Exist proper DATA")
+                } else {
+                    Util.saveFile(Util.DeliveryFoodFilename, data: data)
                 }
         })
         dataTask.resume()

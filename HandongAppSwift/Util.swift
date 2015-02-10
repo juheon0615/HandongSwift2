@@ -39,6 +39,25 @@ class Util {
         return Util.ServerURL + "/getHyoam.jsp"
     }
     
+    // Server Addr - Delivery Food Info
+    class var DeliveryFoodURL: String{
+        return Util.ServerURL + "/yasick/getYasickStoreList.jsp"
+    }
+    
+    // Server Addr - Main Bus INfo
+    class var MainBusSixwayWeekdayURL: String{
+        return Util.ServerURL + "/busWidget/getBus_Weekday(toSix).jsp"
+    }
+    class var MainBusSixwayWeekendURL: String{
+        return Util.ServerURL + "/busWidget/getBus_Weekend(toSix).jsp"
+    }
+    class var MainBusSchoolWeekdayURL: String{
+        return Util.ServerURL + "/busWidget/getBus_Weekday(toSchool).jsp"
+    }
+    class var MainBusSchoolWeekendURL: String{
+        return Util.ServerURL + "/busWidget/getBus_Weekend(toSchool).jsp"
+    }
+    
     // xml file names
     class var SixwayWeekdayBusFilename: String{
         return "swbwd.xml"
@@ -53,14 +72,32 @@ class Util {
         return "scbwe.xml"
     }
     
+    class var DeliveryFoodFilename: String{
+        return "yasick.xml"
+    }
+    
     
     class func saveFile(fileName: String, data: NSData) {
-        var fileMgr = NSFileManager.defaultManager()
-        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let fileMgr = NSFileManager.defaultManager()
+        let docsDir = Util.getDocumentDirectory()
         
-        var docsDir = dirPaths[0] as? String
-        var filePath = docsDir?.stringByAppendingPathComponent(fileName)
-        data.writeToFile(filePath!, atomically: false)
+        let filePath = docsDir.stringByAppendingPathComponent(fileName)
+        data.writeToFile(filePath, atomically: false)
+    }
+    
+    class func readFile(fileName: String) -> NSString? {
+        let fileMgr: NSFileManager = NSFileManager.defaultManager()
+        let docsDir = Util.getDocumentDirectory()
+        
+        let XMLFile = docsDir.stringByAppendingPathComponent(fileName)
+        
+        
+        if fileMgr.fileExistsAtPath(XMLFile) {
+            let databuffer = fileMgr.contentsAtPath(XMLFile)
+            return NSString(data: databuffer!, encoding: NSUTF8StringEncoding)
+        } else {
+            return nil
+        }
     }
     
     class func weekdayChanger(weekdayInt: Int) -> String {
@@ -98,5 +135,28 @@ class Util {
         let flags: NSCalendarUnit = .DayCalendarUnit | .MonthCalendarUnit | .YearCalendarUnit
         let date = NSDate()
         return NSCalendar.currentCalendar().components(flags, fromDate: date)
+    }
+    
+    class func isWeekendToday() -> Bool {
+        let wd = Util.getWeekday()
+        
+        if wd == 1 || wd == 7 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    class func getWeekday() -> Int {
+        let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+        let comp = calendar?.components(.WeekdayCalendarUnit, fromDate: NSDate())
+        
+        return comp!.weekday
+    }
+    
+    class func getDocumentDirectory() -> String {
+        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        
+        return dirPaths[0] as String
     }
 }

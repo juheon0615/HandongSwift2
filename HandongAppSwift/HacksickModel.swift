@@ -32,7 +32,7 @@ class HacksickModel {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyyMMdd"
         let today = NSCalendar.currentCalendar().components(.YearCalendarUnit, fromDate: NSDate())
-        let formattedDate = formatter.dateFromString(String(today.year)+date) // TODOHERE
+        let formattedDate = formatter.dateFromString(String(today.year)+date)
         let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
         let comp = calendar?.components(.WeekdayCalendarUnit, fromDate: formattedDate!)
         

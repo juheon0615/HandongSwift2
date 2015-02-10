@@ -13,6 +13,15 @@
 		524170F41A84A5EB00F96631 /* MomsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524170F31A84A5EB00F96631 /* MomsModel.swift */; };
 		524170F61A84B59300F96631 /* HyoamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524170F51A84B59300F96631 /* HyoamViewController.swift */; };
 		524170F81A84B66200F96631 /* HyoamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524170F71A84B66200F96631 /* HyoamModel.swift */; };
+		524170FA1A865BFC00F96631 /* MainBusUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524170F91A865BFC00F96631 /* MainBusUILabel.swift */; };
+		524170FC1A86613200F96631 /* MainBusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524170FB1A86613200F96631 /* MainBusModel.swift */; };
+		524DD41A1A89EE8B00DEEC28 /* StoreListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DD4191A89EE8B00DEEC28 /* StoreListModel.swift */; };
+		524DD41C1A89EECB00DEEC28 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DD41B1A89EECB00DEEC28 /* StoreModel.swift */; };
+		524DD41E1A89F2BF00DEEC28 /* DeliveryAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DD41D1A89F2BF00DEEC28 /* DeliveryAllViewController.swift */; };
+		524DD4201A89F2D400DEEC28 /* DeliveryTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DD41F1A89F2D400DEEC28 /* DeliveryTabBarController.swift */; };
+		524DD4261A89FFA000DEEC28 /* phone_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 524DD4251A89FFA000DEEC28 /* phone_icon.png */; };
+		524DD4281A8A59D500DEEC28 /* DeliveryNonChickenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DD4271A8A59D500DEEC28 /* DeliveryNonChickenViewController.swift */; };
+		524DD42A1A8A59DF00DEEC28 /* DeliveryChickenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DD4291A8A59DF00DEEC28 /* DeliveryChickenViewController.swift */; };
 		527A698E1A835BAB003B2EB5 /* HacksickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A698D1A835BAB003B2EB5 /* HacksickViewController.swift */; };
 		527A69901A8360F4003B2EB5 /* HacksickModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A698F1A8360F4003B2EB5 /* HacksickModel.swift */; };
 		527A69921A8361A1003B2EB5 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A69911A8361A1003B2EB5 /* MenuModel.swift */; };
@@ -69,6 +78,15 @@
 		524170F31A84A5EB00F96631 /* MomsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomsModel.swift; sourceTree = "<group>"; };
 		524170F51A84B59300F96631 /* HyoamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HyoamViewController.swift; sourceTree = "<group>"; };
 		524170F71A84B66200F96631 /* HyoamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HyoamModel.swift; sourceTree = "<group>"; };
+		524170F91A865BFC00F96631 /* MainBusUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBusUILabel.swift; sourceTree = "<group>"; };
+		524170FB1A86613200F96631 /* MainBusModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBusModel.swift; sourceTree = "<group>"; };
+		524DD4191A89EE8B00DEEC28 /* StoreListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreListModel.swift; sourceTree = "<group>"; };
+		524DD41B1A89EECB00DEEC28 /* StoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
+		524DD41D1A89F2BF00DEEC28 /* DeliveryAllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryAllViewController.swift; sourceTree = "<group>"; };
+		524DD41F1A89F2D400DEEC28 /* DeliveryTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryTabBarController.swift; sourceTree = "<group>"; };
+		524DD4251A89FFA000DEEC28 /* phone_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_icon.png; sourceTree = "<group>"; };
+		524DD4271A8A59D500DEEC28 /* DeliveryNonChickenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryNonChickenViewController.swift; sourceTree = "<group>"; };
+		524DD4291A8A59DF00DEEC28 /* DeliveryChickenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryChickenViewController.swift; sourceTree = "<group>"; };
 		527A698D1A835BAB003B2EB5 /* HacksickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HacksickViewController.swift; sourceTree = "<group>"; };
 		527A698F1A8360F4003B2EB5 /* HacksickModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HacksickModel.swift; sourceTree = "<group>"; };
 		527A69911A8361A1003B2EB5 /* MenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
@@ -131,18 +149,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		527A698C1A835B8B003B2EB5 /* MealView */ = {
+		524DD4211A89F2ED00DEEC28 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				524DD4191A89EE8B00DEEC28 /* StoreListModel.swift */,
+				524DD41B1A89EECB00DEEC28 /* StoreModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		524DD4221A89F2F900DEEC28 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				524DD41D1A89F2BF00DEEC28 /* DeliveryAllViewController.swift */,
+				524DD41F1A89F2D400DEEC28 /* DeliveryTabBarController.swift */,
+				524DD4271A8A59D500DEEC28 /* DeliveryNonChickenViewController.swift */,
+				524DD4291A8A59DF00DEEC28 /* DeliveryChickenViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		524DD4231A89F30800DEEC28 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				527A698F1A8360F4003B2EB5 /* HacksickModel.swift */,
+				524170F71A84B66200F96631 /* HyoamModel.swift */,
+				524170F31A84A5EB00F96631 /* MomsModel.swift */,
+				527A69911A8361A1003B2EB5 /* MenuModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		524DD4241A89F31A00DEEC28 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				527A698D1A835BAB003B2EB5 /* HacksickViewController.swift */,
-				527A698F1A8360F4003B2EB5 /* HacksickModel.swift */,
-				527A69911A8361A1003B2EB5 /* MenuModel.swift */,
 				524170F11A84A48E00F96631 /* MomsViewController.swift */,
-				524170F31A84A5EB00F96631 /* MomsModel.swift */,
 				524170F51A84B59300F96631 /* HyoamViewController.swift */,
-				524170F71A84B66200F96631 /* HyoamModel.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		527A698C1A835B8B003B2EB5 /* MealView */ = {
+			isa = PBXGroup;
+			children = (
+				524DD4241A89F31A00DEEC28 /* Controller */,
+				524DD4231A89F30800DEEC28 /* Model */,
 			);
 			name = MealView;
+			sourceTree = "<group>";
+		};
+		528B652E1A890E060006E0AC /* DeliveryFoodView */ = {
+			isa = PBXGroup;
+			children = (
+				524DD4221A89F2F900DEEC28 /* Controller */,
+				524DD4211A89F2ED00DEEC28 /* Model */,
+			);
+			name = DeliveryFoodView;
 			sourceTree = "<group>";
 		};
 		52B0D2F71A80E110000A2A02 /* BusView */ = {
@@ -216,6 +279,7 @@
 		52BCB45A1A7FB6B70016A37E /* HandongAppSwift */ = {
 			isa = PBXGroup;
 			children = (
+				528B652E1A890E060006E0AC /* DeliveryFoodView */,
 				527A698C1A835B8B003B2EB5 /* MealView */,
 				52B0D2FF1A80EE07000A2A02 /* Utils */,
 				52B0D2F71A80E110000A2A02 /* BusView */,
@@ -262,6 +326,7 @@
 		52BCB4811A7FB7C20016A37E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				524DD4251A89FFA000DEEC28 /* phone_icon.png */,
 				52B0D2E31A80BFF7000A2A02 /* conv.png */,
 				52B0D2E41A80BFF7000A2A02 /* hansick.png */,
 				52B0D2E51A80BFF7000A2A02 /* home.png */,
@@ -292,7 +357,9 @@
 		52BCB4951A80ADCE0016A37E /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				524170F91A865BFC00F96631 /* MainBusUILabel.swift */,
 				52BCB4961A80ADE20016A37E /* MainViewController.swift */,
+				524170FB1A86613200F96631 /* MainBusModel.swift */,
 			);
 			name = MainView;
 			sourceTree = "<group>";
@@ -392,6 +459,7 @@
 				52B0D2F61A80BFF7000A2A02 /* zzimdak.png in Resources */,
 				52B0D2F41A80BFF7000A2A02 /* setting.png in Resources */,
 				52BCB4911A808CA70016A37E /* map.png in Resources */,
+				524DD4261A89FFA000DEEC28 /* phone_icon.png in Resources */,
 				52BCB46C1A7FB6B70016A37E /* LaunchScreen.xib in Resources */,
 				52B0D2F51A80BFF7000A2A02 /* timetable.png in Resources */,
 				52BCB4691A7FB6B70016A37E /* Images.xcassets in Resources */,
@@ -418,6 +486,8 @@
 				52BCB4941A80A42E0016A37E /* LoadingViewController.swift in Sources */,
 				52055AAE1A81FDF800907406 /* SixwayBusViewWeekendController.swift in Sources */,
 				52BCB4971A80ADE20016A37E /* MainViewController.swift in Sources */,
+				524DD42A1A8A59DF00DEEC28 /* DeliveryChickenViewController.swift in Sources */,
+				524DD41A1A89EE8B00DEEC28 /* StoreListModel.swift in Sources */,
 				52B8F33B1A82054C00BC2B99 /* SchoolBusTabBarController.swift in Sources */,
 				524170F41A84A5EB00F96631 /* MomsModel.swift in Sources */,
 				52B0D2FC1A80EBE5000A2A02 /* BusModel.swift in Sources */,
@@ -425,17 +495,23 @@
 				52BCB4621A7FB6B70016A37E /* DataViewController.swift in Sources */,
 				52B8F33F1A82056500BC2B99 /* SchoolBusViewWeekendController.swift in Sources */,
 				527A69901A8360F4003B2EB5 /* HacksickModel.swift in Sources */,
+				524170FC1A86613200F96631 /* MainBusModel.swift in Sources */,
 				527A69921A8361A1003B2EB5 /* MenuModel.swift in Sources */,
 				52B0D3011A80EE14000A2A02 /* Util.swift in Sources */,
+				524DD4201A89F2D400DEEC28 /* DeliveryTabBarController.swift in Sources */,
 				52BCB45E1A7FB6B70016A37E /* AppDelegate.swift in Sources */,
 				527A698E1A835BAB003B2EB5 /* HacksickViewController.swift in Sources */,
 				524170F21A84A48E00F96631 /* MomsViewController.swift in Sources */,
+				524170FA1A865BFC00F96631 /* MainBusUILabel.swift in Sources */,
 				524170F81A84B66200F96631 /* HyoamModel.swift in Sources */,
 				520636721A81F66500C41E35 /* ComfortBusModel.swift in Sources */,
 				52B0D2FA1A80E12D000A2A02 /* SixwayBusTabBarController.swift in Sources */,
 				52B8F33D1A82055700BC2B99 /* SchoolBusViewWeekdayController.swift in Sources */,
 				524170F61A84B59300F96631 /* HyoamViewController.swift in Sources */,
+				524DD41C1A89EECB00DEEC28 /* StoreModel.swift in Sources */,
 				52B0D3031A80F393000A2A02 /* BusTzoneModel.swift in Sources */,
+				524DD41E1A89F2BF00DEEC28 /* DeliveryAllViewController.swift in Sources */,
+				524DD4281A8A59D500DEEC28 /* DeliveryNonChickenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

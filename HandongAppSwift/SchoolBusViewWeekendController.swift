@@ -60,19 +60,10 @@ class SchoolBusViewWeekendController: UIViewController, UITableViewDataSource, U
     }
     
     func beginParsing() {
-        var fileMgr: NSFileManager = NSFileManager.defaultManager()
-        var docsDir: String?
-        var busXML: String?
+        let fileData = Util.readFile(Util.SchoolWeekendBusFilename)
         
-        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        
-        docsDir = dirPaths[0] as? String
-        busXML = docsDir?.stringByAppendingPathComponent(Util.SchoolWeekendBusFilename)
-        
-        if fileMgr.fileExistsAtPath(busXML!) {
-            let databuffer = fileMgr.contentsAtPath(busXML!)
-            var datastring = NSString(data: databuffer!, encoding: NSUTF8StringEncoding)
-            var xml = SWXMLHash.parse(datastring!)
+        if fileData != nil {
+            let xml = SWXMLHash.parse(fileData!)
             
             let count = xml["WeekendBus"]["tZone"].all.count
             
