@@ -12,6 +12,7 @@ import UIKit
 class DeliveryNonChickenViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var storeList = Array<StoreModel>()
+    var selectedStore: StoreModel?
     
     @IBOutlet weak var storeListTableView: UITableView!
     
@@ -76,15 +77,27 @@ class DeliveryNonChickenViewController: UIViewController, UITableViewDataSource,
         let phoneButton = UIButton(frame: CGRect(x: labelWidth + 10, y: 5, width: 40, height: 40))
         phoneButton.setImage(UIImage(named: "phone_icon.png"), forState: .Normal)
         phoneButton.tag = indexPath.row
-        phoneButton.addTarget(self, action: "callButtonPushed:", forControlEvents: .TouchUpInside)
+        phoneButton.addTarget(self, action: "callButtonClick:", forControlEvents: .TouchUpInside)
         cell.addSubview(phoneButton)
         
         cell.separatorInset.bottom = 1.0
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.selectedStore = self.storeList[indexPath.row]
+        self.performSegueWithIdentifier("deliveryDetailSegue", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "deliveryDetailSegue" {
+            var dstView = segue.destinationViewController as DeliveryDetailViewController
+            dstView.store = self.selectedStore
+        }
+    }
+    
     // call Button event handler
-    func callButtonPushed(sender: UIButton!) {
+    func callButtonClick(sender: UIButton!) {
         let url = NSURL(string: self.storeList[sender.tag].phone)
         UIApplication.sharedApplication().openURL(url!)
     }

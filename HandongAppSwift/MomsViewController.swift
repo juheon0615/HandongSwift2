@@ -29,8 +29,35 @@ class MomsViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
-        getDataXML()
         Util.showActivityIndicatory(self.view, indicator: &self.actInd)
+        getDataXML()
+        dateSetter()
+    }
+    
+    func dateSetter() {
+        let today = Util.getToday()
+        
+        let weekdayString = Util.weekdayChanger(today.weekday) + "요일"
+        let monthString = String(today.month) + "월 "
+        let dateString = String(today.day) + "일 "
+        self.dateLabel.text = monthString + dateString + weekdayString
+    }
+    
+    func noDataHandler() {
+        let grayColor = UIColor(red: 155, green: 159, blue: 161, alpha: 0)
+        let screenWidth = Double(UIScreen.mainScreen().applicationFrame.width)
+        
+        // ADD No DATA Label
+        let noDataLabel = UILabel(frame: CGRect(x: 5.0, y: 5.0, width: screenWidth - 10, height: 100.0))
+        
+        noDataLabel.backgroundColor = grayColor
+        noDataLabel.numberOfLines = 0
+        noDataLabel.text = "금일 식단정보가 없습니다.\n또랑 운영 여부를 확인해주시기 바랍니다.\n(전화 :054-260-1267)"
+        
+        self.scrollView.addSubview(noDataLabel)
+        
+        // Loading END
+        Util.hideActivityIndicator(&self.actInd)
     }
     
     func getDataXML() {
@@ -64,6 +91,7 @@ class MomsViewController: UIViewController {
     
     func makeViewWithData() {
         if self.momsItem.count == 0 {
+            self.noDataHandler()
             return
         }
         
@@ -83,14 +111,10 @@ class MomsViewController: UIViewController {
                 // no data for today
                 idx = nil
                 
+                self.noDataHandler()
                 return
             }
         }
-        
-        let weekdayString = self.momsItem[idx!].dayOfWeek + "요일"
-        let monthString = self.momsItem[idx!].month + "월 "
-        let dateString = self.momsItem[idx!].date + "일 "
-        self.dateLabel.text = monthString + dateString + weekdayString
         
         let grayColor = UIColor(red: 155, green: 159, blue: 161, alpha: 0)
         let screenWidth = Double(UIScreen.mainScreen().applicationFrame.width)
@@ -152,9 +176,8 @@ class MomsViewController: UIViewController {
         self.scrollView.addSubview(ldPriceLabel)
         
         
-        
         // Loading END
-        self.actInd.stopAnimating()
+        Util.hideActivityIndicator(&self.actInd)
         self.scrollView.contentSize = CGSizeMake(CGFloat(screenWidth), CGFloat(self.itemYPos))
     }
 }

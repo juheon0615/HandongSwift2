@@ -9,12 +9,19 @@
 /* Begin PBXBuildFile section */
 		52055AAE1A81FDF800907406 /* SixwayBusViewWeekendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52055AAD1A81FDF800907406 /* SixwayBusViewWeekendController.swift */; };
 		520636721A81F66500C41E35 /* ComfortBusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520636711A81F66500C41E35 /* ComfortBusModel.swift */; };
+		523DD90F1A8B420C00C21FD7 /* phone_icon_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 523DD90E1A8B420C00C21FD7 /* phone_icon_small.png */; };
+		523DD9121A8B4AA500C21FD7 /* selected_star_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 523DD9101A8B4AA500C21FD7 /* selected_star_small.png */; };
+		523DD9131A8B4AA500C21FD7 /* unselected_star_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 523DD9111A8B4AA500C21FD7 /* unselected_star_small.png */; };
+		523DD9151A8B4B6300C21FD7 /* DeliveryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523DD9141A8B4B6300C21FD7 /* DeliveryDetailViewController.swift */; };
+		523DD9171A8B66C900C21FD7 /* StoreDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523DD9161A8B66C900C21FD7 /* StoreDetailModel.swift */; };
 		524170F21A84A48E00F96631 /* MomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524170F11A84A48E00F96631 /* MomsViewController.swift */; };
 		524170F41A84A5EB00F96631 /* MomsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524170F31A84A5EB00F96631 /* MomsModel.swift */; };
 		524170F61A84B59300F96631 /* HyoamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524170F51A84B59300F96631 /* HyoamViewController.swift */; };
 		524170F81A84B66200F96631 /* HyoamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524170F71A84B66200F96631 /* HyoamModel.swift */; };
 		524170FA1A865BFC00F96631 /* MainBusUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524170F91A865BFC00F96631 /* MainBusUILabel.swift */; };
 		524170FC1A86613200F96631 /* MainBusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524170FB1A86613200F96631 /* MainBusModel.swift */; };
+		524A659C1A9502C5000867E5 /* MenuDivideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A659B1A9502C5000867E5 /* MenuDivideBarView.swift */; };
+		524A659E1A950510000867E5 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A659D1A950510000867E5 /* MenuItemView.swift */; };
 		524DD41A1A89EE8B00DEEC28 /* StoreListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DD4191A89EE8B00DEEC28 /* StoreListModel.swift */; };
 		524DD41C1A89EECB00DEEC28 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DD41B1A89EECB00DEEC28 /* StoreModel.swift */; };
 		524DD41E1A89F2BF00DEEC28 /* DeliveryAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DD41D1A89F2BF00DEEC28 /* DeliveryAllViewController.swift */; };
@@ -25,6 +32,9 @@
 		527A698E1A835BAB003B2EB5 /* HacksickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A698D1A835BAB003B2EB5 /* HacksickViewController.swift */; };
 		527A69901A8360F4003B2EB5 /* HacksickModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A698F1A8360F4003B2EB5 /* HacksickModel.swift */; };
 		527A69921A8361A1003B2EB5 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A69911A8361A1003B2EB5 /* MenuModel.swift */; };
+		527D109E1A8CA80100F6595B /* MainMenuUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D109D1A8CA80100F6595B /* MainMenuUIImageView.swift */; };
+		527D10A11A8CB39000F6595B /* MainMenuNameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D10A01A8CB39000F6595B /* MainMenuNameLabel.swift */; };
+		527D10A31A8CB4C800F6595B /* MainMenuPriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D10A21A8CB4C800F6595B /* MainMenuPriceLabel.swift */; };
 		52B0D2ED1A80BFF7000A2A02 /* conv.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B0D2E31A80BFF7000A2A02 /* conv.png */; };
 		52B0D2EE1A80BFF7000A2A02 /* hansick.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B0D2E41A80BFF7000A2A02 /* hansick.png */; };
 		52B0D2EF1A80BFF7000A2A02 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B0D2E51A80BFF7000A2A02 /* home.png */; };
@@ -74,12 +84,19 @@
 /* Begin PBXFileReference section */
 		52055AAD1A81FDF800907406 /* SixwayBusViewWeekendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixwayBusViewWeekendController.swift; sourceTree = "<group>"; };
 		520636711A81F66500C41E35 /* ComfortBusModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComfortBusModel.swift; sourceTree = "<group>"; };
+		523DD90E1A8B420C00C21FD7 /* phone_icon_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_icon_small.png; sourceTree = "<group>"; };
+		523DD9101A8B4AA500C21FD7 /* selected_star_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected_star_small.png; sourceTree = "<group>"; };
+		523DD9111A8B4AA500C21FD7 /* unselected_star_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unselected_star_small.png; sourceTree = "<group>"; };
+		523DD9141A8B4B6300C21FD7 /* DeliveryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryDetailViewController.swift; sourceTree = "<group>"; };
+		523DD9161A8B66C900C21FD7 /* StoreDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreDetailModel.swift; sourceTree = "<group>"; };
 		524170F11A84A48E00F96631 /* MomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomsViewController.swift; sourceTree = "<group>"; };
 		524170F31A84A5EB00F96631 /* MomsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomsModel.swift; sourceTree = "<group>"; };
 		524170F51A84B59300F96631 /* HyoamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HyoamViewController.swift; sourceTree = "<group>"; };
 		524170F71A84B66200F96631 /* HyoamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HyoamModel.swift; sourceTree = "<group>"; };
 		524170F91A865BFC00F96631 /* MainBusUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBusUILabel.swift; sourceTree = "<group>"; };
 		524170FB1A86613200F96631 /* MainBusModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBusModel.swift; sourceTree = "<group>"; };
+		524A659B1A9502C5000867E5 /* MenuDivideBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDivideBarView.swift; sourceTree = "<group>"; };
+		524A659D1A950510000867E5 /* MenuItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
 		524DD4191A89EE8B00DEEC28 /* StoreListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreListModel.swift; sourceTree = "<group>"; };
 		524DD41B1A89EECB00DEEC28 /* StoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		524DD41D1A89F2BF00DEEC28 /* DeliveryAllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryAllViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +107,9 @@
 		527A698D1A835BAB003B2EB5 /* HacksickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HacksickViewController.swift; sourceTree = "<group>"; };
 		527A698F1A8360F4003B2EB5 /* HacksickModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HacksickModel.swift; sourceTree = "<group>"; };
 		527A69911A8361A1003B2EB5 /* MenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		527D109D1A8CA80100F6595B /* MainMenuUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuUIImageView.swift; sourceTree = "<group>"; };
+		527D10A01A8CB39000F6595B /* MainMenuNameLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuNameLabel.swift; sourceTree = "<group>"; };
+		527D10A21A8CB4C800F6595B /* MainMenuPriceLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuPriceLabel.swift; sourceTree = "<group>"; };
 		52B0D2E31A80BFF7000A2A02 /* conv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = conv.png; sourceTree = "<group>"; };
 		52B0D2E41A80BFF7000A2A02 /* hansick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hansick.png; sourceTree = "<group>"; };
 		52B0D2E51A80BFF7000A2A02 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
@@ -154,6 +174,7 @@
 			children = (
 				524DD4191A89EE8B00DEEC28 /* StoreListModel.swift */,
 				524DD41B1A89EECB00DEEC28 /* StoreModel.swift */,
+				523DD9161A8B66C900C21FD7 /* StoreDetailModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -165,6 +186,7 @@
 				524DD41F1A89F2D400DEEC28 /* DeliveryTabBarController.swift */,
 				524DD4271A8A59D500DEEC28 /* DeliveryNonChickenViewController.swift */,
 				524DD4291A8A59DF00DEEC28 /* DeliveryChickenViewController.swift */,
+				523DD9141A8B4B6300C21FD7 /* DeliveryDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -199,9 +221,22 @@
 			name = MealView;
 			sourceTree = "<group>";
 		};
+		527D109F1A8CA80400F6595B /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				527D109D1A8CA80100F6595B /* MainMenuUIImageView.swift */,
+				527D10A01A8CB39000F6595B /* MainMenuNameLabel.swift */,
+				527D10A21A8CB4C800F6595B /* MainMenuPriceLabel.swift */,
+				524A659B1A9502C5000867E5 /* MenuDivideBarView.swift */,
+				524A659D1A950510000867E5 /* MenuItemView.swift */,
+			);
+			name = UIComponents;
+			sourceTree = "<group>";
+		};
 		528B652E1A890E060006E0AC /* DeliveryFoodView */ = {
 			isa = PBXGroup;
 			children = (
+				527D109F1A8CA80400F6595B /* UIComponents */,
 				524DD4221A89F2F900DEEC28 /* Controller */,
 				524DD4211A89F2ED00DEEC28 /* Model */,
 			);
@@ -326,6 +361,9 @@
 		52BCB4811A7FB7C20016A37E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				523DD9101A8B4AA500C21FD7 /* selected_star_small.png */,
+				523DD9111A8B4AA500C21FD7 /* unselected_star_small.png */,
+				523DD90E1A8B420C00C21FD7 /* phone_icon_small.png */,
 				524DD4251A89FFA000DEEC28 /* phone_icon.png */,
 				52B0D2E31A80BFF7000A2A02 /* conv.png */,
 				52B0D2E41A80BFF7000A2A02 /* hansick.png */,
@@ -453,8 +491,11 @@
 				52BCB48E1A808CA70016A37E /* buffering.png in Resources */,
 				52B0D2ED1A80BFF7000A2A02 /* conv.png in Resources */,
 				52BCB4671A7FB6B70016A37E /* Main.storyboard in Resources */,
+				523DD90F1A8B420C00C21FD7 /* phone_icon_small.png in Resources */,
+				523DD9121A8B4AA500C21FD7 /* selected_star_small.png in Resources */,
 				52BCB4901A808CA70016A37E /* loading_back.png in Resources */,
 				52BCB4991A80B9760016A37E /* Icon.png in Resources */,
+				523DD9131A8B4AA500C21FD7 /* unselected_star_small.png in Resources */,
 				52B0D2F31A80BFF7000A2A02 /* notice_logo.png in Resources */,
 				52B0D2F61A80BFF7000A2A02 /* zzimdak.png in Resources */,
 				52B0D2F41A80BFF7000A2A02 /* setting.png in Resources */,
@@ -481,27 +522,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				52BCB4601A7FB6B70016A37E /* RootViewController.swift in Sources */,
+				523DD9151A8B4B6300C21FD7 /* DeliveryDetailViewController.swift in Sources */,
 				52B0D3061A81DD82000A2A02 /* SWXMLHash.swift in Sources */,
 				52BCB4641A7FB6B70016A37E /* ModelController.swift in Sources */,
 				52BCB4941A80A42E0016A37E /* LoadingViewController.swift in Sources */,
 				52055AAE1A81FDF800907406 /* SixwayBusViewWeekendController.swift in Sources */,
 				52BCB4971A80ADE20016A37E /* MainViewController.swift in Sources */,
 				524DD42A1A8A59DF00DEEC28 /* DeliveryChickenViewController.swift in Sources */,
+				527D10A31A8CB4C800F6595B /* MainMenuPriceLabel.swift in Sources */,
+				523DD9171A8B66C900C21FD7 /* StoreDetailModel.swift in Sources */,
 				524DD41A1A89EE8B00DEEC28 /* StoreListModel.swift in Sources */,
 				52B8F33B1A82054C00BC2B99 /* SchoolBusTabBarController.swift in Sources */,
 				524170F41A84A5EB00F96631 /* MomsModel.swift in Sources */,
 				52B0D2FC1A80EBE5000A2A02 /* BusModel.swift in Sources */,
 				52B0D2FE1A80ED45000A2A02 /* SixwayBusViewWeekdayController.swift in Sources */,
 				52BCB4621A7FB6B70016A37E /* DataViewController.swift in Sources */,
+				524A659C1A9502C5000867E5 /* MenuDivideBarView.swift in Sources */,
 				52B8F33F1A82056500BC2B99 /* SchoolBusViewWeekendController.swift in Sources */,
 				527A69901A8360F4003B2EB5 /* HacksickModel.swift in Sources */,
 				524170FC1A86613200F96631 /* MainBusModel.swift in Sources */,
+				527D10A11A8CB39000F6595B /* MainMenuNameLabel.swift in Sources */,
+				527D109E1A8CA80100F6595B /* MainMenuUIImageView.swift in Sources */,
 				527A69921A8361A1003B2EB5 /* MenuModel.swift in Sources */,
 				52B0D3011A80EE14000A2A02 /* Util.swift in Sources */,
 				524DD4201A89F2D400DEEC28 /* DeliveryTabBarController.swift in Sources */,
 				52BCB45E1A7FB6B70016A37E /* AppDelegate.swift in Sources */,
 				527A698E1A835BAB003B2EB5 /* HacksickViewController.swift in Sources */,
 				524170F21A84A48E00F96631 /* MomsViewController.swift in Sources */,
+				524A659E1A950510000867E5 /* MenuItemView.swift in Sources */,
 				524170FA1A865BFC00F96631 /* MainBusUILabel.swift in Sources */,
 				524170F81A84B66200F96631 /* HyoamModel.swift in Sources */,
 				520636721A81F66500C41E35 /* ComfortBusModel.swift in Sources */,

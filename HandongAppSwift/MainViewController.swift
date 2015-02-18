@@ -19,6 +19,12 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var isWeekendSixLabel: UILabel!
     @IBOutlet weak var isWeekendSchoolLabel: UILabel!
+    @IBOutlet weak var leftTopButton: UIButton!
+    @IBOutlet weak var rightTopButton: UIButton!
+    @IBOutlet weak var leftBottomButton: UIButton!
+    @IBOutlet weak var rightBottomButton: UIButton!
+    @IBOutlet weak var leftButton: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
     
     override func viewDidLoad() {
         
@@ -58,6 +64,37 @@ class MainViewController: UIViewController {
         let schoolButtonLayer = CAShapeLayer()
         schoolButtonLayer.path = UIBezierPath(roundedRect: schoolBusButton.bounds, byRoundingCorners: botCorner, cornerRadii: cornerRadi).CGPath
         schoolBusButton.layer.mask = schoolButtonLayer
+        
+        
+        // middle
+        let ltLayer = CAShapeLayer()
+        ltLayer.path = UIBezierPath(roundedRect: leftTopButton.bounds, byRoundingCorners: UIRectCorner.TopLeft, cornerRadii: cornerRadi).CGPath
+        leftTopButton.layer.mask = ltLayer
+        
+        let rtLayer = CAShapeLayer()
+        rtLayer.path = UIBezierPath(roundedRect: rightTopButton.bounds, byRoundingCorners: UIRectCorner.TopRight, cornerRadii: cornerRadi).CGPath
+        rightTopButton.layer.mask = rtLayer
+        
+        let lbLayer = CAShapeLayer()
+        lbLayer.path = UIBezierPath(roundedRect: leftBottomButton.bounds, byRoundingCorners: UIRectCorner.BottomLeft, cornerRadii: cornerRadi).CGPath
+        leftBottomButton.layer.mask = lbLayer
+        
+        let rbLayer = CAShapeLayer()
+        rbLayer.path = UIBezierPath(roundedRect: rightBottomButton.bounds, byRoundingCorners: UIRectCorner.BottomRight, cornerRadii: cornerRadi).CGPath
+        rightBottomButton.layer.mask = rbLayer
+        
+        
+        // bottom
+        let leftCorner = UIRectCorner(UIRectCorner.TopLeft.rawValue|UIRectCorner.BottomLeft.rawValue)
+        let rightCorner = UIRectCorner(UIRectCorner.TopRight.rawValue|UIRectCorner.BottomRight.rawValue)
+
+        let lLayer = CAShapeLayer()
+        lLayer.path = UIBezierPath(roundedRect: leftButton.bounds, byRoundingCorners: leftCorner, cornerRadii: cornerRadi).CGPath
+        leftButton.layer.mask = lLayer
+        
+        let rLayer = CAShapeLayer()
+        rLayer.path = UIBezierPath(roundedRect: rightButton.bounds, byRoundingCorners: rightCorner, cornerRadii: cornerRadi).CGPath
+        rightButton.layer.mask = rLayer
     }
     
     func setBusTime() {

@@ -43,6 +43,9 @@ class Util {
     class var DeliveryFoodURL: String{
         return Util.ServerURL + "/yasick/getYasickStoreList.jsp"
     }
+    class func DeliveryDetailURL(id: String) -> String{
+        return Util.ServerURL + "/yasick/get" + id + ".jsp"
+    }
     
     // Server Addr - Main Bus INfo
     class var MainBusSixwayWeekdayURL: String{
@@ -75,6 +78,10 @@ class Util {
     class var DeliveryFoodFilename: String{
         return "yasick.xml"
     }
+    class func DeliveryDetailFilename(id: String) -> String {
+        return id + ".xml"
+    }
+    
     
     
     class func saveFile(fileName: String, data: NSData) {
@@ -97,6 +104,59 @@ class Util {
             return NSString(data: databuffer!, encoding: NSUTF8StringEncoding)
         } else {
             return nil
+        }
+    }
+    
+    class func checkImage(fileName: String) -> Bool {
+        let fileMgr: NSFileManager = NSFileManager.defaultManager()
+        let docsDir = Util.getDocumentDirectory()
+        
+        let imageFile = docsDir.stringByAppendingPathComponent(fileName)
+        
+        
+        return fileMgr.fileExistsAtPath(imageFile)
+    }
+    
+    class func checkAndDownloadImage(id: String, urlString: String) {
+        let fileName = urlString.componentsSeparatedByString("/").last!
+        
+        if !Util.checkImage(id + "/" + fileName) {
+            let url = NSURL(string: urlString)!
+            let session = NSURLSession.sharedSession()
+            
+            let dataTask = session.dataTaskWithURL(url, completionHandler:
+                {(data: NSData!, response:NSURLResponse!, error:NSError!) -> Void in
+                    Util.saveFile(id + "/" + fileName, data: data)
+            })
+            dataTask.resume()
+        }
+    }
+    
+    class func readImage(fileName: String) -> NSData? {
+        let fileMgr: NSFileManager = NSFileManager.defaultManager()
+        let docsDir = Util.getDocumentDirectory()
+        
+        let imageFile = docsDir.stringByAppendingPathComponent(fileName)
+        
+        
+        if fileMgr.fileExistsAtPath(imageFile) {
+            return fileMgr.contentsAtPath(imageFile)
+        } else {
+            return nil
+        }
+    }
+    
+    class func removeFile(fileName: String) -> Bool {
+        let fileMgr = NSFileManager.defaultManager()
+        let docsDir = Util.getDocumentDirectory()
+        
+        let XMLFile = docsDir.stringByAppendingPathComponent(fileName)
+        var error: NSError?
+        
+        if fileMgr.fileExistsAtPath(XMLFile) {
+            return fileMgr.removeItemAtPath(XMLFile, error: &error)
+        } else {
+            return false
         }
     }
     
@@ -129,10 +189,18 @@ class Util {
             UIActivityIndicatorViewStyle.Gray
         uiView.addSubview(indicator)
         indicator.startAnimating()
+        
+        UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+    }
+    
+    class func hideActivityIndicator(inout indicator: UIActivityIndicatorView) {
+        UIApplication.sharedApplication().endIgnoringInteractionEvents()
+        indicator.stopAnimating()
     }
     
     class func getToday() -> NSDateComponents {
-        let flags: NSCalendarUnit = .DayCalendarUnit | .MonthCalendarUnit | .YearCalendarUnit
+        let flags: NSCalendarUnit = .DayCalendarUnit | .MonthCalendarUnit | .YearCalendarUnit | .WeekdayCalendarUnit
+        
         let date = NSDate()
         return NSCalendar.currentCalendar().components(flags, fromDate: date)
     }
@@ -158,5 +226,25 @@ class Util {
         let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         
         return dirPaths[0] as String
+    }
+    
+    class func makeImageDirectory(id: String) {
+        let filemgr = NSFileManager.defaultManager()
+        
+        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
+            .UserDomainMask, true)
+        
+        let docsDir = dirPaths[0] as String
+        let newDir = docsDir.stringByAppendingPathComponent(id)
+        
+        var error: NSError?
+        
+        if !filemgr.createDirectoryAtPath(newDir,
+            withIntermediateDirectories: true,
+            attributes: nil,
+            error: &error) {
+                
+                println("Failed to create dir: \(error!.localizedDescription)")
+        }
     }
 }

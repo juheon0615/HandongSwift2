@@ -152,38 +152,66 @@ class LoadingViewController: UIViewController {
         
         let session = NSURLSession.sharedSession()
         
-        let dataTask = session.dataTaskWithURL(url, completionHandler:
-            {(data: NSData!, response:NSURLResponse!, error:NSError!) -> Void in
-                var xmlDom = SWXMLHash.parse(data)
-                var rootTag: String
-                
-                if (xmlDom["WeekdayBus"].element != nil) {
-                    rootTag = "WeekdayBus"
-                } else if (xmlDom["WeekendBus"].element != nil) {
-                    rootTag = "WeekendBus"
-                } else {
-                    return
-                }
-                
-                if xmlDom[rootTag]["vResult"].element != nil {
-                    // case: do not need to update xml
-                    println("Already Exist proper DATA")
-                } else {
-                    switch response.URL!.path!.componentsSeparatedByString("HandongServer")[1] {
-                    case Util.BusSixwayWeekdaysURL.componentsSeparatedByString("HandongServer")[1]:
-                        Util.saveFile(Util.SixwayWeekdayBusFilename, data: data)
-                    case Util.BusSixwayWeekendURL.componentsSeparatedByString("HandongServer")[1]:
-                        Util.saveFile(Util.SixwayWeekendBusFilename, data: data)
-                    case Util.BusSchoolWeekdaysURL.componentsSeparatedByString("HandongServer")[1]:
-                        Util.saveFile(Util.SchoolWeekdayBusFilename, data: data)
-                    case Util.BusSchoolWeekendURL.componentsSeparatedByString("HandongServer")[1]:
-                        Util.saveFile(Util.SchoolWeekendBusFilename, data: data)
-                    default:
-                        break
-                    }
-                }
-        })
+        let dataTask = session.dataTaskWithURL(url, completionHandler: getBusInfoAndSave)
         dataTask.resume()
+    }
+    
+    func getBusInfoAndSave(data: NSData!, response:NSURLResponse!, error:NSError!) -> Void {
+        var xmlDom = SWXMLHash.parse(data)
+        var rootTag: String
+        
+        if (xmlDom["WeekdayBus"].element != nil) {
+            rootTag = "WeekdayBus"
+        } else if (xmlDom["WeekendBus"].element != nil) {
+            rootTag = "WeekendBus"
+        } else {
+            return
+        }
+        
+        if xmlDom[rootTag]["vResult"].element != nil {
+            // case: do not need to update xml
+            if xmlDom[rootTag]["vResult"].element!.text! == "noChange" {
+                println("Already Exist proper DATA")
+            } else if xmlDom[rootTag]["vResult"].element!.text! == "change" {
+                // remove bus files
+                switch response.URL!.path!.componentsSeparatedByString("HandongServer")[1] {
+                case Util.BusSixwayWeekdaysURL.componentsSeparatedByString("HandongServer")[1]:
+                    Util.removeFile(Util.SixwayWeekdayBusFilename)
+                case Util.BusSixwayWeekendURL.componentsSeparatedByString("HandongServer")[1]:
+                    Util.removeFile(Util.SixwayWeekendBusFilename)
+                case Util.BusSchoolWeekdaysURL.componentsSeparatedByString("HandongServer")[1]:
+                    Util.removeFile(Util.SchoolWeekdayBusFilename)
+                case Util.BusSchoolWeekendURL.componentsSeparatedByString("HandongServer")[1]:
+                    Util.removeFile(Util.SchoolWeekendBusFilename)
+                default:
+                    break
+                }
+                
+                // reload data from SERVER
+                let url = NSURL(string: response.URL!.scheme! + response.URL!.host! + response.URL!.path!)!
+                let session = NSURLSession.sharedSession()
+                
+                let dataTask = session.dataTaskWithURL(url, completionHandler: getBusInfoAndSave)
+                dataTask.resume()
+                
+                println("Bus Info Data Changed. renew it")
+            }
+        } else if xmlDom[rootTag].element != nil {
+            switch response.URL!.path!.componentsSeparatedByString("HandongServer")[1] {
+            case Util.BusSixwayWeekdaysURL.componentsSeparatedByString("HandongServer")[1]:
+                Util.saveFile(Util.SixwayWeekdayBusFilename, data: data)
+            case Util.BusSixwayWeekendURL.componentsSeparatedByString("HandongServer")[1]:
+                Util.saveFile(Util.SixwayWeekendBusFilename, data: data)
+            case Util.BusSchoolWeekdaysURL.componentsSeparatedByString("HandongServer")[1]:
+                Util.saveFile(Util.SchoolWeekdayBusFilename, data: data)
+            case Util.BusSchoolWeekendURL.componentsSeparatedByString("HandongServer")[1]:
+                Util.saveFile(Util.SchoolWeekendBusFilename, data: data)
+            default:
+                break
+            }
+        } else {
+            // case for ERROR MESSAGE or other unFormed Messages.
+        }
     }
     
     func getMainBusInfo() {
@@ -265,13 +293,11 @@ class LoadingViewController: UIViewController {
     }
     
     func getDeliveryInfo() {
-        deliveryXMLFile = docsDir.stringByAppendingPathComponent(Util.DeliveryFoodFilename)
+        deliveryXMLFile = Util.readFile(Util.DeliveryFoodFilename)
         
         var version: String? = nil
-        if fileMgr.fileExistsAtPath(deliveryXMLFile!) {
-            let dataBuffer = fileMgr.contentsAtPath(deliveryXMLFile!)
-            let dataString = NSString(data: dataBuffer!, encoding: NSUTF8StringEncoding)
-            version = self.checkDeliveryFoodXMLVersion(dataString!)
+        if deliveryXMLFile != nil {
+            version = self.checkDeliveryFoodXMLVersion(deliveryXMLFile!)
         }
         getDeliveryFoodDataFromServer(version)
     }
@@ -281,6 +307,11 @@ class LoadingViewController: UIViewController {
         
         return xmlDom["delivery"]["version"].element!.text!
     }
+    func checkDeliveryDetailXMLVersion(data: NSString) -> String {
+        let xmlDom = SWXMLHash.parse(data)
+        
+        return xmlDom["yasick"]["version"].element!.text!
+    }
     
     func getDeliveryFoodDataFromServer(version: String?) {
         var param = (version != nil ? "?version="+version! : "")
@@ -288,17 +319,94 @@ class LoadingViewController: UIViewController {
         let url = NSURL(string: Util.DeliveryFoodURL + param)!
         let session = NSURLSession.sharedSession()
         
-        let dataTask = session.dataTaskWithURL(url, completionHandler:
-            {(data: NSData!, response:NSURLResponse!, error:NSError!) -> Void in
-                let xmlDom = SWXMLHash.parse(data)
-                
-                if xmlDom["delivery"]["vResult"].element != nil {
-                    // case: do not need to update xml
-                    println("Already Exist proper DATA")
-                } else {
-                    Util.saveFile(Util.DeliveryFoodFilename, data: data)
-                }
-        })
+        let dataTask = session.dataTaskWithURL(url, completionHandler: getDeliveryFoodInfoAndSave)
         dataTask.resume()
+    }
+    
+    func getDeliveryFoodInfoAndSave(data: NSData!, response:NSURLResponse!, error:NSError!) -> Void {
+        var xmlDom = SWXMLHash.parse(data)
+        
+        if xmlDom["delivery"]["vResult"].element != nil {
+            // case: do not need to update xml
+            if xmlDom["delivery"]["vResult"].element!.text! == "noChange" {
+                println("Already Exist proper DATA")
+                xmlDom = SWXMLHash.parse(Util.readFile(Util.DeliveryFoodFilename)!)
+            } else if xmlDom["delivery"]["vResult"].element!.text! == "change" {
+                // remove previous file
+                Util.removeFile(Util.DeliveryFoodFilename)
+                
+                // get new data from SERVER
+                let url = NSURL(string: response.URL!.scheme! + response.URL!.host! + response.URL!.path!)!
+                let session = NSURLSession.sharedSession()
+                
+                let dataTask = session.dataTaskWithURL(url, completionHandler: getDeliveryFoodInfoAndSave)
+                dataTask.resume()
+                
+                println("Delivery Food Data Changed. renew it")
+                return
+            }
+        } else {
+            if xmlDom["delivery"].element != nil {
+                Util.saveFile(Util.DeliveryFoodFilename, data: data)
+            } else {
+                return
+            }
+        }
+        
+        // get each store's data
+        for store in xmlDom["delivery"]["information"].all {
+            let file = Util.readFile(Util.DeliveryDetailFilename(store["id"].element!.text!))
+            
+            var param = ""
+            if file != nil {
+                let xmlDom = SWXMLHash.parse(file!)
+                param += "?version=" + xmlDom["yasick"]["version"].element!.text!
+            }
+            
+            let url = NSURL(string: Util.DeliveryDetailURL(store["id"].element!.text!) + param)!
+            let session = NSURLSession.sharedSession()
+            
+            let dataTask = session.dataTaskWithURL(url, completionHandler: getEachDeliveryInfoAndSave)
+            dataTask.resume()
+        }
+    }
+    
+    func getEachDeliveryInfoAndSave(data: NSData!, response:NSURLResponse!, error:NSError!) -> Void {
+        var xmlDom = SWXMLHash.parse(data)
+        
+        let id = response.URL!.path!.componentsSeparatedByString("/").last!.componentsSeparatedByString("get").last!.componentsSeparatedByString(".jsp").first!
+        
+        if xmlDom["yasick"]["vResult"].element != nil {
+            // case: do not need to update xml
+            if xmlDom["yasick"]["vResult"].element!.text! == "noChange" {
+                println("Already Exist proper DATA")
+                xmlDom = SWXMLHash.parse(Util.readFile(Util.DeliveryFoodFilename)!)
+            } else if xmlDom["yasick"]["vResult"].element!.text! == "change" {
+                // remove previous file
+                Util.removeFile(Util.DeliveryDetailFilename(id))
+                
+                // get new data from SERVER
+                let url = NSURL(string: response.URL!.scheme! + response.URL!.host! + response.URL!.path!)!
+                let session = NSURLSession.sharedSession()
+                
+                let dataTask = session.dataTaskWithURL(url, completionHandler: getEachDeliveryInfoAndSave)
+                dataTask.resume()
+                
+                println("Delivery Food Data Changed. renew it")
+                return
+            }
+        } else {
+            if xmlDom["yasick"].element != nil {
+                Util.saveFile(Util.DeliveryDetailFilename(id), data: data)
+            } else {
+                return
+            }
+        }
+        
+        Util.makeImageDirectory(id)
+        
+        for menu in xmlDom["yasick"]["mainMenu"].all {
+            Util.checkAndDownloadImage(id, urlString: menu["photo"].element!.text!)
+        }
     }
 }
