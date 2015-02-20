@@ -17,10 +17,12 @@ class StoreDetailModel {
     var menus = Array<Menu>()
     
     init(xmlDom: XMLIndexer) {
-        
-        self.holiday = xmlDom["yasick"]["storeInfo"]["holiday"].element!.text!
-        self.runTime = xmlDom["yasick"]["storeInfo"]["runTime"].element!.text!
-        self.special = xmlDom["yasick"]["storeInfo"]["special"].element!.text!.stringByReplacingOccurrencesOfString("\\n", withString: "\n", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        let hol = xmlDom["yasick"]["storeInfo"]["holiday"].element!.text
+        let run = xmlDom["yasick"]["storeInfo"]["runTime"].element!.text
+        let spe = xmlDom["yasick"]["storeInfo"]["special"].element!.text
+        self.holiday = (hol != nil ? hol!.stringByReplacingOccurrencesOfString("\\n", withString: "\n", options: NSStringCompareOptions.LiteralSearch, range: nil) : "")
+        self.runTime = (run != nil ? run!.stringByReplacingOccurrencesOfString("\\n", withString: "\n", options: NSStringCompareOptions.LiteralSearch, range: nil) : "")
+        self.special = (spe != nil ? spe!.stringByReplacingOccurrencesOfString("\\n", withString: "\n", options: NSStringCompareOptions.LiteralSearch, range: nil) : "")
         
         let allMainMenu = xmlDom["yasick"]["mainMenu"].all
         for item in allMainMenu {

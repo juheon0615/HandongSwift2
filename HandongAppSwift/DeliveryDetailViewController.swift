@@ -18,12 +18,6 @@ class DeliveryDetailViewController: UIViewController {
     
     @IBOutlet weak var titleBarItem: UINavigationItem!
     
-    @IBOutlet weak var holidayLabel: UILabel!
-    @IBOutlet weak var specialLabel: UILabel!
-    @IBOutlet weak var worktimeLabel: UILabel!
-    @IBOutlet weak var menuTitleLabel: UILabel!
-    @IBOutlet weak var menuTitleHorView: UIView!
-    
     var store: StoreModel?
     var storeInfo: StoreDetailModel?
     
@@ -60,27 +54,51 @@ class DeliveryDetailViewController: UIViewController {
         self.favoriteButton.target = self
         self.favoriteButton.action = "favoriteButtonClick:"
         
+        var itemYPos = 35.0 // margin top
+        let xMargin = 8.0
+        let labelXPos = xMargin + ShopInfoHeaderLabel.width + 5.0
+        
+        
         // set store info
-        self.holidayLabel.text = storeInfo!.holiday
-        self.worktimeLabel.text = storeInfo!.runTime
-        self.specialLabel.numberOfLines = 0
-        self.specialLabel.text = storeInfo!.special
-        self.specialLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        self.specialLabel.setTranslatesAutoresizingMaskIntoConstraints(true)
-        self.specialLabel.sizeToFit()
+        let holiday = ShopInfoHeaderLabel(x: xMargin, y: itemYPos, text: "휴무일 정보")
+        self.scrollView.addSubview(holiday)
+        
+        let holidayLabel = ShopInfoLabel(x: labelXPos, y: itemYPos, text: storeInfo!.holiday)
+        itemYPos += Double(holidayLabel.frame.height) + 3
+        self.scrollView.addSubview(holidayLabel)
+        
+        let worktime = ShopInfoHeaderLabel(x: xMargin, y: itemYPos, text: "영업 시간")
+        self.scrollView.addSubview(worktime)
+        
+        let worktimeLabel = ShopInfoLabel(x: labelXPos, y: itemYPos, text: storeInfo!.runTime)
+        itemYPos += Double(worktimeLabel.frame.height) + 3
+        self.scrollView.addSubview(worktimeLabel)
+        
+        let special = ShopInfoHeaderLabel(x: xMargin, y: itemYPos, text: "특이 사항")
+        self.scrollView.addSubview(special)
+        
+        let specialLabel = ShopInfoLabel(x: labelXPos, y: itemYPos, text: storeInfo!.special)
+        itemYPos += Double(specialLabel.frame.height)
+        self.scrollView.addSubview(specialLabel)
+        
         
         // add components in Scroll View
         let screenWidth = Double(UIScreen.mainScreen().applicationFrame.width)
-        var itemYPos = self.specialLabel.frame.height + self.specialLabel.frame.origin.y
         itemYPos += 5 // set margin
-        var frame = self.menuTitleLabel.frame
-        frame.origin.y = itemYPos
-        self.menuTitleLabel.frame = frame
+        
+        var frame = CGRect(x: 8, y: itemYPos, width: 80, height: 21)
+        var menuTitleLabel = UILabel(frame: frame)
+        menuTitleLabel.font = UIFont(name: menuTitleLabel.font.fontName, size: 16)
+        menuTitleLabel.text = "메뉴"
         itemYPos += 24
-        frame = self.menuTitleHorView.frame
-        frame.origin.y = itemYPos
-        self.menuTitleHorView.frame = frame
+        
+        frame = CGRect(x: 8, y: CGFloat(itemYPos), width: CGFloat(screenWidth - 8*2), height: 1)
+        var menuTitleHorView = UIView(frame: frame)
+        menuTitleHorView.backgroundColor = UIColor.blackColor()
         itemYPos += 5
+        
+        self.scrollView.addSubview(menuTitleLabel)
+        self.scrollView.addSubview(menuTitleHorView)
         
         // add Main Menu
         for i in 0 ..< self.storeInfo!.mainMenus.count {
@@ -93,19 +111,19 @@ class DeliveryDetailViewController: UIViewController {
             let mainMenuPrice = MainMenuPriceLabel(index: i, itemYPos: Double(itemYPos), text: self.storeInfo!.mainMenus[i].price)
             self.scrollView.addSubview(mainMenuPrice)
         }
-        itemYPos += (self.storeInfo!.mainMenus.count > 2 ? 350 : 175)
+        itemYPos += (self.storeInfo!.mainMenus.count > 2 ? 360 : 180)
         
         
-        let divBar = MenuDivideBarView(margin: 5.0, yPos: Double(itemYPos))
+        let divBar = MenuDivideBarView(margin: 5.0, yPos: itemYPos)
         self.scrollView.addSubview(divBar)
         itemYPos += 5.0
         // Add ALL Menu
         for i in 0 ..< self.storeInfo!.menus.count {
-            let itemView = MenuItemView(margin: 5.0, yPos: Double(itemYPos), item: self.storeInfo!.menus[i])
+            let itemView = MenuItemView(margin: 5.0, yPos: itemYPos, item: self.storeInfo!.menus[i])
             self.scrollView.addSubview(itemView)
-            itemYPos += itemView.frame.height + 2
+            itemYPos += Double(itemView.frame.height + 5)
             
-            let divBar = MenuDivideBarView(margin: 5.0, yPos: Double(itemYPos))
+            let divBar = MenuDivideBarView(margin: 5.0, yPos: itemYPos)
             self.scrollView.addSubview(divBar)
             itemYPos += 5.0
         }

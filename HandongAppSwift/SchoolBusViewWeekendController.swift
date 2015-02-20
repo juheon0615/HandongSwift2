@@ -25,8 +25,7 @@ class SchoolBusViewWeekendController: UIViewController, UITableViewDataSource, U
         beginParsing()
         
         // INIT top bar
-        
-        let tableWidth = weekendTimeTableView.frame.width
+        let tableWidth = Double(UIScreen.mainScreen().applicationFrame.width) - 26
         let labelWidth = (tableWidth-60)/3.0
         // add time labels
         let fstLabel = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: labelWidth, height: 30.0))
@@ -120,6 +119,10 @@ class SchoolBusViewWeekendController: UIViewController, UITableViewDataSource, U
         fstLabel.text = self.busTzoneList[indexPath.section].bus[indexPath.row].six
         fstLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         fstLabel.textAlignment =  NSTextAlignment.Center
+        // size control for "바로크가구점"
+        if countElements(fstLabel.text!) > 5 {
+            fstLabel.font = UIFont(name: fstLabel.font.fontName, size: 13)
+        }
         cell.addSubview(fstLabel)
         
         let sndLabel = UILabel(frame: CGRect(x: labelWidth + 30, y: 0.0, width: labelWidth, height: 30.0))

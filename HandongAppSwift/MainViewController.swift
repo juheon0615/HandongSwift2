@@ -17,16 +17,37 @@ class MainViewController: UIViewController {
     @IBOutlet weak var sixwayBusButton: UIButton!
     @IBOutlet weak var schoolBusButton: UIButton!
     
+    @IBOutlet weak var settingButton: UIButton!
+    @IBOutlet weak var alarmButton: UIButton!
+    @IBOutlet weak var hgushopButton: UIButton!
+    @IBOutlet weak var hgutubeButton: UIButton!
+    @IBOutlet weak var convButton: UIButton!
+    @IBOutlet weak var noticeButton: UIButton!
+    
+    @IBOutlet weak var timetableButton: UIButton!
+    @IBOutlet weak var otherButton: UIButton!
+    
+    @IBOutlet weak var sixwayHorBar: UILabel!
+    @IBOutlet weak var schoolHorBar: UILabel!
+    
     @IBOutlet weak var isWeekendSixLabel: UILabel!
     @IBOutlet weak var isWeekendSchoolLabel: UILabel!
-    @IBOutlet weak var leftTopButton: UIButton!
-    @IBOutlet weak var rightTopButton: UIButton!
-    @IBOutlet weak var leftBottomButton: UIButton!
-    @IBOutlet weak var rightBottomButton: UIButton!
-    @IBOutlet weak var leftButton: UIButton!
-    @IBOutlet weak var rightButton: UIButton!
     
-    override func viewDidLoad() {
+    override func viewDidLayoutSubviews() {
+        yasickButton.sizeToFit()
+        haksickButton.sizeToFit()
+        sixwayBusButton.sizeToFit()
+        schoolBusButton.sizeToFit()
+        
+        noticeButton.sizeToFit()
+        convButton.sizeToFit()
+        hgutubeButton.sizeToFit()
+        hgushopButton.sizeToFit()
+        alarmButton.sizeToFit()
+        settingButton.sizeToFit()
+        
+        timetableButton.sizeToFit()
+        otherButton.sizeToFit()
         
         self.makeButtonRound()
         
@@ -46,7 +67,7 @@ class MainViewController: UIViewController {
         // make round corner button
         let topCorner = UIRectCorner(UIRectCorner.TopLeft.rawValue|UIRectCorner.TopRight.rawValue)
         let botCorner = UIRectCorner(UIRectCorner.BottomLeft.rawValue|UIRectCorner.BottomRight.rawValue)
-        let cornerRadi = CGSize(width: 10.0, height: 10.0)
+        let cornerRadi = CGSize(width: 5.0, height: 5.0)
         
         let yasickButtonLayer = CAShapeLayer()
         yasickButtonLayer.path = UIBezierPath(roundedRect: yasickButton.bounds, byRoundingCorners: topCorner, cornerRadii: cornerRadi).CGPath
@@ -68,20 +89,20 @@ class MainViewController: UIViewController {
         
         // middle
         let ltLayer = CAShapeLayer()
-        ltLayer.path = UIBezierPath(roundedRect: leftTopButton.bounds, byRoundingCorners: UIRectCorner.TopLeft, cornerRadii: cornerRadi).CGPath
-        leftTopButton.layer.mask = ltLayer
+        ltLayer.path = UIBezierPath(roundedRect: noticeButton.bounds, byRoundingCorners: UIRectCorner.TopLeft, cornerRadii: cornerRadi).CGPath
+        noticeButton.layer.mask = ltLayer
         
         let rtLayer = CAShapeLayer()
-        rtLayer.path = UIBezierPath(roundedRect: rightTopButton.bounds, byRoundingCorners: UIRectCorner.TopRight, cornerRadii: cornerRadi).CGPath
-        rightTopButton.layer.mask = rtLayer
+        rtLayer.path = UIBezierPath(roundedRect: hgutubeButton.bounds, byRoundingCorners: UIRectCorner.TopRight, cornerRadii: cornerRadi).CGPath
+        hgutubeButton.layer.mask = rtLayer
         
         let lbLayer = CAShapeLayer()
-        lbLayer.path = UIBezierPath(roundedRect: leftBottomButton.bounds, byRoundingCorners: UIRectCorner.BottomLeft, cornerRadii: cornerRadi).CGPath
-        leftBottomButton.layer.mask = lbLayer
+        lbLayer.path = UIBezierPath(roundedRect: hgushopButton.bounds, byRoundingCorners: UIRectCorner.BottomLeft, cornerRadii: cornerRadi).CGPath
+        hgushopButton.layer.mask = lbLayer
         
         let rbLayer = CAShapeLayer()
-        rbLayer.path = UIBezierPath(roundedRect: rightBottomButton.bounds, byRoundingCorners: UIRectCorner.BottomRight, cornerRadii: cornerRadi).CGPath
-        rightBottomButton.layer.mask = rbLayer
+        rbLayer.path = UIBezierPath(roundedRect: settingButton.bounds, byRoundingCorners: UIRectCorner.BottomRight, cornerRadii: cornerRadi).CGPath
+        settingButton.layer.mask = rbLayer
         
         
         // bottom
@@ -89,17 +110,17 @@ class MainViewController: UIViewController {
         let rightCorner = UIRectCorner(UIRectCorner.TopRight.rawValue|UIRectCorner.BottomRight.rawValue)
 
         let lLayer = CAShapeLayer()
-        lLayer.path = UIBezierPath(roundedRect: leftButton.bounds, byRoundingCorners: leftCorner, cornerRadii: cornerRadi).CGPath
-        leftButton.layer.mask = lLayer
+        lLayer.path = UIBezierPath(roundedRect: timetableButton.bounds, byRoundingCorners: leftCorner, cornerRadii: cornerRadi).CGPath
+        timetableButton.layer.mask = lLayer
         
         let rLayer = CAShapeLayer()
-        rLayer.path = UIBezierPath(roundedRect: rightButton.bounds, byRoundingCorners: rightCorner, cornerRadii: cornerRadi).CGPath
-        rightButton.layer.mask = rLayer
+        rLayer.path = UIBezierPath(roundedRect: otherButton.bounds, byRoundingCorners: rightCorner, cornerRadii: cornerRadi).CGPath
+        otherButton.layer.mask = rLayer
     }
     
     func setBusTime() {
-        var itemYPos = 35.0
-        var itemHeight = (self.schoolBusButton.frame.height - CGFloat(itemYPos) - 5.0) / CGFloat(4)
+        var itemYPos = self.sixwayHorBar.frame.origin.y - self.sixwayBusButton.frame.origin.y + 3
+        var itemHeight = (self.sixwayBusButton.frame.height - itemYPos - 5) / CGFloat(4)
         
         // INIT top label
         let tableWidth = self.schoolBusButton.frame.width
@@ -127,8 +148,7 @@ class MainViewController: UIViewController {
         self.sixwayBusButton.addSubview(trdLabel2)
         
         
-        
-        itemYPos += Double(itemHeight)
+        itemYPos += itemHeight
         
         var itemYPostTemp = itemYPos
         // add time table
@@ -146,11 +166,11 @@ class MainViewController: UIViewController {
             self.schoolBusButton.addSubview(trdLabel)
             
             
-            itemYPostTemp += Double(itemHeight)
+            itemYPostTemp += itemHeight
         }
         
         for data in mainBus.toSix {
-            // add toSchool time table label
+            // add toSix time table label
             let fstLabel = MainBusUILabel(frame: CGRect(x: 0.0, y: CGFloat(itemYPos), width: labelWidth, height: itemHeight), text: data.school)
             self.sixwayBusButton.addSubview(fstLabel)
             
@@ -161,7 +181,7 @@ class MainViewController: UIViewController {
             self.sixwayBusButton.addSubview(trdLabel)
             
             
-            itemYPos += Double(itemHeight)
+            itemYPos += itemHeight
         }
     }
 }

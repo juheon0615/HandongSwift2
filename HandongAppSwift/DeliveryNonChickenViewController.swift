@@ -54,13 +54,13 @@ class DeliveryNonChickenViewController: UIViewController, UITableViewDataSource,
         let labelWidth = (tableWidth-60)
         
         // name Text Label
-        let nameLabel = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: labelWidth, height: 30.0))
+        let nameLabel = UILabel(frame: CGRect(x: 5.0, y: 0.0, width: labelWidth, height: 30.0))
         nameLabel.text = self.storeList[indexPath.row].name
         nameLabel.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         nameLabel.textAlignment = NSTextAlignment.Left
         cell.addSubview(nameLabel)
         
-        let phoneLabel = UILabel(frame: CGRect(x: 0, y: 30.0, width: labelWidth/2, height: 10.0))
+        let phoneLabel = UILabel(frame: CGRect(x: 5.0, y: 30.0, width: labelWidth/2, height: 10.0))
         phoneLabel.text = self.storeList[indexPath.row].phone
         phoneLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         phoneLabel.textAlignment = NSTextAlignment.Left

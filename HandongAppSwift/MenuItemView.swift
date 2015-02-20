@@ -27,10 +27,6 @@ class MenuItemView: UIView {
         menuLabel.text = item.name
         priceLabel.text = item.price
         
-        // set COLOR
-        menuLabel.textColor = UIColor.grayColor()
-        priceLabel.textColor = UIColor.grayColor()
-        
         // set FONT SIZE
         menuLabel.font = UIFont(name: menuLabel.font.fontName, size: 14)
         priceLabel.font = UIFont(name: priceLabel.font.fontName, size: 14)
@@ -61,7 +57,6 @@ class MenuItemView: UIView {
             let setLabel = UILabel(frame: CGRect(x: 0, y: Double(newHeight), width: Double(menuWidth), height: 10))
             setLabel.text = item.set
             setLabel.font = UIFont(name: setLabel.font.fontName, size: 13)
-            setLabel.textColor = UIColor.grayColor()
             setLabel.numberOfLines = 0
             setLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
             setLabel.setTranslatesAutoresizingMaskIntoConstraints(true)

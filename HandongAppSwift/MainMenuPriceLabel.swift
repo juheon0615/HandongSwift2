@@ -11,10 +11,14 @@ import UIKit
 
 class MainMenuPriceLabel: UILabel {
     init(index: Int, itemYPos: Double, text: String) {
-        var xPos = (index % 2 == 0 ? 20 : 170)
+        let screenWidth = Double(UIScreen.mainScreen().applicationFrame.width)
+        
+        let margin = (screenWidth - (130.0 * 2)) / 3
+        
+        var xPos = (index % 2 == 0 ? margin : margin*2 + 130)
         
         let firstRowYPos = itemYPos + 130 + 5 + 20 // image size + margin + Title label size
-        let secondRowYPos = itemYPos + 175 + 130 + 5 + 20 // + height of first row
+        let secondRowYPos = itemYPos + 180 + 130 + 5 + 20 // + height of first row
         
         var yPos = (index < 2 ? firstRowYPos : secondRowYPos)
         
@@ -22,6 +26,7 @@ class MainMenuPriceLabel: UILabel {
         
         self.text = text
         self.textAlignment = NSTextAlignment.Center
+        self.font = UIFont(name: self.font.fontName, size: 13)
     }
     
     required init(coder aDecoder: NSCoder) {

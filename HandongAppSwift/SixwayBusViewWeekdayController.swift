@@ -25,8 +25,7 @@ class SixwayBusViewWeekdayController: UIViewController, UITableViewDataSource, U
         beginParsing()
         
         // INIT top bar
-        
-        let tableWidth = weekdayTimeTableView.frame.width
+        let tableWidth = Double(UIScreen.mainScreen().applicationFrame.width) - 26
         let labelWidth = (tableWidth-60)/3.0
         // add time labels
         let fstLabel = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: labelWidth, height: 30.0))

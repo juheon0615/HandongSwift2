@@ -11,9 +11,12 @@ import UIKit
 
 class MainMenuUIImageView: UIImageView {
     init(index: Int, itemYPos: Double, image: String) {
+        let screenWidth = Double(UIScreen.mainScreen().applicationFrame.width)
         
-        var xPos = (index % 2 == 0 ? 20 : 170)
-        var yPos = (index < 2 ? itemYPos : itemYPos + 175)
+        let margin = (screenWidth - (130.0 * 2)) / 3
+        
+        var xPos = (index % 2 == 0 ? margin : margin*2 + 130)
+        var yPos = (index < 2 ? itemYPos : itemYPos + 180)
         
         super.init(frame: CGRect(x: Double(xPos), y: Double(yPos), width: 130.0, height: 130.0))
         

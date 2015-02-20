@@ -11,13 +11,18 @@ import UIKit
 
 class MainMenuNameLabel: UILabel {
     init(index: Int, itemYPos: Double, text: String) {
-        var xPos = (index % 2 == 0 ? 20 : 170)
-        var yPos = (index < 2 ? itemYPos + 130 + 5 : itemYPos + 175 + 130 + 5)
+        let screenWidth = Double(UIScreen.mainScreen().applicationFrame.width)
+        
+        let margin = (screenWidth - (130.0 * 2)) / 3
+        
+        var xPos = (index % 2 == 0 ? margin : margin*2 + 130)
+        var yPos = (index < 2 ? itemYPos + 130 + 5 : itemYPos + 180 + 130 + 5)
         
         super.init(frame: CGRect(x: Double(xPos), y: Double(yPos), width: 130.0, height: 20.0))
         
         self.text = text
         self.textAlignment = NSTextAlignment.Center
+        self.font = UIFont(name: self.font.fontName, size: 13)
     }
 
     required init(coder aDecoder: NSCoder) {

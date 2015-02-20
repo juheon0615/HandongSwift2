@@ -29,6 +29,8 @@
 		524DD4261A89FFA000DEEC28 /* phone_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 524DD4251A89FFA000DEEC28 /* phone_icon.png */; };
 		524DD4281A8A59D500DEEC28 /* DeliveryNonChickenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DD4271A8A59D500DEEC28 /* DeliveryNonChickenViewController.swift */; };
 		524DD42A1A8A59DF00DEEC28 /* DeliveryChickenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DD4291A8A59DF00DEEC28 /* DeliveryChickenViewController.swift */; };
+		525FC66A1A9702A9001BE456 /* ShopInfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525FC6691A9702A9001BE456 /* ShopInfoLabel.swift */; };
+		525FC66C1A970377001BE456 /* ShopInfoHeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525FC66B1A970377001BE456 /* ShopInfoHeaderLabel.swift */; };
 		527A698E1A835BAB003B2EB5 /* HacksickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A698D1A835BAB003B2EB5 /* HacksickViewController.swift */; };
 		527A69901A8360F4003B2EB5 /* HacksickModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A698F1A8360F4003B2EB5 /* HacksickModel.swift */; };
 		527A69921A8361A1003B2EB5 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A69911A8361A1003B2EB5 /* MenuModel.swift */; };
@@ -104,6 +106,8 @@
 		524DD4251A89FFA000DEEC28 /* phone_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_icon.png; sourceTree = "<group>"; };
 		524DD4271A8A59D500DEEC28 /* DeliveryNonChickenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryNonChickenViewController.swift; sourceTree = "<group>"; };
 		524DD4291A8A59DF00DEEC28 /* DeliveryChickenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryChickenViewController.swift; sourceTree = "<group>"; };
+		525FC6691A9702A9001BE456 /* ShopInfoLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopInfoLabel.swift; sourceTree = "<group>"; };
+		525FC66B1A970377001BE456 /* ShopInfoHeaderLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopInfoHeaderLabel.swift; sourceTree = "<group>"; };
 		527A698D1A835BAB003B2EB5 /* HacksickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HacksickViewController.swift; sourceTree = "<group>"; };
 		527A698F1A8360F4003B2EB5 /* HacksickModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HacksickModel.swift; sourceTree = "<group>"; };
 		527A69911A8361A1003B2EB5 /* MenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 				527D10A21A8CB4C800F6595B /* MainMenuPriceLabel.swift */,
 				524A659B1A9502C5000867E5 /* MenuDivideBarView.swift */,
 				524A659D1A950510000867E5 /* MenuItemView.swift */,
+				525FC6691A9702A9001BE456 /* ShopInfoLabel.swift */,
+				525FC66B1A970377001BE456 /* ShopInfoHeaderLabel.swift */,
 			);
 			name = UIComponents;
 			sourceTree = "<group>";
@@ -533,6 +539,7 @@
 				523DD9171A8B66C900C21FD7 /* StoreDetailModel.swift in Sources */,
 				524DD41A1A89EE8B00DEEC28 /* StoreListModel.swift in Sources */,
 				52B8F33B1A82054C00BC2B99 /* SchoolBusTabBarController.swift in Sources */,
+				525FC66A1A9702A9001BE456 /* ShopInfoLabel.swift in Sources */,
 				524170F41A84A5EB00F96631 /* MomsModel.swift in Sources */,
 				52B0D2FC1A80EBE5000A2A02 /* BusModel.swift in Sources */,
 				52B0D2FE1A80ED45000A2A02 /* SixwayBusViewWeekdayController.swift in Sources */,
@@ -557,6 +564,7 @@
 				52B8F33D1A82055700BC2B99 /* SchoolBusViewWeekdayController.swift in Sources */,
 				524170F61A84B59300F96631 /* HyoamViewController.swift in Sources */,
 				524DD41C1A89EECB00DEEC28 /* StoreModel.swift in Sources */,
+				525FC66C1A970377001BE456 /* ShopInfoHeaderLabel.swift in Sources */,
 				52B0D3031A80F393000A2A02 /* BusTzoneModel.swift in Sources */,
 				524DD41E1A89F2BF00DEEC28 /* DeliveryAllViewController.swift in Sources */,
 				524DD4281A8A59D500DEEC28 /* DeliveryNonChickenViewController.swift in Sources */,
