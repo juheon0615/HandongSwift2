@@ -91,8 +91,7 @@ class DeliveryAllViewController: UIViewController, UITableViewDataSource, UITabl
     
     // call Button event handler
     func callButtonClick(sender: UIButton!) {
-        let url = NSURL(string: self.storeList.storeList[sender.tag].phone)
-        UIApplication.sharedApplication().openURL(url!)
+        Util.makePhoneCall(self.storeList.storeList[sender.tag].phone, storeID: self.storeList.storeList[sender.tag].id)
     }
     
     func beginParsing() {

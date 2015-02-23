@@ -83,6 +83,15 @@ class Util {
     }
     
     
+    // KEY STRING for USER DEFAULT - recent call
+    class var RecentCallKey: String{
+        return "RECENTCALLYASICK"
+    }
+    class var recentCallSpliter: String{
+        // split ID and Time value with this string
+        return "-"
+    }
+    
     
     class func saveFile(fileName: String, data: NSData) {
         let fileMgr = NSFileManager.defaultManager()
@@ -198,6 +207,22 @@ class Util {
         indicator.stopAnimating()
     }
     
+    class func getCurrentTime() -> String {
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.DayCalendarUnit | .MonthCalendarUnit | .YearCalendarUnit | .CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
+        
+        let year = components.year
+        let month = components.month
+        let day = components.day
+        let hour = components.hour
+        let minutes = components.minute
+        
+        let retString = String(year%100) + "/" + String(month) + "/" + String(day) + " " + String(hour) + ":" + String(minutes)
+        
+        return retString
+    }
+    
     class func getToday() -> NSDateComponents {
         let flags: NSCalendarUnit = .DayCalendarUnit | .MonthCalendarUnit | .YearCalendarUnit | .WeekdayCalendarUnit
         
@@ -246,5 +271,32 @@ class Util {
                 
                 println("Failed to create dir: \(error!.localizedDescription)")
         }
+    }
+    
+    class func makePhoneCall(phoneNumber: String, storeID: String) {
+        let url = NSURL(string: "tel://" + phoneNumber)
+        UIApplication.sharedApplication().openURL(url!)
+        
+        Util.registerRecentCall(storeID)
+    }
+    
+    class func registerRecentCall(storeID: String) {
+        var userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        var recent: Array<String>? = userDefaults.valueForKey(Util.RecentCallKey) as Array<String>?
+        
+        if recent != nil {
+            recent!.insert(storeID + Util.recentCallSpliter + Util.getCurrentTime(), atIndex: 0)
+            
+            // limit call history count
+            if recent!.count > 10 {
+                recent!.removeLast()
+            }
+        } else {
+            recent = Array<String>()
+            recent!.insert(storeID + Util.recentCallSpliter + Util.getCurrentTime(), atIndex: 0)
+        }
+    
+        userDefaults.setObject(recent, forKey: Util.RecentCallKey)
     }
 }

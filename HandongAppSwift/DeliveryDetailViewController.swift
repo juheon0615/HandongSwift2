@@ -133,8 +133,7 @@ class DeliveryDetailViewController: UIViewController {
     }
     
     func callButtonClick(sender: UIBarButtonItem) {
-        let url = NSURL(string: self.store!.phone)
-        UIApplication.sharedApplication().openURL(url!)
+        Util.makePhoneCall(self.store!.phone, storeID: self.store!.id)
     }
     
     func favoriteButtonClick(sender: UIBarButtonItem) {

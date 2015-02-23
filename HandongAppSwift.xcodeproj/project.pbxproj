@@ -31,6 +31,10 @@
 		524DD42A1A8A59DF00DEEC28 /* DeliveryChickenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524DD4291A8A59DF00DEEC28 /* DeliveryChickenViewController.swift */; };
 		525FC66A1A9702A9001BE456 /* ShopInfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525FC6691A9702A9001BE456 /* ShopInfoLabel.swift */; };
 		525FC66C1A970377001BE456 /* ShopInfoHeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525FC66B1A970377001BE456 /* ShopInfoHeaderLabel.swift */; };
+		526B61741A9B08B900A8B81A /* ghost_logo_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 526B61731A9B08B900A8B81A /* ghost_logo_white.png */; };
+		526B61761A9B0A0400A8B81A /* hgutube_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 526B61751A9B0A0400A8B81A /* hgutube_icon.png */; };
+		526B61781A9B0A2100A8B81A /* hgushop.png in Resources */ = {isa = PBXBuildFile; fileRef = 526B61771A9B0A2100A8B81A /* hgushop.png */; };
+		526B617A1A9B1BE600A8B81A /* MyDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526B61791A9B1BE600A8B81A /* MyDeliveryViewController.swift */; };
 		527A698E1A835BAB003B2EB5 /* HacksickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A698D1A835BAB003B2EB5 /* HacksickViewController.swift */; };
 		527A69901A8360F4003B2EB5 /* HacksickModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A698F1A8360F4003B2EB5 /* HacksickModel.swift */; };
 		527A69921A8361A1003B2EB5 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A69911A8361A1003B2EB5 /* MenuModel.swift */; };
@@ -108,6 +112,10 @@
 		524DD4291A8A59DF00DEEC28 /* DeliveryChickenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryChickenViewController.swift; sourceTree = "<group>"; };
 		525FC6691A9702A9001BE456 /* ShopInfoLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopInfoLabel.swift; sourceTree = "<group>"; };
 		525FC66B1A970377001BE456 /* ShopInfoHeaderLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopInfoHeaderLabel.swift; sourceTree = "<group>"; };
+		526B61731A9B08B900A8B81A /* ghost_logo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ghost_logo_white.png; sourceTree = "<group>"; };
+		526B61751A9B0A0400A8B81A /* hgutube_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hgutube_icon.png; sourceTree = "<group>"; };
+		526B61771A9B0A2100A8B81A /* hgushop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hgushop.png; sourceTree = "<group>"; };
+		526B61791A9B1BE600A8B81A /* MyDeliveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDeliveryViewController.swift; sourceTree = "<group>"; };
 		527A698D1A835BAB003B2EB5 /* HacksickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HacksickViewController.swift; sourceTree = "<group>"; };
 		527A698F1A8360F4003B2EB5 /* HacksickModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HacksickModel.swift; sourceTree = "<group>"; };
 		527A69911A8361A1003B2EB5 /* MenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
@@ -191,6 +199,7 @@
 				524DD4271A8A59D500DEEC28 /* DeliveryNonChickenViewController.swift */,
 				524DD4291A8A59DF00DEEC28 /* DeliveryChickenViewController.swift */,
 				523DD9141A8B4B6300C21FD7 /* DeliveryDetailViewController.swift */,
+				526B61791A9B1BE600A8B81A /* MyDeliveryViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -367,6 +376,9 @@
 		52BCB4811A7FB7C20016A37E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				526B61771A9B0A2100A8B81A /* hgushop.png */,
+				526B61751A9B0A0400A8B81A /* hgutube_icon.png */,
+				526B61731A9B08B900A8B81A /* ghost_logo_white.png */,
 				523DD9101A8B4AA500C21FD7 /* selected_star_small.png */,
 				523DD9111A8B4AA500C21FD7 /* unselected_star_small.png */,
 				523DD90E1A8B420C00C21FD7 /* phone_icon_small.png */,
@@ -503,13 +515,16 @@
 				52BCB4991A80B9760016A37E /* Icon.png in Resources */,
 				523DD9131A8B4AA500C21FD7 /* unselected_star_small.png in Resources */,
 				52B0D2F31A80BFF7000A2A02 /* notice_logo.png in Resources */,
+				526B61761A9B0A0400A8B81A /* hgutube_icon.png in Resources */,
 				52B0D2F61A80BFF7000A2A02 /* zzimdak.png in Resources */,
 				52B0D2F41A80BFF7000A2A02 /* setting.png in Resources */,
+				526B61781A9B0A2100A8B81A /* hgushop.png in Resources */,
 				52BCB4911A808CA70016A37E /* map.png in Resources */,
 				524DD4261A89FFA000DEEC28 /* phone_icon.png in Resources */,
 				52BCB46C1A7FB6B70016A37E /* LaunchScreen.xib in Resources */,
 				52B0D2F51A80BFF7000A2A02 /* timetable.png in Resources */,
 				52BCB4691A7FB6B70016A37E /* Images.xcassets in Resources */,
+				526B61741A9B08B900A8B81A /* ghost_logo_white.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +570,7 @@
 				524DD4201A89F2D400DEEC28 /* DeliveryTabBarController.swift in Sources */,
 				52BCB45E1A7FB6B70016A37E /* AppDelegate.swift in Sources */,
 				527A698E1A835BAB003B2EB5 /* HacksickViewController.swift in Sources */,
+				526B617A1A9B1BE600A8B81A /* MyDeliveryViewController.swift in Sources */,
 				524170F21A84A48E00F96631 /* MomsViewController.swift in Sources */,
 				524A659E1A950510000867E5 /* MenuItemView.swift in Sources */,
 				524170FA1A865BFC00F96631 /* MainBusUILabel.swift in Sources */,
