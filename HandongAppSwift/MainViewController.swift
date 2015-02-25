@@ -33,6 +33,19 @@ class MainViewController: UIViewController {
     @IBOutlet weak var isWeekendSixLabel: UILabel!
     @IBOutlet weak var isWeekendSchoolLabel: UILabel!
     
+    @IBOutlet weak var ghostLogo: UIButton!
+    
+    var initFlag = InitializeFlag.sharedInstance
+    
+    override func viewDidLoad() {
+        if initFlag.flag == true {
+            // data loaded properly
+            initFlag.flag = false
+        } else {
+            // proper handling needed
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         yasickButton.sizeToFit()
         haksickButton.sizeToFit()
@@ -61,6 +74,11 @@ class MainViewController: UIViewController {
             isWeekendSchoolLabel.textColor = UIColor.redColor()
             isWeekendSixLabel.textColor = UIColor.redColor()
         }
+        
+        // logo multiple touch
+        let multipleTapGesture = UITapGestureRecognizer(target: self, action: "logoTouchEvent:")
+        multipleTapGesture.numberOfTapsRequired = 4
+        ghostLogo.addGestureRecognizer(multipleTapGesture)
     }
     
     func makeButtonRound() {
@@ -183,5 +201,22 @@ class MainViewController: UIViewController {
             
             itemYPos += itemHeight
         }
+    }
+    
+    func logoTouchEvent(sender: UITapGestureRecognizer) {
+        var alert = UIAlertController(title: "데이터 초기화", message: "어플리케이션 내부 데이터를 초기화 합니다.\n초기화 후 어플리케이션을 완전히 종료, 재시작해야 데이터를 갱신할 수 있습니다.\n계속 하시겠습니까?", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "취소", style: UIAlertActionStyle.Cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "계속", style: UIAlertActionStyle.Default, handler: {action in
+            switch action.style{
+            case .Default:
+                Util.clearAllStoredData()
+            case .Cancel:
+                break
+            case .Destructive:
+                break
+            }
+        }))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }

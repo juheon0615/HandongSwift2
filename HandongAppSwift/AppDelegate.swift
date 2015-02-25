@@ -37,6 +37,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        var reachability: Reachability = Reachability.reachabilityForInternetConnection()
+        var status = reachability.currentReachabilityStatus
+        if (status == Reachability.NetworkStatus.NotReachable) {
+            // state for CANNOT Access to INTERNET
+            let alert = UIAlertView(title: "인터넷 접속 오류", message: "네트워크에 접속할 수 없습니다.\n표시되는 데이터가 없거나 실제와 차이가 날 수 있으니 주의하시기 바랍니다.\n데이터 갱신을 위해 네트워크 연결 후, 어플리케이션을 완전히 종료, 재시작하시기 바랍니다.", delegate: nil, cancelButtonTitle: "확인")
+            
+            alert.show()
+        }
     }
 
     func applicationWillTerminate(application: UIApplication) {

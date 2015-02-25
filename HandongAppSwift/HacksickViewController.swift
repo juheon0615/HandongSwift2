@@ -30,19 +30,20 @@ class HacksickViewController: UIViewController {
     
     var hacksickItem: HacksickModel?
     var itemYPos: Double = 0.0
+    var boxYPos: Double = 2.0
     
     var actInd = UIActivityIndicatorView()
     
     func noDataHandler() {
-        let grayColor = UIColor(red: 155, green: 159, blue: 161, alpha: 0)
+        let backColor = UIColor(red: 0.9843, green: 0.8196, blue: 0.2509, alpha: 0.2)
         let screenWidth = Double(UIScreen.mainScreen().applicationFrame.width)
         
         // ADD No DATA Label
         let noDataLabel = UILabel(frame: CGRect(x: 5.0, y: 5.0, width: screenWidth - 10, height: 100.0))
         
-        noDataLabel.backgroundColor = grayColor
+        noDataLabel.backgroundColor = backColor
         noDataLabel.numberOfLines = 0
-        noDataLabel.text = "금일 식단정보가 없습니다.\n또랑 운영 여부를 확인해주시기 바랍니다.\n(전화 :054-260-1267)"
+        noDataLabel.text = "금일 식단정보가 없습니다.\n학생식당 운영 여부를 확인해주시기 바랍니다."
         
         self.scrollView.addSubview(noDataLabel)
         
@@ -55,38 +56,41 @@ class HacksickViewController: UIViewController {
             self.noDataHandler()
             return
         }
-        
-        let grayColor = UIColor(red: 155, green: 159, blue: 161, alpha: 0)
+        let backColor = UIColor(red: 0.9843, green: 0.8196, blue: 0.2509, alpha: 0.2)
         let screenWidth = Double(UIScreen.mainScreen().applicationFrame.width)
         
         
         // KO TA
+        let kotaCont = UIView(frame: CGRectZero)
         
-        let kotaHead = UILabel(frame: CGRect(x: 0.0, y: self.itemYPos, width: screenWidth, height: 30.0))
-        self.itemYPos += 30.0
-        
-        kotaHead.backgroundColor = grayColor
+        let kotaHead = UILabel(frame: CGRect(x: 5.0, y: self.itemYPos, width: screenWidth, height: 30.0))
+        self.itemYPos += 32.0
         kotaHead.text = "Korean Table"
+        kotaHead.font = UIFont(name: kotaHead.font.fontName, size: 19)
         
-        self.scrollView.addSubview(kotaHead)
+        kotaCont.addSubview(kotaHead)
         
+        let kotaDivBar = UIView(frame: CGRect(x: 5.0, y: self.itemYPos, width: screenWidth - 30.0, height: 1))
+        kotaDivBar.backgroundColor = UIColor.darkGrayColor()
+        self.itemYPos += 2.0
+        
+        kotaCont.addSubview(kotaDivBar)
         
         // ko ta Breakfast
-        
         let morningLabel = UILabel(frame: CGRect(x: 5.0, y: self.itemYPos, width: screenWidth, height: 30.0))
         self.itemYPos += 30.0
         morningLabel.text = "아침"
         
-        self.scrollView.addSubview(morningLabel)
+        kotaCont.addSubview(morningLabel)
         
         var lineCount = Double(hacksickItem!.breakfast.menu.componentsSeparatedByString("\n").count * 25)
 
-        let morningMenuLabel = UILabel(frame: CGRect(x: 0.0, y: self.itemYPos, width: screenWidth/4*3, height: lineCount))
+        let morningMenuLabel = UILabel(frame: CGRect(x: 8.0, y: self.itemYPos, width: screenWidth/4*3 - 8, height: lineCount))
         morningMenuLabel.text = hacksickItem?.breakfast.menu
         morningMenuLabel.numberOfLines = 0
         morningMenuLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         
-        self.scrollView.addSubview(morningMenuLabel)
+        kotaCont.addSubview(morningMenuLabel)
         
         let morningPriceLabel = UILabel(frame: CGRect(x: screenWidth/4*3, y: self.itemYPos, width: screenWidth/4, height: lineCount))
         self.itemYPos += lineCount
@@ -94,24 +98,23 @@ class HacksickViewController: UIViewController {
         morningPriceLabel.numberOfLines = 0
         morningPriceLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         
-        self.scrollView.addSubview(morningPriceLabel)
-        
+        kotaCont.addSubview(morningPriceLabel)
         
         // ko ta Lunch
         let lunchLabel = UILabel(frame: CGRect(x: 5.0, y: self.itemYPos, width: screenWidth, height: 30.0))
         self.itemYPos += 30.0
         lunchLabel.text = "점심"
         
-        self.scrollView.addSubview(lunchLabel)
+        kotaCont.addSubview(lunchLabel)
         
         lineCount = Double(hacksickItem!.lunch.menu.componentsSeparatedByString("\n").count * 25)
         
-        let lunchMenuLabel = UILabel(frame: CGRect(x: 0.0, y: self.itemYPos, width: screenWidth/4*3, height: lineCount))
+        let lunchMenuLabel = UILabel(frame: CGRect(x: 8.0, y: self.itemYPos, width: screenWidth/4*3 - 8, height: lineCount))
         lunchMenuLabel.text = hacksickItem?.lunch.menu
         lunchMenuLabel.numberOfLines = 0
         lunchMenuLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         
-        self.scrollView.addSubview(lunchMenuLabel)
+        kotaCont.addSubview(lunchMenuLabel)
         
         let lunchPriceLabel = UILabel(frame: CGRect(x: screenWidth/4*3, y: self.itemYPos, width: screenWidth/4, height: lineCount))
         self.itemYPos += lineCount
@@ -119,7 +122,7 @@ class HacksickViewController: UIViewController {
         lunchPriceLabel.numberOfLines = 0
         lunchPriceLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         
-        self.scrollView.addSubview(lunchPriceLabel)
+        kotaCont.addSubview(lunchPriceLabel)
         
         
         // ko ta Dinner
@@ -127,16 +130,16 @@ class HacksickViewController: UIViewController {
         self.itemYPos += 30.0
         dinnerLabel.text = "저녁"
         
-        self.scrollView.addSubview(dinnerLabel)
+        kotaCont.addSubview(dinnerLabel)
         
         lineCount = Double(hacksickItem!.dinner.menu.componentsSeparatedByString("\n").count * 25)
         
-        let dinnerMenuLabel = UILabel(frame: CGRect(x: 0.0, y: self.itemYPos, width: screenWidth/4*3, height: lineCount))
+        let dinnerMenuLabel = UILabel(frame: CGRect(x: 8.0, y: self.itemYPos, width: screenWidth/4*3 - 8, height: lineCount))
         dinnerMenuLabel.text = hacksickItem?.dinner.menu
         dinnerMenuLabel.numberOfLines = 0
         dinnerMenuLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         
-        self.scrollView.addSubview(dinnerMenuLabel)
+        kotaCont.addSubview(dinnerMenuLabel)
         
         let dinnerPriceLabel = UILabel(frame: CGRect(x: screenWidth/4*3, y: self.itemYPos, width: screenWidth/4, height: lineCount))
         self.itemYPos += lineCount
@@ -144,27 +147,44 @@ class HacksickViewController: UIViewController {
         dinnerPriceLabel.numberOfLines = 0
         dinnerPriceLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         
-        self.scrollView.addSubview(dinnerPriceLabel)
+        kotaCont.addSubview(dinnerPriceLabel)
+        
+        // add Container View to Scroll View
+        kotaCont.frame = CGRect(x: 10.0, y: self.boxYPos, width: screenWidth - 20.0, height: itemYPos)
+        kotaCont.backgroundColor = backColor
+        kotaCont.opaque = true
+        self.scrollView.addSubview(kotaCont)
+        
+        self.boxYPos += self.itemYPos + 5.0
+        self.itemYPos = 0.0
+        
         
         
         // FRY FRY
+        let fryCont = UIView(frame: CGRectZero)
         
-        let fryHead = UILabel(frame: CGRect(x: 0.0, y: self.itemYPos, width: screenWidth, height: 30.0))
-        self.itemYPos += 30.0
+        let fryHead = UILabel(frame: CGRect(x: 5.0, y: self.itemYPos, width: screenWidth, height: 30.0))
+        self.itemYPos += 32.0
         
-        fryHead.backgroundColor = grayColor
         fryHead.text = "Fry Fry"
+        fryHead.font = UIFont(name: fryHead.font.fontName, size: 19)
         
-        self.scrollView.addSubview(fryHead)
+        fryCont.addSubview(fryHead)
+        
+        let fryDivBar = UIView(frame: CGRect(x: 5.0, y: self.itemYPos, width: screenWidth - 30.0, height: 1))
+        fryDivBar.backgroundColor = UIColor.darkGrayColor()
+        self.itemYPos += 2.0
+        
+        fryCont.addSubview(fryDivBar)
         
         lineCount = Double(hacksickItem!.fryFry.menu.componentsSeparatedByString("\n").count * 25)
         
-        let fryMenuLabel = UILabel(frame: CGRect(x: 0.0, y: self.itemYPos, width: screenWidth/4*3, height: lineCount))
+        let fryMenuLabel = UILabel(frame: CGRect(x: 8.0, y: self.itemYPos, width: screenWidth/4*3 - 8, height: lineCount))
         fryMenuLabel.text = hacksickItem?.fryFry.menu
         fryMenuLabel.numberOfLines = 0
         fryMenuLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         
-        self.scrollView.addSubview(fryMenuLabel)
+        fryCont.addSubview(fryMenuLabel)
         
         let fryPriceLabel = UILabel(frame: CGRect(x: screenWidth/4*3, y: self.itemYPos, width: screenWidth/4, height: lineCount))
         self.itemYPos += lineCount
@@ -172,26 +192,43 @@ class HacksickViewController: UIViewController {
         fryPriceLabel.numberOfLines = 0
         fryPriceLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         
-        self.scrollView.addSubview(fryPriceLabel)
+        fryCont.addSubview(fryPriceLabel)
+        
+        // add Container View to Scroll View
+        fryCont.frame = CGRect(x: 10.0, y: self.boxYPos, width: screenWidth - 20.0, height: itemYPos)
+        fryCont.backgroundColor = backColor
+        fryCont.opaque = true
+        self.scrollView.addSubview(fryCont)
+        
+        self.boxYPos += self.itemYPos + 5.0
+        self.itemYPos = 0.0
         
         
         // Noodle ROAD
-        let noodleHead = UILabel(frame: CGRect(x: 0.0, y: self.itemYPos, width: screenWidth, height: 30.0))
-        self.itemYPos += 30.0
+        let noodleCont = UIView(frame: CGRectZero)
         
-        noodleHead.backgroundColor = grayColor
+        let noodleHead = UILabel(frame: CGRect(x: 5.0, y: self.itemYPos, width: screenWidth, height: 30.0))
+        self.itemYPos += 32.0
+        
         noodleHead.text = "Noodle Road"
+        noodleHead.font = UIFont(name: noodleHead.font.fontName, size: 19)
         
-        self.scrollView.addSubview(noodleHead)
+        noodleCont.addSubview(noodleHead)
+        
+        let noodleDivBar = UIView(frame: CGRect(x: 5.0, y: self.itemYPos, width: screenWidth - 30.0, height: 1))
+        noodleDivBar.backgroundColor = UIColor.darkGrayColor()
+        self.itemYPos += 2.0
+        
+        noodleCont.addSubview(noodleDivBar)
         
         lineCount = Double(hacksickItem!.noodleRoad.menu.componentsSeparatedByString("\n").count * 25)
         
-        let noodleMenuLabel = UILabel(frame: CGRect(x: 0.0, y: self.itemYPos, width: screenWidth/4*3, height: lineCount))
+        let noodleMenuLabel = UILabel(frame: CGRect(x: 8.0, y: self.itemYPos, width: screenWidth/4*3 - 8, height: lineCount))
         noodleMenuLabel.text = hacksickItem?.noodleRoad.menu
         noodleMenuLabel.numberOfLines = 0
         noodleMenuLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         
-        self.scrollView.addSubview(noodleMenuLabel)
+        noodleCont.addSubview(noodleMenuLabel)
         
         let noodlePriceLabel = UILabel(frame: CGRect(x: screenWidth/4*3, y: self.itemYPos, width: screenWidth/4, height: lineCount))
         self.itemYPos += lineCount
@@ -199,26 +236,43 @@ class HacksickViewController: UIViewController {
         noodlePriceLabel.numberOfLines = 0
         noodlePriceLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         
-        self.scrollView.addSubview(noodlePriceLabel)
+        noodleCont.addSubview(noodlePriceLabel)
+        
+        // add Container View to Scroll View
+        noodleCont.frame = CGRect(x: 10.0, y: self.boxYPos, width: screenWidth - 20.0, height: itemYPos)
+        noodleCont.backgroundColor = backColor
+        noodleCont.opaque = true
+        self.scrollView.addSubview(noodleCont)
+        
+        self.boxYPos += self.itemYPos + 5.0
+        self.itemYPos = 0.0
         
         
         // HAO
-        let haoHead = UILabel(frame: CGRect(x: 0.0, y: self.itemYPos, width: screenWidth, height: 30.0))
-        self.itemYPos += 30.0
+        let haoCont = UIView(frame: CGRectZero)
         
-        haoHead.backgroundColor = grayColor
+        let haoHead = UILabel(frame: CGRect(x: 5.0, y: self.itemYPos, width: screenWidth, height: 30.0))
+        self.itemYPos += 32.0
+        
         haoHead.text = "Hao"
+        haoHead.font = UIFont(name: haoHead.font.fontName, size: 19)
         
-        self.scrollView.addSubview(haoHead)
+        haoCont.addSubview(haoHead)
+        
+        let haoDivBar = UIView(frame: CGRect(x: 5.0, y: self.itemYPos, width: screenWidth - 30.0, height: 1))
+        haoDivBar.backgroundColor = UIColor.darkGrayColor()
+        self.itemYPos += 2.0
+        
+        haoCont.addSubview(haoDivBar)
         
         lineCount = Double(hacksickItem!.hao.menu.componentsSeparatedByString("\n").count * 25)
         
-        let haoMenuLabel = UILabel(frame: CGRect(x: 0.0, y: self.itemYPos, width: screenWidth/4*3, height: lineCount))
+        let haoMenuLabel = UILabel(frame: CGRect(x: 8.0, y: self.itemYPos, width: screenWidth/4*3 - 8, height: lineCount))
         haoMenuLabel.text = hacksickItem?.hao.menu
         haoMenuLabel.numberOfLines = 0
         haoMenuLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         
-        self.scrollView.addSubview(haoMenuLabel)
+        haoCont.addSubview(haoMenuLabel)
         
         let haoPriceLabel = UILabel(frame: CGRect(x: screenWidth/4*3, y: self.itemYPos, width: screenWidth/4, height: lineCount))
         self.itemYPos += lineCount
@@ -226,26 +280,43 @@ class HacksickViewController: UIViewController {
         haoPriceLabel.numberOfLines = 0
         haoPriceLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         
-        self.scrollView.addSubview(haoPriceLabel)
+        haoCont.addSubview(haoPriceLabel)
+        
+        // add Container View to Scroll View
+        haoCont.frame = CGRect(x: 10.0, y: self.boxYPos, width: screenWidth - 20.0, height: itemYPos)
+        haoCont.backgroundColor = backColor
+        haoCont.opaque = true
+        self.scrollView.addSubview(haoCont)
+        
+        self.boxYPos += self.itemYPos + 5.0
+        self.itemYPos = 0.0
         
         
         // GraceGarden
-        let graceHead = UILabel(frame: CGRect(x: 0.0, y: self.itemYPos, width: screenWidth, height: 30.0))
-        self.itemYPos += 30.0
+        let graceCont = UIView(frame: CGRectZero)
         
-        graceHead.backgroundColor = grayColor
+        let graceHead = UILabel(frame: CGRect(x: 5.0, y: self.itemYPos, width: screenWidth, height: 30.0))
+        self.itemYPos += 32.0
+        
         graceHead.text = "Grace Garden"
+        graceHead.font = UIFont(name: graceHead.font.fontName, size: 19)
         
-        self.scrollView.addSubview(graceHead)
+        graceCont.addSubview(graceHead)
+        
+        let graceDivBar = UIView(frame: CGRect(x: 5.0, y: self.itemYPos, width: screenWidth - 30.0, height: 1))
+        graceDivBar.backgroundColor = UIColor.darkGrayColor()
+        self.itemYPos += 2.0
+        
+        graceCont.addSubview(graceDivBar)
         
         lineCount = Double(hacksickItem!.graceGarden.menu.componentsSeparatedByString("\n").count * 25)
         
-        let graceMenuLabel = UILabel(frame: CGRect(x: 0.0, y: self.itemYPos, width: screenWidth/4*3, height: lineCount))
+        let graceMenuLabel = UILabel(frame: CGRect(x: 8.0, y: self.itemYPos, width: screenWidth/4*3 - 8, height: lineCount))
         graceMenuLabel.text = hacksickItem?.graceGarden.menu
         graceMenuLabel.numberOfLines = 0
         graceMenuLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         
-        self.scrollView.addSubview(graceMenuLabel)
+        graceCont.addSubview(graceMenuLabel)
         
         let gracePriceLabel = UILabel(frame: CGRect(x: screenWidth/4*3, y: self.itemYPos, width: screenWidth/4, height: lineCount))
         self.itemYPos += lineCount
@@ -253,26 +324,43 @@ class HacksickViewController: UIViewController {
         gracePriceLabel.numberOfLines = 0
         gracePriceLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         
-        self.scrollView.addSubview(gracePriceLabel)
+        graceCont.addSubview(gracePriceLabel)
+        
+        // add Container View to Scroll View
+        graceCont.frame = CGRect(x: 10.0, y: self.boxYPos, width: screenWidth - 20.0, height: itemYPos)
+        graceCont.backgroundColor = backColor
+        graceCont.opaque = true
+        self.scrollView.addSubview(graceCont)
+        
+        self.boxYPos += self.itemYPos + 5.0
+        self.itemYPos = 0.0
         
         
         // Mix RICE
-        let mixHead = UILabel(frame: CGRect(x: 0.0, y: self.itemYPos, width: screenWidth, height: 30.0))
-        self.itemYPos += 30.0
+        let mixCont = UIView(frame: CGRectZero)
         
-        mixHead.backgroundColor = grayColor
+        let mixHead = UILabel(frame: CGRect(x: 5.0, y: self.itemYPos, width: screenWidth, height: 30.0))
+        self.itemYPos += 32.0
+        
         mixHead.text = "Mix Rice"
+        mixHead.font = UIFont(name: mixHead.font.fontName, size: 19)
         
-        self.scrollView.addSubview(mixHead)
+        mixCont.addSubview(mixHead)
+        
+        let mixDivBar = UIView(frame: CGRect(x: 5.0, y: self.itemYPos, width: screenWidth - 30.0, height: 1))
+        mixDivBar.backgroundColor = UIColor.darkGrayColor()
+        self.itemYPos += 2.0
+        
+        mixCont.addSubview(mixDivBar)
         
         lineCount = Double(hacksickItem!.mixRice.menu.componentsSeparatedByString("\n").count * 25)
         
-        let mixMenuLabel = UILabel(frame: CGRect(x: 0.0, y: self.itemYPos, width: screenWidth/4*3, height: lineCount))
+        let mixMenuLabel = UILabel(frame: CGRect(x: 8.0, y: self.itemYPos, width: screenWidth/4*3 - 8, height: lineCount))
         mixMenuLabel.text = hacksickItem?.mixRice.menu
         mixMenuLabel.numberOfLines = 0
         mixMenuLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         
-        self.scrollView.addSubview(mixMenuLabel)
+        mixCont.addSubview(mixMenuLabel)
         
         let mixPriceLabel = UILabel(frame: CGRect(x: screenWidth/4*3, y: self.itemYPos, width: screenWidth/4, height: lineCount))
         self.itemYPos += lineCount
@@ -280,18 +368,33 @@ class HacksickViewController: UIViewController {
         mixPriceLabel.numberOfLines = 0
         mixPriceLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         
-        self.scrollView.addSubview(mixPriceLabel)
+        mixCont.addSubview(mixPriceLabel)
+        
+        // add Container View to Scroll View
+        mixCont.frame = CGRect(x: 10.0, y: self.boxYPos, width: screenWidth - 20.0, height: itemYPos)
+        mixCont.backgroundColor = backColor
+        mixCont.opaque = true
+        self.scrollView.addSubview(mixCont)
+        
+        self.boxYPos += self.itemYPos + 5.0
+        self.itemYPos = 0.0
         
         
         // Loading END
         Util.hideActivityIndicator(&self.actInd)
-        self.scrollView.contentSize = CGSizeMake(CGFloat(screenWidth), CGFloat(self.itemYPos))
+        self.scrollView.contentSize = CGSizeMake(CGFloat(screenWidth), CGFloat(self.boxYPos))
     }
     
     override func viewDidLoad() {
         Util.showActivityIndicatory(self.view, indicator: &self.actInd)
-        getDataXML()
+        
         dateSetter()
+        
+        let data = Util.readFile(Util.TodaysHacksickInfoName)
+        if data != nil {
+            self.parseHacksickXML(data!)
+        }
+        self.makeViewWithData()
     }
     
     func dateSetter() {
@@ -303,19 +406,7 @@ class HacksickViewController: UIViewController {
         self.dateLabel.text = monthString + dateString + weekdayString
     }
     
-    func getDataXML() {
-        let url = NSURL(string: Util.HacksickURL)!
-        let session = NSURLSession.sharedSession()
-        let dataTask = session.dataTaskWithURL(url, completionHandler:
-            {(data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
-                self.parseHacksickXML(data)
-                
-                self.makeViewWithData()
-        })
-        dataTask.resume()
-    }
-    
-    func parseHacksickXML(data: NSData) {
+    func parseHacksickXML(data: NSString) {
         let xmlDom = SWXMLHash.parse(data)
         
         hacksickItem = HacksickModel(date: xmlDom[rootTag][dateTag].element!.text!,

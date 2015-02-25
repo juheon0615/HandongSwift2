@@ -13,6 +13,11 @@ class MyDeliveryViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var recentTableView: UITableView!
     @IBOutlet weak var favoriteTableView: UITableView!
     
+    @IBOutlet weak var clearButton: UIButton!
+    
+    
+    var selectedStore: StoreModel?
+
     let storeList = StoreListModel.sharedInstance
     var userDefaults = NSUserDefaults.standardUserDefaults()
     
@@ -21,37 +26,60 @@ class MyDeliveryViewController: UIViewController, UITableViewDataSource, UITable
     var timeList = Array<String>()
     
     override func viewDidLoad() {
-        self.beginParsing()
+        StoreListDAO.beginParsing(&storeList.storeList)
+        
+        // RECENT
+        recentTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "rCell")
+        recentTableView.dataSource = self
+        recentTableView.delegate = self
+        recentTableView.rowHeight = 44
+        
+        self.getRecentIDs()
+        self.recentTableView.reloadData()
+        
+        // FAVORITE
+        favoriteTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "fCell")
+        favoriteTableView.dataSource = self
+        favoriteTableView.delegate = self
+        favoriteTableView.rowHeight = 44
         
         self.getFavoriteIDs()
-        self.getRecentIDs()
-        
         self.favoriteTableView.reloadData()
-        self.recentTableView.reloadData()
+        
+        clearButton.addTarget(self, action: "clerButtonClick:", forControlEvents: .TouchUpInside)
     }
     
     func getFavoriteIDs() {
         for store in storeList.storeList {
-            let isFav: Bool? = self.userDefaults.valueForKey(store.id) as Bool?
+            let isFav = self.userDefaults.boolForKey(store.id)
             
             // case for Favorite Store ALREADY Checked
-            if isFav != nil && isFav! == true {
+            if isFav == true {
                 self.favoriteList.append(store)
             }
         }
     }
     
     func getRecentIDs() {
-        let list = userDefaults.stringArrayForKey(Util.RecentCallKey) as Array<String>
+        let list = userDefaults.stringArrayForKey(Util.RecentCallKey) as Array<String>?
         
-        for row in list {
+        if list == nil {
+            return
+        }
+        
+        // init list
+        recentList.removeAll(keepCapacity: false)
+        timeList.removeAll(keepCapacity: false)
+        
+        // add DATA
+        for row in list! {
             let id = row.componentsSeparatedByString(Util.recentCallSpliter)[0]
             let time = row.componentsSeparatedByString(Util.recentCallSpliter)[1]
             
             for shop in storeList.storeList {
                 if shop.id == id {
-                    recentList.insert(shop, atIndex: 0)
-                    timeList.insert(time, atIndex: 0)
+                    recentList.append(shop)
+                    timeList.append(time)
                     
                     break
                 }
@@ -68,10 +96,10 @@ class MyDeliveryViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if tavleView == self.favoriteTableView {
-            var cell:UITableViewCell! = self.favoriteTableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+        if tableView == self.favoriteTableView {
+            var cell:UITableViewCell! = self.favoriteTableView.dequeueReusableCellWithIdentifier("fCell") as UITableViewCell
             if cell == nil {
-                cell = NSBundle.mainBundle().loadNibNamed("Cell", owner: self, options: nil)[0] as UITableViewCell
+                cell = NSBundle.mainBundle().loadNibNamed("fCell", owner: self, options: nil)[0] as UITableViewCell
             }
             
             // remove previous labels
@@ -85,20 +113,20 @@ class MyDeliveryViewController: UIViewController, UITableViewDataSource, UITable
             
             // name Text Label
             let nameLabel = UILabel(frame: CGRect(x: 5.0, y: 0.0, width: labelWidth, height: 30.0))
-            nameLabel.text = self.storeList.storeList[indexPath.row].name
+            nameLabel.text = self.favoriteList[indexPath.row].name
             nameLabel.lineBreakMode = NSLineBreakMode.ByTruncatingTail
             nameLabel.textAlignment = NSTextAlignment.Left
             cell.addSubview(nameLabel)
             
             let phoneLabel = UILabel(frame: CGRect(x: 5.0, y: 30.0, width: labelWidth/2, height: 10.0))
-            phoneLabel.text = self.storeList.storeList[indexPath.row].phone
+            phoneLabel.text = self.favoriteList[indexPath.row].phone
             phoneLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
             phoneLabel.textAlignment = NSTextAlignment.Left
             phoneLabel.font = UIFont(name: phoneLabel.font.fontName, size: 11)
             cell.addSubview(phoneLabel)
             
             let rtLabel = UILabel(frame: CGRect(x: labelWidth/2, y: 30.0, width: labelWidth/2, height: 10.0))
-            rtLabel.text = self.storeList.storeList[indexPath.row].runTime
+            rtLabel.text = self.favoriteList[indexPath.row].runTime
             rtLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
             rtLabel.textAlignment = NSTextAlignment.Right
             rtLabel.font = UIFont(name: rtLabel.font.fontName, size: 11)
@@ -113,9 +141,9 @@ class MyDeliveryViewController: UIViewController, UITableViewDataSource, UITable
             cell.separatorInset.bottom = 1.0
             return cell
         } else {
-            var cell:UITableViewCell! = self.recentTableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+            var cell:UITableViewCell! = self.recentTableView.dequeueReusableCellWithIdentifier("rCell") as UITableViewCell
             if cell == nil {
-                cell = NSBundle.mainBundle().loadNibNamed("Cell", owner: self, options: nil)[0] as UITableViewCell
+                cell = NSBundle.mainBundle().loadNibNamed("rCell", owner: self, options: nil)[0] as UITableViewCell
             }
             
             // remove previous labels
@@ -129,24 +157,24 @@ class MyDeliveryViewController: UIViewController, UITableViewDataSource, UITable
             
             // name Text Label
             let nameLabel = UILabel(frame: CGRect(x: 5.0, y: 0.0, width: labelWidth, height: 30.0))
-            nameLabel.text = self.storeList.storeList[indexPath.row].name
+            nameLabel.text = self.recentList[indexPath.row].name
             nameLabel.lineBreakMode = NSLineBreakMode.ByTruncatingTail
             nameLabel.textAlignment = NSTextAlignment.Left
             cell.addSubview(nameLabel)
             
             let phoneLabel = UILabel(frame: CGRect(x: 5.0, y: 30.0, width: labelWidth/2, height: 10.0))
-            phoneLabel.text = self.storeList.storeList[indexPath.row].phone
+            phoneLabel.text = self.recentList[indexPath.row].phone
             phoneLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
             phoneLabel.textAlignment = NSTextAlignment.Left
             phoneLabel.font = UIFont(name: phoneLabel.font.fontName, size: 11)
             cell.addSubview(phoneLabel)
             
-            let rtLabel = UILabel(frame: CGRect(x: labelWidth/2, y: 30.0, width: labelWidth/2, height: 10.0))
-            rtLabel.text = self.storeList.storeList[indexPath.row].runTime
-            rtLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
-            rtLabel.textAlignment = NSTextAlignment.Right
-            rtLabel.font = UIFont(name: rtLabel.font.fontName, size: 11)
-            cell.addSubview(rtLabel)
+            let timestampLabel = UILabel(frame: CGRect(x: labelWidth/2, y: 30.0, width: labelWidth/2, height: 10.0))
+            timestampLabel.text = self.timeList[indexPath.row]
+            timestampLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
+            timestampLabel.textAlignment = NSTextAlignment.Right
+            timestampLabel.font = UIFont(name: timestampLabel.font.fontName, size: 11)
+            cell.addSubview(timestampLabel)
             
             let phoneButton = UIButton(frame: CGRect(x: labelWidth + 10, y: 5, width: 40, height: 40))
             phoneButton.setImage(UIImage(named: "phone_icon.png"), forState: .Normal)
@@ -160,7 +188,12 @@ class MyDeliveryViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.selectedStore = self.storeList.storeList[indexPath.row]
+        if tableView == self.favoriteTableView {
+            self.selectedStore = self.favoriteList[indexPath.row]
+        } else {
+            self.selectedStore = self.recentList[indexPath.row]
+        }
+        
         self.performSegueWithIdentifier("deliveryDetailSegue", sender: self)
     }
     
@@ -173,31 +206,35 @@ class MyDeliveryViewController: UIViewController, UITableViewDataSource, UITable
     
     // call Button event handler
     func callButtonClick(sender: UIButton!) {
-        Util.makePhoneCall(self.storeList.storeList[sender.tag].phone)
+        let selectedView = sender.superview as UITableViewCell
+        var number: String
+        var id: String
+        
+        if selectedView.reuseIdentifier == "fCell" {
+            number = self.favoriteList[sender.tag].phone
+            id = self.favoriteList[sender.tag].id
+        } else {
+            number = self.recentList[sender.tag].phone
+            id = self.recentList[sender.tag].id
+        }
+        
+        Util.makePhoneCall(number, storeID: id)
+        
+        self.getRecentIDs()
+        recentTableView.reloadData()
     }
-    
-    func beginParsing() {
-        if self.storeList.storeList.count > 0 {
-            // not first call.
-            // do not need to read data
+
+    func clerButtonClick(sender: UIButton!) {
+        let list = userDefaults.stringArrayForKey(Util.RecentCallKey) as Array<String>?
+        
+        if list == nil {
             return
         }
         
-        let fileData = Util.readFile(Util.DeliveryFoodFilename)
-        
-        if fileData != nil {
-            let xmlDom = SWXMLHash.parse(fileData!)
-            
-            for item in xmlDom["delivery"]["information"].all {
-                let id = item["id"].element!.text!
-                let name = item["name"].element!.text!
-                let phone = item["phone"].element!.text
-                let runTime = item["runTime"].element!.text
-                let category = item["category"].element!.text
-                
-                self.storeList.storeList.append(StoreModel(id: id, name: name, phone: phone, runTime: runTime, category: category))
-            }
+        for row in list! {
+            userDefaults.removeObjectForKey(Util.RecentCallKey)
         }
+        recentList.removeAll(keepCapacity: false)
+        recentTableView.reloadData()
     }
-
 }

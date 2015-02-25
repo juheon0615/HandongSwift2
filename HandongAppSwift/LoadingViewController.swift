@@ -29,8 +29,13 @@ class LoadingViewController: UIViewController {
     var schoolBusWeekdayXMLFile: String?
     var deliveryXMLFile: String?
     
+    var initFlag = InitializeFlag.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Init start
+        initFlag.flag = false
         
         // loading image rotation
         var rotationAni = CABasicAnimation()
@@ -53,10 +58,14 @@ class LoadingViewController: UIViewController {
         
         // get Delivery Food Info
         self.getDeliveryInfo()
+        
+        
+        // get FOOD Info
+        self.getFoodInfo()
     }
     
     override func viewDidAppear(animated: Bool) {
-        let timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: Selector("nextPage"), userInfo: nil, repeats: false)
+        let timer = NSTimer.scheduledTimerWithTimeInterval(4, target: self, selector: Selector("nextPage"), userInfo: nil, repeats: false)
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,7 +74,10 @@ class LoadingViewController: UIViewController {
     }
     
     func nextPage() {
-        self.performSegueWithIdentifier("loadingDoneSegue", sender: self)
+        if initFlag.flag == false {
+            initFlag.flag = true
+            self.performSegueWithIdentifier("loadingDoneSegue", sender: self)
+        }
     }
     
     func getBusInfo() {
@@ -408,5 +420,38 @@ class LoadingViewController: UIViewController {
         for menu in xmlDom["yasick"]["mainMenu"].all {
             Util.checkAndDownloadImage(id, urlString: menu["photo"].element!.text!)
         }
+    }
+    
+    func getFoodInfo() {
+        let hacksickXMLFile = Util.readFile(Util.TodaysHacksickInfoName)
+        let momsXMLFile = Util.readFile(Util.TodaysMomsInfoName)
+        let hyoamXMLFile = Util.readFile(Util.TodaysHyoamInfoName)
+        
+        if hacksickXMLFile == nil || momsXMLFile == nil || hyoamXMLFile == nil{
+            Util.clearFoodXMLs()
+            Util.makeFoodDirectory()
+            
+            self.getFoodDataXMLandStore(Util.HacksickURL, name: Util.TodaysHacksickInfoName)
+            self.getFoodDataXMLandStore(Util.MomskitchenURL, name: Util.TodaysMomsInfoName)
+            self.getFoodDataXMLandStore(Util.HyoamthetableURL, name: Util.TodaysHyoamInfoName)
+        } else {
+            self.nextPage()
+        }
+    }
+    
+    func getFoodDataXMLandStore(url: String, name: String) {
+        let url = NSURL(string: url)!
+        let session = NSURLSession.sharedSession()
+        let dataTask = session.dataTaskWithURL(url, completionHandler:
+            {(data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
+                Util.saveFile(name, data: data)
+                
+                if name == Util.TodaysHyoamInfoName {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.nextPage()
+                    })
+                }
+        })
+        dataTask.resume()
     }
 }

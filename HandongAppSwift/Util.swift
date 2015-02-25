@@ -82,6 +82,19 @@ class Util {
         return id + ".xml"
     }
     
+    class var FoodFolderName: String {
+        return "mealData"
+    }
+    class var TodaysHacksickInfoName: String {
+        return Util.FoodFolderName.stringByAppendingPathComponent(Util.getTodayString() + "hacksick.xml")
+    }
+    class var TodaysMomsInfoName: String {
+        return Util.FoodFolderName.stringByAppendingPathComponent(Util.getTodayString() + "moms.xml")
+    }
+    class var TodaysHyoamInfoName: String {
+        return Util.FoodFolderName.stringByAppendingPathComponent(Util.getTodayString() + "hyoam.xml")
+    }
+    
     
     // KEY STRING for USER DEFAULT - recent call
     class var RecentCallKey: String{
@@ -90,6 +103,18 @@ class Util {
     class var recentCallSpliter: String{
         // split ID and Time value with this string
         return "-"
+    }
+    
+    
+    
+    class func clearAllStoredData() {        
+        let fileMgr = NSFileManager.defaultManager()
+        let docsDir = Util.getDocumentDirectory()
+        let enumerator = fileMgr.enumeratorAtPath(docsDir)
+        
+        while let file = enumerator?.nextObject() as? String {
+            fileMgr.removeItemAtPath(docsDir.stringByAppendingPathComponent(file), error: nil)
+        }
     }
     
     
@@ -169,6 +194,16 @@ class Util {
         }
     }
     
+    class func clearFoodXMLs() {
+        let fileMgr = NSFileManager.defaultManager()
+        let docsDir = Util.getDocumentDirectory()
+        let enumerator = fileMgr.enumeratorAtPath(docsDir.stringByAppendingPathComponent(Util.FoodFolderName))
+        
+        while let file = enumerator?.nextObject() as? String {
+            fileMgr.removeItemAtPath(docsDir.stringByAppendingPathComponent(file), error: nil)
+        }
+    }
+    
     class func weekdayChanger(weekdayInt: Int) -> String {
         switch weekdayInt {
         case 1:
@@ -218,7 +253,9 @@ class Util {
         let hour = components.hour
         let minutes = components.minute
         
-        let retString = String(year%100) + "/" + String(month) + "/" + String(day) + " " + String(hour) + ":" + String(minutes)
+        let dateString = String(year%100) + "/" + String(month) + "/" + String(day)
+        let timeString = String(hour) + ":" + String(minutes)
+        let retString = dateString + " " + timeString
         
         return retString
     }
@@ -228,6 +265,14 @@ class Util {
         
         let date = NSDate()
         return NSCalendar.currentCalendar().components(flags, fromDate: date)
+    }
+    
+    class func getTodayString() -> String {
+        let today = Util.getToday()
+        var retString: String
+        
+        retString = String(today.year) + String(today.month) + String(today.day)
+        return retString
     }
     
     class func isWeekendToday() -> Bool {
@@ -251,6 +296,26 @@ class Util {
         let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         
         return dirPaths[0] as String
+    }
+    
+    class func makeFoodDirectory() {
+        let filemgr = NSFileManager.defaultManager()
+        
+        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
+            .UserDomainMask, true)
+        
+        let docsDir = dirPaths[0] as String
+        let newDir = docsDir.stringByAppendingPathComponent(Util.FoodFolderName)
+        
+        var error: NSError?
+        
+        if !filemgr.createDirectoryAtPath(newDir,
+            withIntermediateDirectories: true,
+            attributes: nil,
+            error: &error) {
+                
+                println("Failed to create dir: \(error!.localizedDescription)")
+        }
     }
     
     class func makeImageDirectory(id: String) {
@@ -292,6 +357,9 @@ class Util {
             if recent!.count > 10 {
                 recent!.removeLast()
             }
+            
+            // delete prev user-default data
+            userDefaults.removeObjectForKey(Util.RecentCallKey)
         } else {
             recent = Array<String>()
             recent!.insert(storeID + Util.recentCallSpliter + Util.getCurrentTime(), atIndex: 0)

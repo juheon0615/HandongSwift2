@@ -22,10 +22,13 @@ class DeliveryAllViewController: UIViewController, UITableViewDataSource, UITabl
         storeListTableView.dataSource = self
         storeListTableView.delegate = self
         
-        storeListTableView.rowHeight = 50
+        storeListTableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         
-        self.beginParsing()
+        // parse Data and refresh LIST
+        StoreListDAO.beginParsing(&storeList.storeList)
+        self.storeListTableView.reloadData()
     }
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.storeList.storeList.count
@@ -47,33 +50,34 @@ class DeliveryAllViewController: UIViewController, UITableViewDataSource, UITabl
         let labelWidth = (tableWidth-60)
         
         // name Text Label
-        let nameLabel = UILabel(frame: CGRect(x: 5.0, y: 0.0, width: labelWidth, height: 30.0))
+        
+        let nameLabel = UILabel(frame: CGRect(x: 5.0, y: 1.0, width: labelWidth, height: 30.0))
         nameLabel.text = self.storeList.storeList[indexPath.row].name
         nameLabel.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         nameLabel.textAlignment = NSTextAlignment.Left
         cell.addSubview(nameLabel)
         
-        let phoneLabel = UILabel(frame: CGRect(x: 5.0, y: 30.0, width: labelWidth/2, height: 10.0))
+        let phoneLabel = UILabel(frame: CGRect(x: 5.0, y: 31.0, width: labelWidth/2, height: 10.0))
         phoneLabel.text = self.storeList.storeList[indexPath.row].phone
         phoneLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         phoneLabel.textAlignment = NSTextAlignment.Left
         phoneLabel.font = UIFont(name: phoneLabel.font.fontName, size: 11)
         cell.addSubview(phoneLabel)
         
-        let rtLabel = UILabel(frame: CGRect(x: labelWidth/2, y: 30.0, width: labelWidth/2, height: 10.0))
+        let rtLabel = UILabel(frame: CGRect(x: labelWidth/2, y: 31.0, width: labelWidth/2, height: 10.0))
         rtLabel.text = self.storeList.storeList[indexPath.row].runTime
         rtLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         rtLabel.textAlignment = NSTextAlignment.Right
         rtLabel.font = UIFont(name: rtLabel.font.fontName, size: 11)
         cell.addSubview(rtLabel)
         
-        let phoneButton = UIButton(frame: CGRect(x: labelWidth + 10, y: 5, width: 40, height: 40))
+        let phoneButton = UIButton(frame: CGRect(x: labelWidth + 10, y: 2, width: 40, height: 40))
         phoneButton.setImage(UIImage(named: "phone_icon.png"), forState: .Normal)
         phoneButton.tag = indexPath.row
         phoneButton.addTarget(self, action: "callButtonClick:", forControlEvents: .TouchUpInside)
         cell.addSubview(phoneButton)
         
-        cell.separatorInset.bottom = 1.0
+        //cell.separatorInset.bottom = 1.0
         return cell
     }
     
@@ -92,33 +96,5 @@ class DeliveryAllViewController: UIViewController, UITableViewDataSource, UITabl
     // call Button event handler
     func callButtonClick(sender: UIButton!) {
         Util.makePhoneCall(self.storeList.storeList[sender.tag].phone, storeID: self.storeList.storeList[sender.tag].id)
-    }
-    
-    func beginParsing() {
-        if self.storeList.storeList.count > 0 {
-            // not first call.
-            // do not need to read data
-            return
-        }
-        
-        let fileData = Util.readFile(Util.DeliveryFoodFilename)
-        
-        if fileData != nil {
-            let xmlDom = SWXMLHash.parse(fileData!)
-            
-            for item in xmlDom["delivery"]["information"].all {
-                let id = item["id"].element!.text!
-                let name = item["name"].element!.text!
-                let phone = item["phone"].element!.text
-                let runTime = item["runTime"].element!.text
-                let category = item["category"].element!.text
-                
-                self.storeList.storeList.append(StoreModel(id: id, name: name, phone: phone, runTime: runTime, category: category))
-            }
-            
-            dispatch_async(dispatch_get_main_queue(), {
-                self.storeListTableView.reloadData()
-            })
-        }
     }
 }

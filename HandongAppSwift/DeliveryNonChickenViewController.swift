@@ -22,9 +22,12 @@ class DeliveryNonChickenViewController: UIViewController, UITableViewDataSource,
         storeListTableView.dataSource = self
         storeListTableView.delegate = self
         
-        storeListTableView.rowHeight = 50
+        storeListTableView.rowHeight = 44
         
         // Init Store info
+        if !(StoreListModel.sharedInstance.storeList.count > 0) {
+            StoreListDAO.beginParsing(&StoreListModel.sharedInstance.storeList)
+        }
         let allList = StoreListModel.sharedInstance.storeList
         
         for item in allList {
