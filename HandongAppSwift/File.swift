@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import UIkit
+
+class StudentResourcesPhone: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    
+}

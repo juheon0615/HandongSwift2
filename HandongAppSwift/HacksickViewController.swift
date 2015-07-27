@@ -407,7 +407,7 @@ class HacksickViewController: UIViewController {
     }
     
     func parseHacksickXML(data: NSString) {
-        let xmlDom = SWXMLHash.parse(data)
+        let xmlDom = SWXMLHash.parse(data as String)
         
         hacksickItem = HacksickModel(date: xmlDom[rootTag][dateTag].element!.text!,
             breakfast: xmlDom[rootTag][koteBreTag][menuTag].element!.text,

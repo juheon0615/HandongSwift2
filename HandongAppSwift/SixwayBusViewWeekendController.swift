@@ -62,7 +62,7 @@ class SixwayBusViewWeekendController: UIViewController, UITableViewDataSource, U
         let fileData = Util.readFile(Util.SixwayWeekendBusFilename)
         
         if fileData != nil {
-            let xml = SWXMLHash.parse(fileData!)
+            let xml = SWXMLHash.parse(fileData! as String)
             
             let count = xml["WeekendBus"]["tZone"].all.count
             
@@ -100,9 +100,9 @@ class SixwayBusViewWeekendController: UIViewController, UITableViewDataSource, U
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell! = self.weekendTimeTableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+        var cell:UITableViewCell! = self.weekendTimeTableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
         if cell == nil {
-            cell = NSBundle.mainBundle().loadNibNamed("Cell", owner: self, options: nil)[0] as UITableViewCell
+            cell = NSBundle.mainBundle().loadNibNamed("Cell", owner: self, options: nil)[0] as! UITableViewCell
         }
         
         // remove previous labels

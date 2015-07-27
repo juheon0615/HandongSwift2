@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D2F33EE1B5CE027008B61E7 /* StudentResourcesOptime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2F33ED1B5CE027008B61E7 /* StudentResourcesOptime.swift */; };
+		3D2F33F01B5CE05E008B61E7 /* OpTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2F33EF1B5CE05E008B61E7 /* OpTimeModel.swift */; };
+		3D2F33F21B60D501008B61E7 /* StudentResourcesProfessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2F33F11B60D501008B61E7 /* StudentResourcesProfessor.swift */; };
+		3D2F33F41B60D536008B61E7 /* ProfessorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2F33F31B60D536008B61E7 /* ProfessorModel.swift */; };
+		3D2F33FA1B62607D008B61E7 /* carpool icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D2F33F91B62607D008B61E7 /* carpool icon.png */; };
+		3D67073B1B54E1A600B2A06A /* StudentResourcesPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67073A1B54E1A600B2A06A /* StudentResourcesPhone.swift */; };
+		3DA80F9A1B664BA500655B83 /* DdoSooneiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA80F991B664BA500655B83 /* DdoSooneiController.swift */; };
+		3DA80FAA1B6656BC00655B83 /* ddosuni_back.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DA80FA51B6656BC00655B83 /* ddosuni_back.jpg */; };
+		3DA80FAB1B6656BC00655B83 /* ddosuni_cafe.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DA80FA61B6656BC00655B83 /* ddosuni_cafe.png */; };
+		3DA80FAC1B6656BC00655B83 /* ddosuni_house1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DA80FA71B6656BC00655B83 /* ddosuni_house1.jpg */; };
+		3DA80FAD1B6656BC00655B83 /* ddosuni_house2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DA80FA81B6656BC00655B83 /* ddosuni_house2.jpg */; };
+		3DA80FAE1B6656BC00655B83 /* ddosuni_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DA80FA91B6656BC00655B83 /* ddosuni_phone.png */; };
+		3DCB60691B6610F4009E1D34 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB60681B6610F4009E1D34 /* LoginController.swift */; };
 		52055AAE1A81FDF800907406 /* SixwayBusViewWeekendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52055AAD1A81FDF800907406 /* SixwayBusViewWeekendController.swift */; };
 		520636721A81F66500C41E35 /* ComfortBusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520636711A81F66500C41E35 /* ComfortBusModel.swift */; };
 		523DD90F1A8B420C00C21FD7 /* phone_icon_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 523DD90E1A8B420C00C21FD7 /* phone_icon_small.png */; };
@@ -91,6 +104,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D2F33ED1B5CE027008B61E7 /* StudentResourcesOptime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentResourcesOptime.swift; sourceTree = "<group>"; };
+		3D2F33EF1B5CE05E008B61E7 /* OpTimeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpTimeModel.swift; sourceTree = "<group>"; };
+		3D2F33F11B60D501008B61E7 /* StudentResourcesProfessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentResourcesProfessor.swift; sourceTree = "<group>"; };
+		3D2F33F31B60D536008B61E7 /* ProfessorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfessorModel.swift; sourceTree = "<group>"; };
+		3D2F33F91B62607D008B61E7 /* carpool icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "carpool icon.png"; path = "HandongAppSwift/carpool icon.png"; sourceTree = "<group>"; };
+		3D67073A1B54E1A600B2A06A /* StudentResourcesPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentResourcesPhone.swift; sourceTree = "<group>"; };
+		3DA80F991B664BA500655B83 /* DdoSooneiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DdoSooneiController.swift; sourceTree = "<group>"; };
+		3DA80FA51B6656BC00655B83 /* ddosuni_back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ddosuni_back.jpg; path = "../../Downloads/또순이이미지/ddosuni_back.jpg"; sourceTree = "<group>"; };
+		3DA80FA61B6656BC00655B83 /* ddosuni_cafe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ddosuni_cafe.png; path = "../../Downloads/또순이이미지/ddosuni_cafe.png"; sourceTree = "<group>"; };
+		3DA80FA71B6656BC00655B83 /* ddosuni_house1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ddosuni_house1.jpg; path = "../../Downloads/또순이이미지/ddosuni_house1.jpg"; sourceTree = "<group>"; };
+		3DA80FA81B6656BC00655B83 /* ddosuni_house2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ddosuni_house2.jpg; path = "../../Downloads/또순이이미지/ddosuni_house2.jpg"; sourceTree = "<group>"; };
+		3DA80FA91B6656BC00655B83 /* ddosuni_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ddosuni_phone.png; path = "../../Downloads/또순이이미지/ddosuni_phone.png"; sourceTree = "<group>"; };
+		3DCB60681B6610F4009E1D34 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		52055AAD1A81FDF800907406 /* SixwayBusViewWeekendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixwayBusViewWeekendController.swift; sourceTree = "<group>"; };
 		520636711A81F66500C41E35 /* ComfortBusModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComfortBusModel.swift; sourceTree = "<group>"; };
 		523DD90E1A8B420C00C21FD7 /* phone_icon_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_icon_small.png; sourceTree = "<group>"; };
@@ -187,6 +213,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DA875041B4F97BA005C9FC7 /* StudentResource */ = {
+			isa = PBXGroup;
+			children = (
+				3DA875091B4F9845005C9FC7 /* Controller */,
+				3DA875081B4F982D005C9FC7 /* Model */,
+			);
+			name = StudentResource;
+			sourceTree = "<group>";
+		};
+		3DA875081B4F982D005C9FC7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D2F33EF1B5CE05E008B61E7 /* OpTimeModel.swift */,
+				3D2F33F31B60D536008B61E7 /* ProfessorModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3DA875091B4F9845005C9FC7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3D67073A1B54E1A600B2A06A /* StudentResourcesPhone.swift */,
+				3D2F33ED1B5CE027008B61E7 /* StudentResourcesOptime.swift */,
+				3D2F33F11B60D501008B61E7 /* StudentResourcesProfessor.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		3DCB60671B6610C1009E1D34 /* LoginController */ = {
+			isa = PBXGroup;
+			children = (
+				3DCB60681B6610F4009E1D34 /* LoginController.swift */,
+			);
+			name = LoginController;
+			sourceTree = "<group>";
+		};
+		3DCB606C1B6623C2009E1D34 /* DdoSoonei */ = {
+			isa = PBXGroup;
+			children = (
+				3DA80FA51B6656BC00655B83 /* ddosuni_back.jpg */,
+				3DA80FA61B6656BC00655B83 /* ddosuni_cafe.png */,
+				3DA80FA71B6656BC00655B83 /* ddosuni_house1.jpg */,
+				3DA80FA81B6656BC00655B83 /* ddosuni_house2.jpg */,
+				3DA80FA91B6656BC00655B83 /* ddosuni_phone.png */,
+				3DA80F991B664BA500655B83 /* DdoSooneiController.swift */,
+			);
+			name = DdoSoonei;
+			sourceTree = "<group>";
+		};
 		524DD4211A89F2ED00DEEC28 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +394,7 @@
 		52BCB44F1A7FB6B70016A37E = {
 			isa = PBXGroup;
 			children = (
+				3D2F33F91B62607D008B61E7 /* carpool icon.png */,
 				52BCB45A1A7FB6B70016A37E /* HandongAppSwift */,
 				52BCB4741A7FB6B70016A37E /* HandongAppSwiftTests */,
 				52BCB4591A7FB6B70016A37E /* Products */,
@@ -337,6 +413,9 @@
 		52BCB45A1A7FB6B70016A37E /* HandongAppSwift */ = {
 			isa = PBXGroup;
 			children = (
+				3DCB606C1B6623C2009E1D34 /* DdoSoonei */,
+				3DCB60671B6610C1009E1D34 /* LoginController */,
+				3DA875041B4F97BA005C9FC7 /* StudentResource */,
 				528B652E1A890E060006E0AC /* DeliveryFoodView */,
 				527A698C1A835B8B003B2EB5 /* MealView */,
 				52B0D2FF1A80EE07000A2A02 /* Utils */,
@@ -482,6 +561,7 @@
 					};
 					52BCB4701A7FB6B70016A37E = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = TW49Q8AG9T;
 						TestTargetID = 52BCB4571A7FB6B70016A37E;
 					};
 				};
@@ -510,8 +590,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D2F33FA1B62607D008B61E7 /* carpool icon.png in Resources */,
+				3DA80FAE1B6656BC00655B83 /* ddosuni_phone.png in Resources */,
 				52BCB48F1A808CA70016A37E /* handong.png in Resources */,
 				52B0D2F21A80BFF7000A2A02 /* main_bus.png in Resources */,
+				3DA80FAB1B6656BC00655B83 /* ddosuni_cafe.png in Resources */,
 				52B0D2EE1A80BFF7000A2A02 /* hansick.png in Resources */,
 				52B0D2F11A80BFF7000A2A02 /* main_alarm.png in Resources */,
 				52B0D2F01A80BFF7000A2A02 /* left.png in Resources */,
@@ -525,11 +608,14 @@
 				52BCB4991A80B9760016A37E /* Icon.png in Resources */,
 				523DD9131A8B4AA500C21FD7 /* unselected_star_small.png in Resources */,
 				52B0D2F31A80BFF7000A2A02 /* notice_logo.png in Resources */,
+				3DA80FAA1B6656BC00655B83 /* ddosuni_back.jpg in Resources */,
 				526B61761A9B0A0400A8B81A /* hgutube_icon.png in Resources */,
+				3DA80FAC1B6656BC00655B83 /* ddosuni_house1.jpg in Resources */,
 				52B0D2F61A80BFF7000A2A02 /* zzimdak.png in Resources */,
 				52B0D2F41A80BFF7000A2A02 /* setting.png in Resources */,
 				526B61781A9B0A2100A8B81A /* hgushop.png in Resources */,
 				52BCB4911A808CA70016A37E /* map.png in Resources */,
+				3DA80FAD1B6656BC00655B83 /* ddosuni_house2.jpg in Resources */,
 				524DD4261A89FFA000DEEC28 /* phone_icon.png in Resources */,
 				52BCB46C1A7FB6B70016A37E /* LaunchScreen.xib in Resources */,
 				52B0D2F51A80BFF7000A2A02 /* timetable.png in Resources */,
@@ -555,6 +641,7 @@
 				52BCB4601A7FB6B70016A37E /* RootViewController.swift in Sources */,
 				523DD9151A8B4B6300C21FD7 /* DeliveryDetailViewController.swift in Sources */,
 				52B0D3061A81DD82000A2A02 /* SWXMLHash.swift in Sources */,
+				3D2F33F41B60D536008B61E7 /* ProfessorModel.swift in Sources */,
 				52BCB4641A7FB6B70016A37E /* ModelController.swift in Sources */,
 				52BCB4941A80A42E0016A37E /* LoadingViewController.swift in Sources */,
 				52055AAE1A81FDF800907406 /* SixwayBusViewWeekendController.swift in Sources */,
@@ -567,6 +654,7 @@
 				525FC66A1A9702A9001BE456 /* ShopInfoLabel.swift in Sources */,
 				524170F41A84A5EB00F96631 /* MomsModel.swift in Sources */,
 				52B0D2FC1A80EBE5000A2A02 /* BusModel.swift in Sources */,
+				3DA80F9A1B664BA500655B83 /* DdoSooneiController.swift in Sources */,
 				52B0D2FE1A80ED45000A2A02 /* SixwayBusViewWeekdayController.swift in Sources */,
 				526B617C1A9BFAB900A8B81A /* StoreListDAO.swift in Sources */,
 				52BCB4621A7FB6B70016A37E /* DataViewController.swift in Sources */,
@@ -579,6 +667,8 @@
 				527D10A11A8CB39000F6595B /* MainMenuNameLabel.swift in Sources */,
 				527D109E1A8CA80100F6595B /* MainMenuUIImageView.swift in Sources */,
 				527A69921A8361A1003B2EB5 /* MenuModel.swift in Sources */,
+				3DCB60691B6610F4009E1D34 /* LoginController.swift in Sources */,
+				3D2F33F01B5CE05E008B61E7 /* OpTimeModel.swift in Sources */,
 				52B0D3011A80EE14000A2A02 /* Util.swift in Sources */,
 				524DD4201A89F2D400DEEC28 /* DeliveryTabBarController.swift in Sources */,
 				52BCB45E1A7FB6B70016A37E /* AppDelegate.swift in Sources */,
@@ -588,14 +678,17 @@
 				524A659E1A950510000867E5 /* MenuItemView.swift in Sources */,
 				524170FA1A865BFC00F96631 /* MainBusUILabel.swift in Sources */,
 				524170F81A84B66200F96631 /* HyoamModel.swift in Sources */,
+				3D2F33F21B60D501008B61E7 /* StudentResourcesProfessor.swift in Sources */,
 				520636721A81F66500C41E35 /* ComfortBusModel.swift in Sources */,
 				52B0D2FA1A80E12D000A2A02 /* SixwayBusTabBarController.swift in Sources */,
+				3D2F33EE1B5CE027008B61E7 /* StudentResourcesOptime.swift in Sources */,
 				52B8F33D1A82055700BC2B99 /* SchoolBusViewWeekdayController.swift in Sources */,
 				524170F61A84B59300F96631 /* HyoamViewController.swift in Sources */,
 				524DD41C1A89EECB00DEEC28 /* StoreModel.swift in Sources */,
 				525FC66C1A970377001BE456 /* ShopInfoHeaderLabel.swift in Sources */,
 				52B0D3031A80F393000A2A02 /* BusTzoneModel.swift in Sources */,
 				524DD41E1A89F2BF00DEEC28 /* DeliveryAllViewController.swift in Sources */,
+				3D67073B1B54E1A600B2A06A /* StudentResourcesPhone.swift in Sources */,
 				524DD4281A8A59D500DEEC28 /* DeliveryNonChickenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -752,6 +845,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -763,6 +858,7 @@
 				INFOPLIST_FILE = HandongAppSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HandongAppSwift.app/HandongAppSwift";
 			};
 			name = Debug;
@@ -771,6 +867,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -778,6 +876,7 @@
 				INFOPLIST_FILE = HandongAppSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HandongAppSwift.app/HandongAppSwift";
 			};
 			name = Release;

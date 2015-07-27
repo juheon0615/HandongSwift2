@@ -20,7 +20,7 @@ class StoreListDAO {
         let fileData = Util.readFile(Util.DeliveryFoodFilename)
         
         if fileData != nil {
-            let xmlDom = SWXMLHash.parse(fileData!)
+            let xmlDom = SWXMLHash.parse(fileData! as String)
             
             for item in xmlDom["delivery"]["information"].all {
                 let id = item["id"].element!.text!

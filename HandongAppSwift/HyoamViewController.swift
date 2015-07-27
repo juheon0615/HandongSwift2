@@ -52,7 +52,7 @@ class HyoamViewController: UIViewController {
     }
     
     func parseHyoamXML(data: NSString) {
-        let xmlDom = SWXMLHash.parse(data)
+        let xmlDom = SWXMLHash.parse(data as String)
         
         var alldayMenuCount = xmlDom[rootTag][itemTag].all.count
         

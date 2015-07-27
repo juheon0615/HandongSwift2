@@ -36,7 +36,7 @@ class DeliveryDetailViewController: UIViewController {
         let file = Util.readFile(Util.DeliveryDetailFilename(store!.id))
         
         if file != nil {
-            self.storeInfo = StoreDetailModel(xmlDom: SWXMLHash.parse(file!))
+            self.storeInfo = StoreDetailModel(xmlDom: SWXMLHash.parse(file! as String))
             self.displayData()
         }
     }

@@ -42,9 +42,9 @@ class DeliveryChickenViewController: UIViewController, UITableViewDataSource, UI
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell! = self.storeListTableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+        var cell:UITableViewCell! = self.storeListTableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
         if cell == nil {
-            cell = NSBundle.mainBundle().loadNibNamed("Cell", owner: self, options: nil)[0] as UITableViewCell
+            cell = NSBundle.mainBundle().loadNibNamed("Cell", owner: self, options: nil)[0] as! UITableViewCell
         }
         
         // remove previous labels
@@ -94,7 +94,7 @@ class DeliveryChickenViewController: UIViewController, UITableViewDataSource, UI
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "deliveryDetailSegue" {
-            var dstView = segue.destinationViewController as DeliveryDetailViewController
+            var dstView = segue.destinationViewController as! DeliveryDetailViewController
             dstView.store = self.selectedStore
         }
     }

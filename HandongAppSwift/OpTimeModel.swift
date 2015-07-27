@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+class OpTime {
+    var name: String
+    var runtime: String
+    var note: String
+    
+    init(name: String, runtime: String, note: String?){
+        self.name = name
+        self.runtime = runtime
+        self.note = (note != nil ? note!:"")
+    }
+  
+}

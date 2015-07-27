@@ -105,6 +105,14 @@ class Util {
         return "-"
     }
     
+    // For Student Resource Operating Time
+    class var OperatingTimeURL: String {
+        return Util.ServerURL + "/getOptime.jsp"
+    }
+    
+    class var OperatingTimeName: String {
+        return "OpTime.xml"
+    }
     
     
     class func clearAllStoredData() {        
@@ -135,7 +143,9 @@ class Util {
         
         if fileMgr.fileExistsAtPath(XMLFile) {
             let databuffer = fileMgr.contentsAtPath(XMLFile)
-            return NSString(data: databuffer!, encoding: NSUTF8StringEncoding)
+            let dataString:String
+            
+            return NSString(data: databuffer!, encoding: NSUTF8StringEncoding) as! String
         } else {
             return nil
         }
@@ -252,8 +262,11 @@ class Util {
         let day = components.day
         let hour = components.hour
         let minutes = components.minute
+      
         
-        let dateString = String(year%100) + "/" + String(month) + "/" + String(day)
+        let dateString = String(year%100)
+            //+ "/" + String(month) + "/" + String(day)... code removed for convenience
+        
         let timeString = String(hour) + ":" + String(minutes)
         let retString = dateString + " " + timeString
         
@@ -295,7 +308,7 @@ class Util {
     class func getDocumentDirectory() -> String {
         let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         
-        return dirPaths[0] as String
+        return dirPaths[0] as! String
     }
     
     class func makeFoodDirectory() {
@@ -304,7 +317,7 @@ class Util {
         let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
             .UserDomainMask, true)
         
-        let docsDir = dirPaths[0] as String
+        let docsDir = dirPaths[0] as! String
         let newDir = docsDir.stringByAppendingPathComponent(Util.FoodFolderName)
         
         var error: NSError?
@@ -324,7 +337,7 @@ class Util {
         let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
             .UserDomainMask, true)
         
-        let docsDir = dirPaths[0] as String
+        let docsDir = dirPaths[0] as! String
         let newDir = docsDir.stringByAppendingPathComponent(id)
         
         var error: NSError?
@@ -348,7 +361,7 @@ class Util {
     class func registerRecentCall(storeID: String) {
         var userDefaults = NSUserDefaults.standardUserDefaults()
         
-        var recent: Array<String>? = userDefaults.valueForKey(Util.RecentCallKey) as Array<String>?
+        var recent: Array<String>? = userDefaults.valueForKey(Util.RecentCallKey) as! Array<String>?
         
         if recent != nil {
             recent!.insert(storeID + Util.recentCallSpliter + Util.getCurrentTime(), atIndex: 0)

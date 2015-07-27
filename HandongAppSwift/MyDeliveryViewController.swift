@@ -61,7 +61,7 @@ class MyDeliveryViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func getRecentIDs() {
-        let list = userDefaults.stringArrayForKey(Util.RecentCallKey) as Array<String>?
+        let list = userDefaults.stringArrayForKey(Util.RecentCallKey) as! Array<String>?
         
         if list == nil {
             return
@@ -97,9 +97,9 @@ class MyDeliveryViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if tableView == self.favoriteTableView {
-            var cell:UITableViewCell! = self.favoriteTableView.dequeueReusableCellWithIdentifier("fCell") as UITableViewCell
+            var cell:UITableViewCell! = self.favoriteTableView.dequeueReusableCellWithIdentifier("fCell") as! UITableViewCell
             if cell == nil {
-                cell = NSBundle.mainBundle().loadNibNamed("fCell", owner: self, options: nil)[0] as UITableViewCell
+                cell = NSBundle.mainBundle().loadNibNamed("fCell", owner: self, options: nil)[0] as! UITableViewCell
             }
             
             // remove previous labels
@@ -141,9 +141,9 @@ class MyDeliveryViewController: UIViewController, UITableViewDataSource, UITable
             cell.separatorInset.bottom = 1.0
             return cell
         } else {
-            var cell:UITableViewCell! = self.recentTableView.dequeueReusableCellWithIdentifier("rCell") as UITableViewCell
+            var cell:UITableViewCell! = self.recentTableView.dequeueReusableCellWithIdentifier("rCell") as! UITableViewCell
             if cell == nil {
-                cell = NSBundle.mainBundle().loadNibNamed("rCell", owner: self, options: nil)[0] as UITableViewCell
+                cell = NSBundle.mainBundle().loadNibNamed("rCell", owner: self, options: nil)[0] as! UITableViewCell
             }
             
             // remove previous labels
@@ -199,14 +199,14 @@ class MyDeliveryViewController: UIViewController, UITableViewDataSource, UITable
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "deliveryDetailSegue" {
-            var dstView = segue.destinationViewController as DeliveryDetailViewController
+            var dstView = segue.destinationViewController as! DeliveryDetailViewController
             dstView.store = self.selectedStore
         }
     }
     
     // call Button event handler
     func callButtonClick(sender: UIButton!) {
-        let selectedView = sender.superview as UITableViewCell
+        let selectedView = sender.superview as! UITableViewCell
         var number: String
         var id: String
         
@@ -225,7 +225,7 @@ class MyDeliveryViewController: UIViewController, UITableViewDataSource, UITable
     }
 
     func clerButtonClick(sender: UIButton!) {
-        let list = userDefaults.stringArrayForKey(Util.RecentCallKey) as Array<String>?
+        let list = userDefaults.stringArrayForKey(Util.RecentCallKey) as! Array<String>?
         
         if list == nil {
             return

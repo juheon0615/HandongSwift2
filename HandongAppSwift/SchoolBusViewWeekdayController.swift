@@ -62,7 +62,7 @@ class SchoolBusViewWeekdayController: UIViewController, UITableViewDataSource, U
         let fileData = Util.readFile(Util.SchoolWeekdayBusFilename)
         
         if fileData != nil {
-            let xml = SWXMLHash.parse(fileData!)
+            let xml = SWXMLHash.parse(fileData! as String)
                 
             let count = xml["WeekdayBus"]["tZone"].all.count
             
@@ -99,9 +99,9 @@ class SchoolBusViewWeekdayController: UIViewController, UITableViewDataSource, U
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell! = self.weekdayTimeTableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+        var cell:UITableViewCell! = self.weekdayTimeTableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
         if cell == nil {
-            cell = NSBundle.mainBundle().loadNibNamed("Cell", owner: self, options: nil)[0] as UITableViewCell
+            cell = NSBundle.mainBundle().loadNibNamed("Cell", owner: self, options: nil)[0] as! UITableViewCell
         }
         
         // remove previous labels
@@ -118,7 +118,7 @@ class SchoolBusViewWeekdayController: UIViewController, UITableViewDataSource, U
         fstLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
         fstLabel.textAlignment =  NSTextAlignment.Center
         // size control for "바로크가구점"
-        if countElements(fstLabel.text!) > 5 {
+        if count(fstLabel.text!) > 5 {
             fstLabel.font = UIFont(name: fstLabel.font.fontName, size: 13)
         }
         cell.addSubview(fstLabel)

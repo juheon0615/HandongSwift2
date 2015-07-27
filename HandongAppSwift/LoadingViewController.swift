@@ -128,7 +128,7 @@ class LoadingViewController: UIViewController {
     }
     
     func checkBusXMLVersion(data: NSString) -> String {
-        var xmlDom = SWXMLHash.parse(data)
+        var xmlDom = SWXMLHash.parse(data as String)
         var rootTag: String
     
         switch xmlDom.element!.name {
@@ -305,7 +305,7 @@ class LoadingViewController: UIViewController {
     }
     
     func getDeliveryInfo() {
-        deliveryXMLFile = Util.readFile(Util.DeliveryFoodFilename)
+        deliveryXMLFile = Util.readFile(Util.DeliveryFoodFilename) as? String
         
         var version: String? = nil
         if deliveryXMLFile != nil {
@@ -315,12 +315,12 @@ class LoadingViewController: UIViewController {
     }
     
     func checkDeliveryFoodXMLVersion(data: NSString) -> String {
-        let xmlDom = SWXMLHash.parse(data)
+        let xmlDom = SWXMLHash.parse(data as String)
         
         return xmlDom["delivery"]["version"].element!.text!
     }
     func checkDeliveryDetailXMLVersion(data: NSString) -> String {
-        let xmlDom = SWXMLHash.parse(data)
+        let xmlDom = SWXMLHash.parse(data as String)
         
         return xmlDom["yasick"]["version"].element!.text!
     }
@@ -342,7 +342,7 @@ class LoadingViewController: UIViewController {
             // case: do not need to update xml
             if xmlDom["delivery"]["vResult"].element!.text! == "noChange" {
                 println("Already Exist proper DATA")
-                xmlDom = SWXMLHash.parse(Util.readFile(Util.DeliveryFoodFilename)!)
+                xmlDom = SWXMLHash.parse(Util.readFile(Util.DeliveryFoodFilename)! as String)
             } else if xmlDom["delivery"]["vResult"].element!.text! == "change" {
                 // remove previous file
                 Util.removeFile(Util.DeliveryFoodFilename)
@@ -371,7 +371,7 @@ class LoadingViewController: UIViewController {
             
             var param = ""
             if file != nil {
-                let xmlDom = SWXMLHash.parse(file!)
+                let xmlDom = SWXMLHash.parse(file! as String)
                 param += "?version=" + xmlDom["yasick"]["version"].element!.text!
             }
             
@@ -392,7 +392,7 @@ class LoadingViewController: UIViewController {
             // case: do not need to update xml
             if xmlDom["yasick"]["vResult"].element!.text! == "noChange" {
                 println("Already Exist proper DATA")
-                xmlDom = SWXMLHash.parse(Util.readFile(Util.DeliveryFoodFilename)!)
+                xmlDom = SWXMLHash.parse(Util.readFile(Util.DeliveryFoodFilename)! as String)
             } else if xmlDom["yasick"]["vResult"].element!.text! == "change" {
                 // remove previous file
                 Util.removeFile(Util.DeliveryDetailFilename(id))
