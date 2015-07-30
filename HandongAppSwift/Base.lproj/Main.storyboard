@@ -362,16 +362,16 @@
                         <viewControllerLayoutGuide type="bottom" id="fVi-av-42M"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Sgx-HO-cha">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1IB-u1-s5R">
-                                <rect key="frame" x="0.0" y="20" width="160" height="253"/>
+                                <rect key="frame" x="0.0" y="20" width="160" height="299"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                             </containerView>
                             <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibB-MN-Uuw">
-                                <rect key="frame" x="160" y="20" width="160" height="253"/>
+                                <rect key="frame" x="160" y="20" width="160" height="299"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -379,10 +379,10 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9lQ-9e-wi1">
-                                <rect key="frame" x="0.0" y="273" width="320" height="207"/>
+                                <rect key="frame" x="0.0" y="319" width="320" height="249"/>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZL-0C-jOr">
-                                <rect key="frame" x="16" y="175" width="134" height="98"/>
+                                <rect key="frame" x="16" y="201" width="134" height="118"/>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.81960784310000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
                                 <state key="normal" title="식단">
@@ -393,7 +393,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" showsTouchWhenHighlighted="YES" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRj-gb-hDV">
-                                <rect key="frame" x="16" y="75" width="134" height="98"/>
+                                <rect key="frame" x="16" y="81" width="134" height="118"/>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.81960784310000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
@@ -405,7 +405,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyo-w7-5Bv">
-                                <rect key="frame" x="112" y="283" width="96" height="59"/>
+                                <rect key="frame" x="112" y="329" width="96" height="73"/>
                                 <color key="backgroundColor" red="0.36470588240000001" green="0.82352941180000006" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="편의정보">
@@ -416,7 +416,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cum-Di-xz8">
-                                <rect key="frame" x="208" y="283" width="96" height="59"/>
+                                <rect key="frame" x="208" y="329" width="96" height="73"/>
                                 <color key="backgroundColor" red="0.28367337279999999" green="0.83762463789999997" blue="0.2540284257" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="또순이">
@@ -427,7 +427,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgt-wS-HUk">
-                                <rect key="frame" x="16" y="342" width="96" height="59"/>
+                                <rect key="frame" x="16" y="402" width="96" height="73"/>
                                 <color key="backgroundColor" red="0.36470588240000001" green="0.82352941180000006" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="HGU Shop">
@@ -435,15 +435,18 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nok-ls-T4M">
-                                <rect key="frame" x="112" y="342" width="96" height="59"/>
+                                <rect key="frame" x="112" y="402" width="96" height="73"/>
                                 <color key="backgroundColor" red="0.36470588240000001" green="0.82352941180000006" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="알람">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="0W4-Tv-Ja3" kind="modal" id="MOx-ER-7i7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1G-pW-6Df">
-                                <rect key="frame" x="208" y="342" width="96" height="59"/>
+                                <rect key="frame" x="208" y="402" width="96" height="73"/>
                                 <color key="backgroundColor" red="0.36470588240000001" green="0.82352941180000006" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="알람">
@@ -451,7 +454,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="top" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBo-47-vOA">
-                                <rect key="frame" x="170" y="75" width="134" height="98"/>
+                                <rect key="frame" x="170" y="81" width="134" height="118"/>
                                 <color key="backgroundColor" red="0.37254901960784315" green="0.76078431372549016" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
@@ -463,7 +466,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="top" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9e-3I-Ucz">
-                                <rect key="frame" x="170" y="175" width="134" height="98"/>
+                                <rect key="frame" x="170" y="201" width="134" height="118"/>
                                 <color key="backgroundColor" red="0.37254901959999998" green="0.76078431369999999" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
@@ -475,7 +478,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xco-ah-xJQ">
-                                <rect key="frame" x="16" y="411" width="84" height="59"/>
+                                <rect key="frame" x="16" y="485" width="84" height="73"/>
                                 <color key="backgroundColor" red="0.93333333333333335" green="0.40000000000000002" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="시간표">
@@ -486,7 +489,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APx-nv-Ba9">
-                                <rect key="frame" x="100" y="411" width="120" height="59"/>
+                                <rect key="frame" x="100" y="485" width="120" height="73"/>
                                 <color key="backgroundColor" red="0.93333333330000001" green="0.40000000000000002" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal">
@@ -495,7 +498,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcP-pg-E1b">
-                                <rect key="frame" x="208" y="411" width="96" height="59"/>
+                                <rect key="frame" x="208" y="485" width="96" height="73"/>
                                 <color key="backgroundColor" red="0.93644208630421866" green="0.27134449396707222" blue="0.25424467309800142" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="한동카풀">
@@ -506,13 +509,13 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="zzimdak.png" translatesAutoresizingMaskIntoConstraints="NO" id="F6w-Yj-kZk">
-                                <rect key="frame" x="56" y="92" width="53" height="53"/>
+                                <rect key="frame" x="56" y="108" width="53" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="F6w-Yj-kZk" secondAttribute="height" multiplier="1:1" id="ga7-Gk-F7W"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cN5-kD-BLp">
-                                <rect key="frame" x="177" y="105" width="120" height="1"/>
+                                <rect key="frame" x="177" y="111" width="120" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -523,7 +526,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOF-jl-tnv">
-                                <rect key="frame" x="177" y="205" width="120" height="1"/>
+                                <rect key="frame" x="177" y="231" width="120" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="o9M-Sw-xTS"/>
@@ -533,105 +536,105 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_bus.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dfx-ua-Gbg">
-                                <rect key="frame" x="174" y="79" width="24" height="24"/>
+                                <rect key="frame" x="174" y="85" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Dfx-ua-Gbg" secondAttribute="height" multiplier="1:1" id="w4b-zB-Fhh"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_bus.png" translatesAutoresizingMaskIntoConstraints="NO" id="klI-UC-luE">
-                                <rect key="frame" x="174" y="179" width="24" height="24"/>
+                                <rect key="frame" x="174" y="205" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="klI-UC-luE" secondAttribute="height" multiplier="1:1" id="VwT-dZ-Lb0"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hansick.png" translatesAutoresizingMaskIntoConstraints="NO" id="ekH-9m-VTO">
-                                <rect key="frame" x="56" y="183" width="53" height="53"/>
+                                <rect key="frame" x="56" y="219" width="53" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ekH-9m-VTO" secondAttribute="height" multiplier="1:1" id="wEa-dw-FTj"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(평일)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNk-YW-qXp">
-                                <rect key="frame" x="266" y="86" width="30" height="16"/>
+                                <rect key="frame" x="266" y="92" width="30" height="16"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(평일)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEb-0h-frS">
-                                <rect key="frame" x="266" y="186" width="30" height="16"/>
+                                <rect key="frame" x="266" y="212" width="30" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="handong.png" translatesAutoresizingMaskIntoConstraints="NO" id="Y58-wv-x6A">
-                                <rect key="frame" x="102" y="30" width="116" height="32"/>
+                                <rect key="frame" x="91" y="30" width="138" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Y58-wv-x6A" secondAttribute="height" multiplier="362:100" id="IND-nq-F1x"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UI3-98-csU">
-                                <rect key="frame" x="16" y="283" width="96" height="59"/>
+                                <rect key="frame" x="16" y="329" width="96" height="73"/>
                                 <color key="backgroundColor" red="0.36470588235294116" green="0.82352941176470584" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="공지사항">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7Ig-N3-QZL" kind="push" id="AaM-9e-i9b"/>
+                                    <segue destination="7Ig-N3-QZL" kind="modal" id="VrQ-o1-d1U"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notice_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ifn-Rk-0iS">
-                                <rect key="frame" x="49" y="290" width="30" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="notice_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ifn-Rk-0iS">
+                                <rect key="frame" x="46" y="340" width="36" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ifn-Rk-0iS" secondAttribute="height" multiplier="1:1" id="tbb-R0-HRf"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="conv.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Jj-9w-4d8">
-                                <rect key="frame" x="146" y="290" width="29" height="29"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="conv.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Jj-9w-4d8">
+                                <rect key="frame" x="143" y="340" width="35" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6Jj-9w-4d8" secondAttribute="height" multiplier="1:1" id="qKB-Dy-C88"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home.png" translatesAutoresizingMaskIntoConstraints="NO" id="qgr-9f-YMb">
-                                <rect key="frame" x="240" y="289" width="32" height="32"/>
+                                <rect key="frame" x="236" y="338" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qgr-9f-YMb" secondAttribute="height" multiplier="1:1" id="Uiv-U6-xIP"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_alarm.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fei-ew-GLE">
-                                <rect key="frame" x="145" y="349" width="30" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="main_alarm.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fei-ew-GLE">
+                                <rect key="frame" x="142" y="413" width="36" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Fei-ew-GLE" secondAttribute="height" multiplier="1:1" id="2hF-U1-YNH"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting.png" translatesAutoresizingMaskIntoConstraints="NO" id="m6B-FC-qQQ">
-                                <rect key="frame" x="241" y="349" width="30" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="setting.png" translatesAutoresizingMaskIntoConstraints="NO" id="m6B-FC-qQQ">
+                                <rect key="frame" x="238" y="413" width="36" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="m6B-FC-qQQ" secondAttribute="height" multiplier="1:1" id="dYI-9Y-CLg"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timetable.png" translatesAutoresizingMaskIntoConstraints="NO" id="I9j-cT-RCs">
-                                <rect key="frame" x="39" y="413" width="39" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="I9j-cT-RCs" secondAttribute="height" multiplier="1:1" id="elY-nW-H9y"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ghost_logo_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="kua-3l-H9Z">
-                                <rect key="frame" x="104" y="411" width="113" height="59"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ghost_logo_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="kua-3l-H9Z">
+                                <rect key="frame" x="91" y="485" width="139" height="73"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kua-3l-H9Z" secondAttribute="height" multiplier="300:156" id="TOi-Q6-poh"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hgushop.png" translatesAutoresizingMaskIntoConstraints="NO" id="PUi-hE-Y74">
-                                <rect key="frame" x="45" y="344" width="39" height="39"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="hgushop.png" translatesAutoresizingMaskIntoConstraints="NO" id="PUi-hE-Y74">
+                                <rect key="frame" x="40" y="407" width="49" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="PUi-hE-Y74" secondAttribute="height" multiplier="1:1" id="yKN-fF-FQp"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="carpool icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Qe-Is-dqx">
-                                <rect key="frame" x="238" y="415" width="36" height="36"/>
+                                <rect key="frame" x="238" y="492" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="5Qe-Is-dqx" secondAttribute="height" multiplier="1:1" id="i3Z-Qu-VBF"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="timetable.png" translatesAutoresizingMaskIntoConstraints="NO" id="I9j-cT-RCs">
+                                <rect key="frame" x="34" y="490" width="49" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="I9j-cT-RCs" secondAttribute="height" multiplier="1:1" id="elY-nW-H9y"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -759,7 +762,6 @@
                             <constraint firstItem="TZL-0C-jOr" firstAttribute="leading" secondItem="Sgx-HO-cha" secondAttribute="leadingMargin" id="zcI-46-tHh"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="alarmButton" destination="Nok-ls-T4M" id="NFx-XD-6bf"/>
                         <outlet property="convButton" destination="fyo-w7-5Bv" id="Can-8N-hdz"/>
@@ -782,7 +784,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ief-6C-oV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2643" y="1034"/>
+            <point key="canvasLocation" x="-467" y="906"/>
         </scene>
         <!--Sixway Bus Weekend Item-->
         <scene sceneID="Ti5-MH-Mqd">
@@ -1467,7 +1469,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="beq-CD-dka" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1958.5" y="440.5"/>
+            <point key="canvasLocation" x="-948.5" y="778.5"/>
         </scene>
         <!--Sixway Bus Weekdays Item-->
         <scene sceneID="uVh-Gg-LRq">
@@ -1897,6 +1899,420 @@
             </objects>
             <point key="canvasLocation" x="-172.5" y="2501.5"/>
         </scene>
+        <!--CarpoolLaoding-->
+        <scene sceneID="b2s-Bo-8f8">
+            <objects>
+                <viewController title="CarpoolLaoding" id="0W4-Tv-Ja3" customClass="CarpoolLoading" customModule="HandongAppSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uWt-K1-Kei"/>
+                        <viewControllerLayoutGuide type="bottom" id="rA7-H4-lql"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DEt-tF-6lS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="xxdpi_LoadingPage-03.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uVB-9k-GYn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="buffering.png" translatesAutoresizingMaskIntoConstraints="NO" id="M1K-fw-v04">
+                                <rect key="frame" x="161" y="404" width="52" height="53"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeP-je-umw">
+                                <rect key="frame" x="195" y="42" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Z6Z-Kt-Mye" kind="modal" id="sL3-ED-p4O"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VIi-c8-22l"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dPc-2M-xmV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2.5" y="883.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5o5-OU-Utu">
+            <objects>
+                <viewController id="Tpf-o4-d43" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kzd-Hc-acu"/>
+                        <viewControllerLayoutGuide type="bottom" id="XIS-Fk-6cV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uun-vp-AMf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="caf-Ch-hPo">
+                                <rect key="frame" x="-12" y="5" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="f1U-Uw-Cmh">
+                                        <barButtonItem key="backBarButtonItem" title="&lt; Back" id="lgE-8x-SYP"/>
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" style="plain" id="HR8-rV-rYr">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zuq-pe-RYh">
+                                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="&lt; 뒤로">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="m0K-vR-qXF">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xTv-QA-vKe">
+                                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="My Page">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4SN-ha-k34" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3587" y="565"/>
+        </scene>
+        <!--방목록-->
+        <scene sceneID="JLK-X4-d2w">
+            <objects>
+                <viewController title="방목록" id="sbk-IA-J4s" customClass="RoomListController" customModule="HandongAppSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZgI-Xf-bdr"/>
+                        <viewControllerLayoutGuide type="bottom" id="rrc-l4-QOm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ARE-9e-c5F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m6N-pa-qHQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="방목록" id="VM6-vc-Hso">
+                                        <barButtonItem key="backBarButtonItem" title="&lt; Back" id="fZP-dI-6E8"/>
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" style="plain" id="fR5-Kk-Eza">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="di4-Go-7ga">
+                                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="&lt; 뒤로">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="UqC-SO-ZvO">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="y5v-Qr-db2">
+                                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="방만들기">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="e4h-9L-Khe" kind="modal" id="NRN-sn-RxH"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="kO7-e4-2FX"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DyR-HQ-Gf6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2083.5" y="796.5"/>
+        </scene>
+        <!--켈린더-->
+        <scene sceneID="y7r-am-mnB">
+            <objects>
+                <viewController title="켈린더" id="hAU-Nl-G0w" customClass="CarpoolCalenderController" customModule="HandongAppSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YgB-FJ-fNn"/>
+                        <viewControllerLayoutGuide type="bottom" id="tAj-cn-9xN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kll-26-42L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bFy-EA-XdL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="날짜 선택" id="z8x-hS-07S">
+                                        <barButtonItem key="backBarButtonItem" title="&lt; Back" id="OA7-fO-d66"/>
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" style="plain" id="0vC-hH-TKq">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="buZ-78-ps2">
+                                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="&lt; 뒤로">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="wfz-7f-foh">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ALO-0a-I8r">
+                                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="My Page">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="9qp-LZ-G6a" kind="modal" id="r1A-F6-NyF"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="날짜선택" image="xxdpi_ChatMenu_AlarmOn.png" id="fLu-Po-9TN"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fhf-wg-qua" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1619.5" y="796.5"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="W6F-TH-Zft">
+            <objects>
+                <tabBarController id="Z6Z-Kt-Mye" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="F3h-Ow-w78">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="hAU-Nl-G0w" kind="relationship" relationship="viewControllers" id="Arh-Ok-oDS"/>
+                        <segue destination="sbk-IA-J4s" kind="relationship" relationship="viewControllers" id="s9E-7a-IEr"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YUT-TS-8bY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1026" y="1090"/>
+        </scene>
+        <!--SettingPage-->
+        <scene sceneID="5bv-1a-tr8">
+            <objects>
+                <viewController title="SettingPage" id="CxZ-SA-HOe" customClass="CarpoolSettingController" customModule="HandongAppSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aco-Fz-Alo"/>
+                        <viewControllerLayoutGuide type="bottom" id="Oj2-1T-K7P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q9d-jj-S0O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6CF-Nh-WaD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="설정" id="2OQ-k0-jjI">
+                                        <barButtonItem key="backBarButtonItem" title="&lt; Back" id="14w-zF-1hm"/>
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" style="plain" id="REC-es-Ajz">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iP9-IR-1nL">
+                                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="&lt; 뒤로">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="9qp-LZ-G6a" kind="modal" id="j3Y-AZ-1GX"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kra-sr-Btg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1154.5" y="-34.5"/>
+        </scene>
+        <!--CreateRoomPage-->
+        <scene sceneID="BAR-1P-bAp">
+            <objects>
+                <viewController title="CreateRoomPage" id="e4h-9L-Khe" customClass="CreateRoomController" customModule="HandongAppSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QgM-Qu-8Dz"/>
+                        <viewControllerLayoutGuide type="bottom" id="6yt-sr-kLI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XlU-9I-SpP" customClass="create">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L0g-m6-L0u">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="카풀모집" id="TMH-28-Dzk">
+                                        <barButtonItem key="backBarButtonItem" title="&lt; Back" id="12m-vk-Nn6"/>
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" style="plain" id="PeK-YD-rJn">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lzW-WX-vZ6">
+                                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="&lt; 뒤로">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="sbk-IA-J4s" kind="modal" id="hfb-VK-x8P"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TQR-AQ-woY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2605.5" y="796.5"/>
+        </scene>
+        <!--MyCarpoolPage-->
+        <scene sceneID="GA2-gg-uRX">
+            <objects>
+                <viewController title="MyCarpoolPage" id="9qp-LZ-G6a" customClass="CarpoolMypageController" customModule="HandongAppSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XVF-I1-Mux"/>
+                        <viewControllerLayoutGuide type="bottom" id="cqw-ES-bql"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ePs-9r-t0B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WWS-Kf-YK4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="마이페이지" id="eHd-KI-Abd">
+                                        <barButtonItem key="backBarButtonItem" title="&lt; Back" id="aOS-KP-WbM"/>
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" style="plain" id="SIk-iM-QMv">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FTz-rL-c17">
+                                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="&lt; 뒤로">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="hAU-Nl-G0w" kind="modal" id="iqb-cA-TrP"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="bAl-Ls-IXY">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ydm-DV-p1t">
+                                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="설정">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="CxZ-SA-HOe" kind="modal" id="vIP-WK-UtR"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iv1-Om-M2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2083.5" y="-84.5"/>
+        </scene>
+        <!--ChatroomPage-->
+        <scene sceneID="Aoq-ve-Es4">
+            <objects>
+                <viewController title="ChatroomPage" id="Dg9-72-7uR" customClass="ChatRoomController" customModule="HandongAppSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2qL-26-vP6"/>
+                        <viewControllerLayoutGuide type="bottom" id="aMa-Z4-QUW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LRq-EN-qhx" customClass="Chatroo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m5c-hi-7o8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="6kx-Fx-8dO">
+                                        <barButtonItem key="backBarButtonItem" title="&lt; Back" id="ku5-cK-2ni"/>
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" style="plain" id="icI-0J-1Y4">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sdo-s3-rsM">
+                                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="&lt; 뒤로">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <connections>
+                                                <segue destination="sbk-IA-J4s" kind="modal" id="6rx-ZX-znM"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="7ig-x3-PUM">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yar-dN-n38">
+                                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="참자가정보">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="방이름이들어갈 자리" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpQ-XT-Sjc">
+                                <rect key="frame" x="106" y="11" width="162" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="njx-JK-yLG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2083.5" y="1563.5"/>
+        </scene>
         <!--전화번호부-->
         <scene sceneID="9rq-xx-Ht7">
             <objects>
@@ -2113,19 +2529,15 @@
                             <constraint firstAttribute="width" secondItem="d2d-BK-Asg" secondAttribute="width" id="vdX-gK-jZq"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="loadingImg" destination="qG5-7R-l9y" id="n9s-at-U6r"/>
-                        <outlet property="msgLabel" destination="TQc-bs-oUD" id="aNI-tI-1C9"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tm6-gf-iw4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1422" y="1769"/>
+            <point key="canvasLocation" x="-990" y="81"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="lG3-Bi-TJr">
             <objects>
-                <viewController storyboardIdentifier="loading page for notice" id="7Ig-N3-QZL" userLabel="Loading View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loading page for notice" id="7Ig-N3-QZL" userLabel="Loading View Controller" customClass="NoticeLoading" customModule="HandongAppSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3M4-sI-IjV"/>
                         <viewControllerLayoutGuide type="bottom" id="4UB-rb-JPi"/>
@@ -2188,14 +2600,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2tE-Iz-a1F"/>
-                    <connections>
-                        <outlet property="loadingImg" destination="nTF-dk-3km" id="1P3-sY-t6r"/>
-                        <outlet property="msgLabel" destination="PlW-2e-9YT" id="gFU-R4-xF5"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Znf-jK-TWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1567" y="1078"/>
+            <point key="canvasLocation" x="-583" y="94"/>
         </scene>
         <!--Ddo Soonei Controller-->
         <scene sceneID="Nva-0y-HCH">
@@ -2206,14 +2614,14 @@
                         <viewControllerLayoutGuide type="bottom" id="SCT-ob-SVn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KjR-p7-9Gd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ddosuni_back.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8mH-A2-YgH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="-5" width="320" height="573"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ui9-jb-kaf">
-                                <rect key="frame" x="192" y="272" width="134" height="124"/>
+                                <rect key="frame" x="163" y="272" width="134" height="124"/>
                                 <color key="backgroundColor" red="0.49835373969088531" green="0.95034327649999994" blue="0.78838954363705316" alpha="0.66000000000000003" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <connections>
@@ -2221,7 +2629,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tjb-xC-ik8">
-                                <rect key="frame" x="62" y="153" width="131" height="118"/>
+                                <rect key="frame" x="36" y="153" width="131" height="118"/>
                                 <color key="backgroundColor" red="0.95034327649999994" green="0.5535924173043969" blue="0.081238226915027884" alpha="0.66000000000000003" colorSpace="calibratedRGB"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2230,8 +2638,47 @@
                                     <action selector="OpenDdoSoonCafe:" destination="cQA-Js-p2Y" eventType="touchUpInside" id="p6e-Gx-HVm"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="handong.png" translatesAutoresizingMaskIntoConstraints="NO" id="sK0-XQ-k0z">
+                                <rect key="frame" x="118" y="603" width="159" height="32"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="원룸하면 또순이" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huM-cU-mac">
+                                <rect key="frame" x="48" y="471" width="220" height="23"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ddosuni_cafe.png" translatesAutoresizingMaskIntoConstraints="NO" id="sq6-kh-fiV">
+                                <rect key="frame" x="61" y="172" width="80" height="80"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="전화걸기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nB6-aC-ugN">
+                                <rect key="frame" x="196" y="365" width="68" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="까페 가기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="P4t-Ue-2Ci">
+                                <rect key="frame" x="61" y="241" width="80" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ddosuni_house2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ZEs-SX-iAN">
+                                <rect key="frame" x="36" y="272" width="131" height="124"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ddosuni_house1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="QkZ-Aj-Ytd">
+                                <rect key="frame" x="167" y="153" width="130" height="118"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ddosuni_phone.png" translatesAutoresizingMaskIntoConstraints="NO" id="MNx-2I-P9B">
+                                <rect key="frame" x="193" y="301" width="75" height="65"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="또순이 하면 원룸" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xI4-50-qX8">
+                                <rect key="frame" x="50" y="502" width="220" height="20"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMY-WY-aah">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="1" y="-5" width="319" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
@@ -2256,53 +2703,13 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="handong.png" translatesAutoresizingMaskIntoConstraints="NO" id="sK0-XQ-k0z">
-                                <rect key="frame" x="118" y="603" width="159" height="32"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="원룸하면 또순이" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huM-cU-mac">
-                                <rect key="frame" x="87" y="471" width="220" height="23"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ddosuni_cafe.png" translatesAutoresizingMaskIntoConstraints="NO" id="sq6-kh-fiV">
-                                <rect key="frame" x="87" y="172" width="80" height="80"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="전화걸기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nB6-aC-ugN">
-                                <rect key="frame" x="225" y="365" width="68" height="31"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="까페 가기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="P4t-Ue-2Ci">
-                                <rect key="frame" x="87" y="241" width="80" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ddosuni_house2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ZEs-SX-iAN">
-                                <rect key="frame" x="62" y="272" width="131" height="124"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ddosuni_house1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="QkZ-Aj-Ytd">
-                                <rect key="frame" x="192" y="153" width="134" height="118"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ddosuni_phone.png" translatesAutoresizingMaskIntoConstraints="NO" id="MNx-2I-P9B">
-                                <rect key="frame" x="222" y="301" width="75" height="65"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="또순이 하면 원룸" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xI4-50-qX8">
-                                <rect key="frame" x="77" y="502" width="220" height="20"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pe0-cB-9YV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-806.5" y="527.5"/>
+            <point key="canvasLocation" x="-5820" y="469"/>
         </scene>
     </scenes>
     <resources>
@@ -2328,6 +2735,8 @@
         <image name="setting.png" width="100" height="100"/>
         <image name="timetable.png" width="100" height="100"/>
         <image name="unselected_star_small.png" width="30" height="30"/>
+        <image name="xxdpi_ChatMenu_AlarmOn.png" width="144" height="144"/>
+        <image name="xxdpi_LoadingPage-03.jpg" width="1080" height="1920"/>
         <image name="zzimdak.png" width="100" height="100"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -2336,11 +2745,14 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="w3z-EZ-Imm"/>
         <segue reference="EV2-Ms-zVV"/>
-        <segue reference="cac-t4-Wat"/>
+        <segue reference="gux-nU-7be"/>
         <segue reference="WXD-dF-pdX"/>
+        <segue reference="cac-t4-Wat"/>
         <segue reference="cdr-it-nuW"/>
         <segue reference="f41-90-oEP"/>
+        <segue reference="6rx-ZX-znM"/>
+        <segue reference="r1A-F6-NyF"/>
+        <segue reference="Arh-Ok-oDS"/>
     </inferredMetricsTieBreakers>
 </document>
